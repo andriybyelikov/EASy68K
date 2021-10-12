@@ -8,27 +8,27 @@
 #pragma resource "*.dfm"
 TfindDialogFrm *findDialogFrm;
 //---------------------------------------------------------------------------
-__fastcall TfindDialogFrm::TfindDialogFrm(TComponent* Owner)
+TfindDialogFrm::TfindDialogFrm(TComponent* Owner)
         : TForm(Owner)
 {
   findNext = false;
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfindDialogFrm::findNextBtnClick(TObject *Sender)
+void TfindDialogFrm::findNextBtnClick(TObject *Sender)
 {
   Form1->find(findText->Text, findNext);
   findNext = true;      // search for next
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfindDialogFrm::cancelBtnClick(TObject *Sender)
+void TfindDialogFrm::cancelBtnClick(TObject *Sender)
 {
   this->Close();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfindDialogFrm::findTextChange(TObject *Sender)
+void TfindDialogFrm::findTextChange(TObject *Sender)
 {
   if (findText->Text == "") {
     findNextBtn->Enabled = false;
@@ -41,7 +41,7 @@ void __fastcall TfindDialogFrm::findTextChange(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfindDialogFrm::FormShow(TObject *Sender)
+void TfindDialogFrm::FormShow(TObject *Sender)
 {
   if (findText->Text == "") {
     findNextBtn->Enabled = false;
@@ -55,7 +55,7 @@ void __fastcall TfindDialogFrm::FormShow(TObject *Sender)
 }
 
 
-void __fastcall TfindDialogFrm::FormKeyDown(TObject *Sender, WORD &Key,
+void TfindDialogFrm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    // if F3 AND Searching

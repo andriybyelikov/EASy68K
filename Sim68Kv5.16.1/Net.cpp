@@ -32,7 +32,7 @@ USHORT       port = 40000;
 //     The low 16 bits contains Status code as defined in net.h.
 //     The high 16 bits contains "Windows Socket Error Code".
 
-int __fastcall netInit(int port, int protocol)
+int netInit(int port, int protocol)
 {
   unsigned long ul = 1;
   int           nRet;
@@ -117,7 +117,7 @@ int __fastcall netInit(int port, int protocol)
 //     The low 16 bits contains Status code as defined in net.h.
 //     The high 16 bits contains "Windows Socket Error Code".
 
-int __fastcall netCreateServer(int port, int protocol) {
+int netCreateServer(int port, int protocol) {
 
   int status;
 
@@ -156,7 +156,7 @@ int __fastcall netCreateServer(int port, int protocol) {
 //     The high 16 bits contains "Windows Socket Error Code".
 //   *server = IP address connected to as null terminated string.
 
-int __fastcall netCreateClient(char *server, int port, int protocol) {
+int netCreateClient(char *server, int port, int protocol) {
 
     int status;
     int timeout = 5000;         // attempt to connect for 5 seconds before returnning an error
@@ -231,7 +231,7 @@ int __fastcall netCreateClient(char *server, int port, int protocol) {
 //     The high 16 bits contains "Windows Socket Error Code".
 //   size = Number of bytes sent, 0 if no data sent.
 //
-int __fastcall netSendData(char *data, unsigned int &size, char *remoteIP) {
+int netSendData(char *data, unsigned int &size, char *remoteIP) {
     int status;
     int sendSize = size;
     size = 0;       // assume 0 bytes sent, changed if send successful
@@ -287,7 +287,7 @@ int __fastcall netSendData(char *data, unsigned int &size, char *remoteIP) {
 //     The high 16 bits contains "Windows Socket Error Code".
 //   size = Number of bytes sent, 0 if no data sent.
 //
-int __fastcall netSendData(char *data, unsigned int &size, char *remoteIP, const USHORT port) {
+int netSendData(char *data, unsigned int &size, char *remoteIP, const USHORT port) {
     int status;
     int sendSize = size;
     size = 0;       // assume 0 bytes sent, changed if send successful
@@ -342,7 +342,7 @@ int __fastcall netSendData(char *data, unsigned int &size, char *remoteIP, const
 //     The high 16 bits contains "Windows Socket Error Code".
 //   size = Number of bytes received, may be 0.
 //   *senderIP = IP address of sender as null terminated string.
-int __fastcall netReadData(char *data, unsigned int &size, char *senderIP)
+int netReadData(char *data, unsigned int &size, char *senderIP)
 {
     int status;
     int readSize = size;
@@ -414,7 +414,7 @@ int __fastcall netReadData(char *data, unsigned int &size, char *senderIP)
 //   size = Number of bytes received, may be 0.
 //   *senderIP = IP address of sender as null terminated string.
 //   port = port number of sender.
-int __fastcall netReadData(char *data, unsigned int &size, char *senderIP, USHORT &port)
+int netReadData(char *data, unsigned int &size, char *senderIP, USHORT &port)
 {
     int status;
     int readSize = size;
@@ -475,7 +475,7 @@ int __fastcall netReadData(char *data, unsigned int &size, char *senderIP, USHOR
 //--------------------------------------------------------------------------
 // Close socket and free buffers
 //
-int __fastcall netCloseSockets() {
+int netCloseSockets() {
   int status;
   BOOL linger;
 
@@ -500,7 +500,7 @@ int __fastcall netCloseSockets() {
 
 //-------------------------------------------------------------------------
 // Get the IP address of this computer as a string
-int __fastcall netLocalIP(char *localIP) {
+int netLocalIP(char *localIP) {
 
   char hostName[40];
   hostent* host;

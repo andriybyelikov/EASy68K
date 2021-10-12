@@ -1,0 +1,36 @@
+void TTextStuff::NewProject(type)
+    sourcetext.fontname = editoroptions.fontname
+    sourcetext.fontsize = editoroptions.fontsize
+
+    sourcetext.modified = false
+    clearundoredo
+
+    if type == source
+        main->iNewFiles++
+        project.filename = "untitled" + iNewFiles + ".x68"
+    else if type == list
+
+void TTextStuff::NewSourceFile
+    disable richedit events
+
+    project = TTextStuff::NewProject() // create the control for the source's text
+
+    if editoroptions.assemblytabs checked == true
+        project.tabtype = assemblytabs
+    else
+        project.tabtype = fixedtabs
+    project.tabsize = editoroptions.fixedtabsize
+    sourcetext.fontname = editoroptions.fontname
+    sourcetext.fontsize = editoroptions.fontsize
+
+    load template.NEW content into editor
+
+    sourcetext.selectall
+    set tabs
+    sourcetext.protect attributes
+    project.modified = false
+    sourcetext.modified = false
+
+    highlight source text
+
+    enable richedit events and force update

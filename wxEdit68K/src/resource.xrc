@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxFrame" name="frame">
+    <title>wxEASy68K</title>
+    <object class="wxMenuBar">
+      <object class="wxMenu">
+        <label>_File</label>
+        <object class="wxMenuItem" name="wxID_NEW"/>
+        <object class="wxMenuItem" name="wxID_OPEN"/>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_SAVE"/>
+        <object class="wxMenuItem" name="wxID_SAVEAS"/>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_CLOSE"/>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_EXIT"/>
+      </object>
+      <object class="wxMenu">
+        <label>_Edit</label>
+        <object class="wxMenuItem" name="wxID_UNDO"/>
+        <object class="wxMenuItem" name="wxID_REDO"/>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_CUT"/>
+        <object class="wxMenuItem" name="wxID_COPY"/>
+        <object class="wxMenuItem" name="wxID_PASTE"/>
+        <object class="wxMenuItem" name="wxID_SELECTALL"/>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem">
+          <label>Comment Selection\tCTRL+ALT+C</label>
+          <bitmap>../icons/comment.png</bitmap>
+        </object>
+        <object class="wxMenuItem">
+          <label>Uncomment Selection\tCTRL+ALT+U</label>
+          <bitmap>../icons/uncomment.png</bitmap>
+        </object>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_FIND"/>
+        <object class="wxMenuItem">
+          <label>Find Next\tF3</label>
+        </object>
+        <object class="wxMenuItem">
+          <label>Find And Replace...\tCTRL+R</label>
+        </object>
+      </object>
+      <object class="wxMenu">
+        <label>_Project</label>
+        <object class="wxMenuItem">
+          <label>Assemble Source...\tF9</label>
+          <bitmap>../icons/assemble.png</bitmap>
+        </object>
+      </object>
+      <object class="wxMenu">
+        <label>_Options</label>
+        <object class="wxMenuItem">
+          <label>Assembler Options...</label>
+        </object>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="menu_options_editor_options">
+          <label>Editor Options...</label>
+        </object>
+      </object>
+      <object class="wxMenu">
+        <label>_Help</label>
+        <object class="wxMenuItem">
+          <bitmap stock_id="wxART_HELP"/>
+          <label>Help</label>
+        </object>
+        <object class="wxMenuItem" name="wxID_SEPARATOR"/>
+        <object class="wxMenuItem" name="wxID_ABOUT"/>
+      </object>
+    </object>
+    <object class="wxToolBar">
+      <object class="tool" name="tool_new">
+        <bitmap stock_id="wxART_NEW"/>
+        <tooltip>New (Ctrl+N)</tooltip>
+      </object>
+      <object class="tool" name="tool_open">
+        <bitmap stock_id="wxART_FILE_OPEN"/>
+        <tooltip>Open... (Ctrl+O)</tooltip>
+      </object>
+      <object class="tool" name="tool_save">
+        <bitmap stock_id="wxART_FILE_SAVE"/>
+        <tooltip>Save (Ctrl+S)</tooltip>
+      </object>
+      <object class="tool" name="tool_saveas">
+        <bitmap stock_id="wxART_FILE_SAVE_AS"/>
+        <tooltip>Save As...</tooltip>
+      </object>
+      <object class="tool" name="tool_close">
+        <bitmap stock_id="wxART_CLOSE"/>
+        <tooltip>Close (Ctrl+W)</tooltip>
+      </object>
+      <object class="separator"/>
+      <object class="tool" name="tool_undo">
+        <bitmap stock_id="wxART_UNDO"/>
+        <tooltip>Undo (Ctrl+Z)</tooltip>
+      </object>
+      <object class="tool" name="tool_redo">
+        <bitmap stock_id="wxART_REDO"/>
+        <tooltip>Redo (Ctrl+Alt+Z)</tooltip>
+      </object>
+      <object class="tool" name="tool_cut">
+        <bitmap stock_id="wxART_CUT"/>
+        <tooltip>Cut (Ctrl+X)</tooltip>
+      </object>
+      <object class="tool" name="tool_copy">
+        <bitmap stock_id="wxART_COPY"/>
+        <tooltip>Copy (Ctrl+C)</tooltip>
+      </object>
+      <object class="tool" name="tool_paste">
+        <bitmap stock_id="wxART_PASTE"/>
+        <tooltip>Paste (Ctrl+V)</tooltip>
+      </object>
+      <object class="separator"/>
+      <object class="tool" name="tool_comment">
+        <bitmap>../icons/comment.png</bitmap>
+        <tooltip>Comment Selection (Ctrl+Alt+C)</tooltip>
+      </object>
+      <object class="tool" name="tool_uncomment">
+        <bitmap>../icons/uncomment.png</bitmap>
+        <tooltip>Uncomment Selection (Ctrl+Alt+U)</tooltip>
+      </object>
+      <object class="separator"/>
+      <object class="tool" name="tool_assemble">
+        <bitmap>../icons/assemble.png</bitmap>
+        <tooltip>Assemble Source (F9)</tooltip>
+      </object>
+    </object>
+  </object>
+</resource>

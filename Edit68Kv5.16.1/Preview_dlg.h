@@ -14,10 +14,10 @@ class TPreviewDlg : public TForm
 {
 __published:	// IDE-managed Components
         TLabel *Label1;
-        void __fastcall FormShow(TObject *Sender);
+        void FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TPreviewDlg(TComponent* Owner);
+        TPreviewDlg(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPreviewDlg *PreviewDlg;

@@ -69,7 +69,7 @@ LARGE_INTEGER scoreTime;
 float profileTimes[MAX_PROFILES];
 
 //---------------------------------------------------------------------------
-__fastcall TTextStuff::TTextStuff(TComponent* Owner)
+TTextStuff::TTextStuff(TComponent* Owner)
         : TForm(Owner)
 {
   InsertMode = true;
@@ -79,7 +79,7 @@ __fastcall TTextStuff::TTextStuff(TComponent* Owner)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::ProfileStart(unsigned int n)
+void TTextStuff::ProfileStart(unsigned int n)
 {
   if (n >= MAX_PROFILES)
     return;
@@ -87,7 +87,7 @@ void __fastcall TTextStuff::ProfileStart(unsigned int n)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::ProfileEnd(unsigned int n)
+void TTextStuff::ProfileEnd(unsigned int n)
 {
   if (n >= MAX_PROFILES)
     return;
@@ -96,7 +96,7 @@ void __fastcall TTextStuff::ProfileEnd(unsigned int n)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::ProfileClear()
+void TTextStuff::ProfileClear()
 {
   for (int i=0; i<MAX_PROFILES; i++)
     profileTimes[i] = 0.0f;
@@ -104,7 +104,7 @@ void __fastcall TTextStuff::ProfileClear()
 
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::LoadFile(AnsiString name)
+void TTextStuff::LoadFile(AnsiString name)
 {
   AnsiString ext = UpperCase(ExtractFileExt(name));
   AnsiString str;
@@ -206,7 +206,7 @@ void __fastcall TTextStuff::LoadFile(AnsiString name)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::UpdateStatusBar()
+void TTextStuff::UpdateStatusBar()
 {
   AnsiString str;
   int tabSize = EditorOptionsForm->FixedTabSize->Value;
@@ -259,7 +259,7 @@ void __fastcall TTextStuff::UpdateStatusBar()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::SourceTextKeyDown(TObject *Sender, WORD &Key,
+void TTextStuff::SourceTextKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   try {
@@ -387,7 +387,7 @@ void __fastcall TTextStuff::SourceTextKeyDown(TObject *Sender, WORD &Key,
 
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::SourceTextKeyUp(TObject *Sender, WORD &Key,
+void TTextStuff::SourceTextKeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   try {
@@ -404,7 +404,7 @@ void __fastcall TTextStuff::SourceTextKeyUp(TObject *Sender, WORD &Key,
 
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::SourceTextKeyPress(TObject *Sender, char &Key)
+void TTextStuff::SourceTextKeyPress(TObject *Sender, char &Key)
 {
   try {
   if(Key == VK_TAB && !realTabs)
@@ -417,7 +417,7 @@ void __fastcall TTextStuff::SourceTextKeyPress(TObject *Sender, char &Key)
 
 //---------------------------------------------------------------------------
 // sets tabs of all text in SourceText
-void __fastcall TTextStuff::SetTabsAll()
+void TTextStuff::SetTabsAll()
 {
   try {
     SourceText->SelectAll();    // Select all text
@@ -434,7 +434,7 @@ void __fastcall TTextStuff::SetTabsAll()
 
 //---------------------------------------------------------------------------
 // sets tabs of selected text in SourceText
-void __fastcall TTextStuff::SetTabs()
+void TTextStuff::SetTabs()
 {
   try {
     //disable all RichEdit events
@@ -495,7 +495,7 @@ void __fastcall TTextStuff::SetTabs()
 //---------------------------------------------------------------------------
 // replace tabs in selected rows with spaces
 // replaces all tabs in partially selected rows
-void __fastcall TTextStuff::replaceTabs()
+void TTextStuff::replaceTabs()
 {
   CurPos = SourceText->CaretPos;        //store position of cursor
   str = SourceText->SelText;           // get selected text
@@ -536,28 +536,28 @@ void __fastcall TTextStuff::replaceTabs()
 
 //---------------------------------------------------------------------------
 // Comment the selected lines by adding a '*' to the start of each line
-void __fastcall TTextStuff::commentSelection()
+void TTextStuff::commentSelection()
 {
   insertInSelection("*");
 }
 
 //---------------------------------------------------------------------------
 // Uncomment the selected lines by removing the '*' at the start of each line
-void __fastcall TTextStuff::unCommentSelection()
+void TTextStuff::unCommentSelection()
 {
   deleteFromSelection("*");
 }
 
 //---------------------------------------------------------------------------
 // Indent the selected lines by adding a space to the start of each line
-void __fastcall TTextStuff::indentSelection()
+void TTextStuff::indentSelection()
 {
   insertInSelection(" ");
 }
 
 //---------------------------------------------------------------------------
 // Outdent the selected lines by deleting a space to the start of each line
-void __fastcall TTextStuff::outdentSelection()
+void TTextStuff::outdentSelection()
 {
   deleteFromSelection(" ");
 }
@@ -565,7 +565,7 @@ void __fastcall TTextStuff::outdentSelection()
 
 //---------------------------------------------------------------------------
 // Delete dstr from the beginning of the selected lines
-void __fastcall TTextStuff::deleteFromSelection(AnsiString dstr)
+void TTextStuff::deleteFromSelection(AnsiString dstr)
 {
   int startSave, lengthSave, row, startLine, endLine;
   UndoRedo item;
@@ -614,7 +614,7 @@ void __fastcall TTextStuff::deleteFromSelection(AnsiString dstr)
 
 //---------------------------------------------------------------------------
 // Inserts the string ins in the front of each selected line
-void __fastcall TTextStuff::insertInSelection(AnsiString istr)
+void TTextStuff::insertInSelection(AnsiString istr)
 {
   int startSave, lengthSave, row, startLine, endLine;
   UndoRedo item;
@@ -657,7 +657,7 @@ void __fastcall TTextStuff::insertInSelection(AnsiString istr)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::FormClose(TObject *Sender,
+void TTextStuff::FormClose(TObject *Sender,
       TCloseAction &Action)
 {
   //update how many windows are open and what type
@@ -705,7 +705,7 @@ void __fastcall TTextStuff::FormClose(TObject *Sender,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::ClearErrorMessages(TObject *Sender)
+void TTextStuff::ClearErrorMessages(TObject *Sender)
 {
   Messages->Height = 7;
   Messages->Items->Clear();
@@ -716,7 +716,7 @@ void __fastcall TTextStuff::ClearErrorMessages(TObject *Sender)
 //Highlights the line with selected error. The selection functions require
 //char positions, not a line number so this is found first then selected based
 //on those values.
-void __fastcall TTextStuff::MessagesDblClick(TObject *Sender)
+void TTextStuff::MessagesDblClick(TObject *Sender)
 {
   try {
     int iLineNum = StrToInt(Messages->ItemFocused->Caption);
@@ -738,7 +738,7 @@ void __fastcall TTextStuff::MessagesDblClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-int __fastcall TTextStuff::GetFirstPos(int line)
+int TTextStuff::GetFirstPos(int line)
 { //returns start of line in Char positions
   try {
     return( SourceText->Perform(EM_LINEINDEX, line, 0));
@@ -748,7 +748,7 @@ int __fastcall TTextStuff::GetFirstPos(int line)
 }
 
 //---------------------------------------------------------------------------
-int __fastcall TTextStuff::GetLastPos(int line)
+int TTextStuff::GetLastPos(int line)
 {  //returns end of line in Char positions
   try {
     if(line >= SourceText->Lines->Count - 1)      // if last line
@@ -762,7 +762,7 @@ int __fastcall TTextStuff::GetLastPos(int line)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::SourceTextMouseUp(TObject *Sender,
+void TTextStuff::SourceTextMouseUp(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   try {
@@ -776,7 +776,7 @@ void __fastcall TTextStuff::SourceTextMouseUp(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::SourceTextMouseDown(TObject *Sender,
+void TTextStuff::SourceTextMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   try {
@@ -788,7 +788,7 @@ void __fastcall TTextStuff::SourceTextMouseDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::FormShow(TObject *Sender)
+void TTextStuff::FormShow(TObject *Sender)
 { /*Initialize variables */
   try {
     Main->mnuFind->Enabled = true;
@@ -803,13 +803,13 @@ void __fastcall TTextStuff::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::tbNewClick(TObject *Sender)
+void TTextStuff::tbNewClick(TObject *Sender)
 {
   Main->mnuNewClick(Sender);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::tbPrintClick(TObject *Sender)
+void TTextStuff::tbPrintClick(TObject *Sender)
 {
   Main->mnuPrintSourceClick(Sender);
 }
@@ -819,7 +819,7 @@ void __fastcall TTextStuff::tbPrintClick(TObject *Sender)
      "Source"  -  Create a source file window
      "List"    -  Create a list file window
 */
-void __fastcall TTextStuff::NewProject(AnsiString Type)
+void TTextStuff::NewProject(AnsiString Type)
 {
   try {
     //set font of editor window to that which is saved in settings
@@ -877,7 +877,7 @@ void __fastcall TTextStuff::NewProject(AnsiString Type)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::NewSourceFile()
+void TTextStuff::NewSourceFile()
 {
   try {
     //disable all RichEdit events
@@ -920,7 +920,7 @@ void __fastcall TTextStuff::NewSourceFile()
 
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::FormCloseQuery(TObject *Sender, bool &CanClose)
+void TTextStuff::FormCloseQuery(TObject *Sender, bool &CanClose)
 { /*Prevents user from closing a form with changes they want to save.*/
 
   try {
@@ -955,14 +955,14 @@ void __fastcall TTextStuff::FormCloseQuery(TObject *Sender, bool &CanClose)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TTextStuff::EditorOptions1Click(TObject *Sender)
+void TTextStuff::EditorOptions1Click(TObject *Sender)
 {
   Main->mnuEditorOptionsClick(Sender);
 }
 
 //---------------------------------------------------------------------------
 // Attempt to correct a text selection bug in the RichEdit1 control
-void __fastcall TTextStuff::SourceTextSelectionChange(TObject *Sender)
+void TTextStuff::SourceTextSelectionChange(TObject *Sender)
 {
   static int oldSelStart = SourceText->SelStart;
   static int oldSelLength = SourceText->SelLength;
@@ -992,7 +992,7 @@ void __fastcall TTextStuff::SourceTextSelectionChange(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::EditorReload1Click(TObject *Sender)
+void TTextStuff::EditorReload1Click(TObject *Sender)
 {
   try {
     if(Project.Modified && Project.HasName)
@@ -1019,7 +1019,7 @@ void __fastcall TTextStuff::EditorReload1Click(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // return number of visible lines in richedit control
-int  __fastcall TTextStuff::getVisibleLineCount()
+int  TTextStuff::getVisibleLineCount()
 {
    //get the formatting rectangle of the richedit control:
    RECT richRect = {0};
@@ -1029,14 +1029,14 @@ int  __fastcall TTextStuff::getVisibleLineCount()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::SourceTextVertScroll(TObject *Sender)
+void TTextStuff::SourceTextVertScroll(TObject *Sender)
 {
   //highlightAbort = true;        // stop current highlight operation
   colorHighlight(0,SourceText->Lines->Count);  // highlight
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TTextStuff::FormResize(TObject *Sender)
+void TTextStuff::FormResize(TObject *Sender)
 {
   //highlightAbort = true;        // stop current highlight operation
   colorHighlight(0,SourceText->Lines->Count);  // highlight
@@ -1048,7 +1048,7 @@ void __fastcall TTextStuff::FormResize(TObject *Sender)
 // The syntax highlight will occur when the timer fires.
 // Using a timer prevents the syntax highlight from slowing rapid editing.
 // Only visible lines are highlighted.
-void __fastcall TTextStuff::colorHighlight(int startLine, int endLine)
+void TTextStuff::colorHighlight(int startLine, int endLine)
 {
   try {
     if (highlightDisabled)
@@ -1089,7 +1089,7 @@ void __fastcall TTextStuff::colorHighlight(int startLine, int endLine)
 // represents so it may be properly highlighted.
 // Minimize interaction with the RichEdit control (SourceText) as much as possible
 // for best performance.
-void __fastcall TTextStuff::HighlightTimerTimer(TObject *Sender)
+void TTextStuff::HighlightTimerTimer(TObject *Sender)
 {
   int size, startLine = colorStart, endLine = colorEnd;
   char *start;
@@ -1301,7 +1301,7 @@ int checkRelational(int n) {
 //      p points to the line
 //      The text is already set to codeStyle
 // This parser for syntax highlighting only
-bool __fastcall TTextStuff::highlightLine(tokenT &tokenType)
+bool TTextStuff::highlightLine(tokenT &tokenType)
 {
   const int DIRECTIVE_COUNT = 32;       // 32 directives
   const int NO_OPERAND_I = 7;           // first 7 have no operand
@@ -1493,7 +1493,7 @@ bool __fastcall TTextStuff::highlightLine(tokenT &tokenType)
 //---------------------------------------------------------------------------
 // Parse the operand for syntax highlighting
 // Pre: The text is already set to codeStyle
-char* __fastcall TTextStuff::highlightOperand()
+char* TTextStuff::highlightOperand()
 {
   bool more;
   int parenCount;
@@ -1574,7 +1574,7 @@ char* __fastcall TTextStuff::highlightOperand()
 // set the selected text font
 // Pre: The text is already set to codeStyle
 
-void __fastcall TTextStuff::setFontStyle(FontStyle fs)
+void TTextStuff::setFontStyle(FontStyle fs)
 {
   try {
     if (fs.color != codeStyle.color)
@@ -1619,7 +1619,7 @@ unsigned int textLength = 0;
 
 //---------------------------------------------------------------------------
 // save data so current change may be undone
-void __fastcall TTextStuff::SaveUndo(UndoRedo item, bool notRedo)
+void TTextStuff::SaveUndo(UndoRedo item, bool notRedo)
 {
   try {
     if(item.length == 0 && item.str == "")    // nothing to save
@@ -1645,7 +1645,7 @@ void __fastcall TTextStuff::SaveUndo(UndoRedo item, bool notRedo)
 
 //---------------------------------------------------------------------------
 // SaveRedo
-void __fastcall TTextStuff::SaveRedo(UndoRedo item)
+void TTextStuff::SaveRedo(UndoRedo item)
 {
   try {
     if(item.length == 0 && item.str == "")    // nothing to save
@@ -1661,7 +1661,7 @@ void __fastcall TTextStuff::SaveRedo(UndoRedo item)
 
 //---------------------------------------------------------------------------
 // clear redo stack
-void __fastcall TTextStuff::clearRedo()
+void TTextStuff::clearRedo()
 {
   try {
     while(!redoS.empty())
@@ -1674,7 +1674,7 @@ void __fastcall TTextStuff::clearRedo()
 
 //---------------------------------------------------------------------------
 // clear undo/redo stacks
-void __fastcall TTextStuff::clearUndoRedo()
+void TTextStuff::clearUndoRedo()
 {
   try {
     while(!undoS.empty())
@@ -1688,7 +1688,7 @@ void __fastcall TTextStuff::clearUndoRedo()
 
 //---------------------------------------------------------------------------
 //  Undo
-void __fastcall TTextStuff::Undo()
+void TTextStuff::Undo()
 {
   try {
     UndoRedo undoData, redoData;
@@ -1726,7 +1726,7 @@ void __fastcall TTextStuff::Undo()
 
 //---------------------------------------------------------------------------
 //  Redo
-void __fastcall TTextStuff::Redo()
+void TTextStuff::Redo()
 {
   try {
     UndoRedo undoData, redoData;
@@ -1762,7 +1762,7 @@ void __fastcall TTextStuff::Redo()
 //---------------------------------------------------------------------------
 // Exec undo
 // sets item.length with undo length
-void __fastcall TTextStuff::exec_undo(UndoRedo &item)
+void TTextStuff::exec_undo(UndoRedo &item)
 {
   try {
     //disable all RichEdit events
@@ -1807,7 +1807,7 @@ void __fastcall TTextStuff::exec_undo(UndoRedo &item)
 
 //---------------------------------------------------------------------------
 // keep track of mouse drag operations for undo/redo
-void __fastcall TTextStuff::SourceTextMouseMove(TObject *Sender,
+void TTextStuff::SourceTextMouseMove(TObject *Sender,
       TShiftState Shift, int X, int Y)
 {
   if (Shift.Contains(ssLeft))           // if drag
@@ -1817,7 +1817,7 @@ void __fastcall TTextStuff::SourceTextMouseMove(TObject *Sender,
 //---------------------------------------------------------------------------
 // called prior to change in text.
 // undo information is collected
-void __fastcall TTextStuff::SourceTextProtectChange(TObject *Sender,
+void TTextStuff::SourceTextProtectChange(TObject *Sender,
       int StartPos, int EndPos, bool &AllowChange)
 {
   try {
@@ -1850,7 +1850,7 @@ void __fastcall TTextStuff::SourceTextProtectChange(TObject *Sender,
 // The Text property contains the change
 // Determines what the change operation was and calls SaveUndo with the
 // data that needs to be saved.
-void __fastcall TTextStuff::SourceTextChange(TObject *Sender)
+void TTextStuff::SourceTextChange(TObject *Sender)
 {
   try {
     UndoRedo item;
@@ -1909,7 +1909,7 @@ void __fastcall TTextStuff::SourceTextChange(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // enable/disable undo/redo menus and buttons
-void __fastcall TTextStuff::FormActivate(TObject *Sender)
+void TTextStuff::FormActivate(TObject *Sender)
 {
   try {
     if(!undoS.empty())

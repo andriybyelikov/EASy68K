@@ -34,19 +34,19 @@ extern AnsiString str;
 unsigned int memAddr;
 
 //---------------------------------------------------------------------------
-__fastcall TMemoryFrm::TMemoryFrm(TComponent* Owner)
+TMemoryFrm::TMemoryFrm(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TMemoryFrm::FormCreate(TObject *Sender)
+void TMemoryFrm::FormCreate(TObject *Sender)
 {
   rowHeight = Canvas->TextHeight("Xp");
   colWidth  = Canvas->TextWidth("W");
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TMemoryFrm::Address1Change(TObject *Sender)
+void TMemoryFrm::Address1Change(TObject *Sender)
 {
   try {
     str = "0x";
@@ -64,7 +64,7 @@ void __fastcall TMemoryFrm::Address1Change(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // diplays full screen of memory
-void __fastcall TMemoryFrm::FormPaint(TObject *Sender)
+void TMemoryFrm::FormPaint(TObject *Sender)
 {
   TPoint scrPos;
   int tX, tY;
@@ -126,7 +126,7 @@ void __fastcall TMemoryFrm::FormPaint(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // displays memory around loc only.
-void __fastcall TMemoryFrm::LivePaint(unsigned int loc)
+void TMemoryFrm::LivePaint(unsigned int loc)
 {
   if (loc >= memAddr-3 && loc <= (memAddr + nRows*16) &&
       loc < MEMSIZE && LiveCheckBox->Checked)
@@ -183,14 +183,14 @@ void __fastcall TMemoryFrm::LivePaint(unsigned int loc)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TMemoryFrm::FormResize(TObject *Sender)
+void TMemoryFrm::FormResize(TObject *Sender)
 {
   Repaint();
 }
 //---------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-void __fastcall TMemoryFrm::RowSpinUpClick(TObject *Sender)
+void TMemoryFrm::RowSpinUpClick(TObject *Sender)
 {
   AnsiString str;
   int addr;
@@ -207,7 +207,7 @@ void __fastcall TMemoryFrm::RowSpinUpClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::RowSpinDownClick(TObject *Sender)
+void TMemoryFrm::RowSpinDownClick(TObject *Sender)
 {
   AnsiString str;
   int addr;
@@ -224,7 +224,7 @@ void __fastcall TMemoryFrm::RowSpinDownClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::PageSpinUpClick(TObject *Sender)
+void TMemoryFrm::PageSpinUpClick(TObject *Sender)
 {
   AnsiString str;
   int addr;
@@ -242,7 +242,7 @@ void __fastcall TMemoryFrm::PageSpinUpClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::PageSpinDownClick(TObject *Sender)
+void TMemoryFrm::PageSpinDownClick(TObject *Sender)
 {
   AnsiString str;
   int addr;
@@ -260,14 +260,14 @@ void __fastcall TMemoryFrm::PageSpinDownClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::FormMouseWheelDown(TObject *Sender,
+void TMemoryFrm::FormMouseWheelDown(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   RowSpinDownClick(Sender);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::FormMouseWheelUp(TObject *Sender,
+void TMemoryFrm::FormMouseWheelUp(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   RowSpinUpClick(Sender);
@@ -275,7 +275,7 @@ void __fastcall TMemoryFrm::FormMouseWheelUp(TObject *Sender,
 //---------------------------------------------------------------------------
 
 
-void __fastcall TMemoryFrm::Address1KeyDown(TObject *Sender, WORD &Key,
+void TMemoryFrm::Address1KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   switch (Key) {
@@ -306,7 +306,7 @@ void __fastcall TMemoryFrm::Address1KeyDown(TObject *Sender, WORD &Key,
 
 //---------------------------------------------------------------------------
 // goto row, col
-void __fastcall TMemoryFrm::gotoRC(TObject *Sender, int r, int c)
+void TMemoryFrm::gotoRC(TObject *Sender, int r, int c)
 {
   row = r;
   col = c;
@@ -337,7 +337,7 @@ void __fastcall TMemoryFrm::gotoRC(TObject *Sender, int r, int c)
 
 //---------------------------------------------------------------------------
 // Mouse Button Down
-void __fastcall TMemoryFrm::FormMouseDown(TObject *Sender,
+void TMemoryFrm::FormMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   erasePrompt();                // erase old prompt
@@ -356,7 +356,7 @@ void __fastcall TMemoryFrm::FormMouseDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::promptTimer(TObject *Sender)
+void TMemoryFrm::promptTimer(TObject *Sender)
 {
   drawPrompt();
 }
@@ -364,7 +364,7 @@ void __fastcall TMemoryFrm::promptTimer(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // draw prompt
-void __fastcall TMemoryFrm::drawPrompt()
+void TMemoryFrm::drawPrompt()
 {
   int promptX = colWidth * col;
 
@@ -382,7 +382,7 @@ void __fastcall TMemoryFrm::drawPrompt()
 
 //---------------------------------------------------------------------------
 // erase prompt
-void __fastcall TMemoryFrm::erasePrompt()
+void TMemoryFrm::erasePrompt()
 {
   int promptX = colWidth * col;
 
@@ -394,7 +394,7 @@ void __fastcall TMemoryFrm::erasePrompt()
 
 //---------------------------------------------------------------------------
 // Handle key press on form
-void __fastcall TMemoryFrm::FormKeyPress(TObject *Sender, char &Key)
+void TMemoryFrm::FormKeyPress(TObject *Sender, char &Key)
 {
   AnsiString str;
   TPoint scrPos;
@@ -467,7 +467,7 @@ void __fastcall TMemoryFrm::FormKeyPress(TObject *Sender, char &Key)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::FormKeyDown(TObject *Sender, WORD &Key,
+void TMemoryFrm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   erasePrompt();                // erase old prompt
@@ -510,7 +510,7 @@ void __fastcall TMemoryFrm::FormKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::BringToFront()
+void TMemoryFrm::BringToFront()
 {
   if(MemoryFrm->Visible)
     MemoryFrm->SetFocus();
@@ -520,7 +520,7 @@ void __fastcall TMemoryFrm::BringToFront()
 
 //---------------------------------------------------------------------------
 // move data in the 68000's memory space
-void __fastcall TMemoryFrm::CopyClick(TObject *Sender)
+void TMemoryFrm::CopyClick(TObject *Sender)
 {
   try {
     unsigned int fromAddr, toAddr, bytes, i;
@@ -571,7 +571,7 @@ void __fastcall TMemoryFrm::CopyClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TMemoryFrm::AddrKeyPress(TObject *Sender, char &Key)
+void TMemoryFrm::AddrKeyPress(TObject *Sender, char &Key)
 {
   if ( (Key >= '0' && Key <= '9') ||
        (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -585,7 +585,7 @@ void __fastcall TMemoryFrm::AddrKeyPress(TObject *Sender, char &Key)
 
 
 
-void __fastcall TMemoryFrm::FillClick(TObject *Sender)
+void TMemoryFrm::FillClick(TObject *Sender)
 {
   AnsiString str;
   unsigned int fromAddr, toAddr, bytes, i;
@@ -615,14 +615,14 @@ void __fastcall TMemoryFrm::FillClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TMemoryFrm::Address1KeyUp(TObject *Sender, WORD &Key,
+void TMemoryFrm::Address1KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   Repaint();      // update display
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMemoryFrm::SaveClick(TObject *Sender)
+void TMemoryFrm::SaveClick(TObject *Sender)
 {
   AnsiString str;
   unsigned int fromAddr, toAddr, i;

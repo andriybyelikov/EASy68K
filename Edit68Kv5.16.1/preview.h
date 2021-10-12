@@ -23,7 +23,7 @@ __published:	// IDE-managed Components
         TQRRichText *QRRichText1;
 private:	// User declarations
 public:		// User declarations
-        __fastcall TPreviewForm(TComponent* Owner);
+        TPreviewForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TPreviewForm *PreviewForm;

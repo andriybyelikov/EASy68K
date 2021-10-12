@@ -9,23 +9,23 @@
 #pragma resource "*.dfm"
 TreplaceDialogFrm *replaceDialogFrm;
 //---------------------------------------------------------------------------
-__fastcall TreplaceDialogFrm::TreplaceDialogFrm(TComponent* Owner)
+TreplaceDialogFrm::TreplaceDialogFrm(TComponent* Owner)
         : TForm(Owner)
 {
   replaceAll = false;
 }
 //---------------------------------------------------------------------------
-void __fastcall TreplaceDialogFrm::findNextBtnClick(TObject *Sender)
+void TreplaceDialogFrm::findNextBtnClick(TObject *Sender)
 {
   Main->FindDialogFind(findText->Text, wholeWordChk->Checked, matchCaseChk->Checked);
 }
 //---------------------------------------------------------------------------
-void __fastcall TreplaceDialogFrm::cancelBtnClick(TObject *Sender)
+void TreplaceDialogFrm::cancelBtnClick(TObject *Sender)
 {
   this->Close();        
 }
 //---------------------------------------------------------------------------
-void __fastcall TreplaceDialogFrm::findTextChange(TObject *Sender)
+void TreplaceDialogFrm::findTextChange(TObject *Sender)
 {
   if (findText->Text == "") {
     findNextBtn->Enabled = false;
@@ -39,13 +39,13 @@ void __fastcall TreplaceDialogFrm::findTextChange(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
-void __fastcall TreplaceDialogFrm::replaceBtnClick(TObject *Sender)
+void TreplaceDialogFrm::replaceBtnClick(TObject *Sender)
 {
   replaceAll = false;
   Main->ReplaceDialogReplace();
 }
 //---------------------------------------------------------------------------
-void __fastcall TreplaceDialogFrm::replaceAllBtnClick(TObject *Sender)
+void TreplaceDialogFrm::replaceAllBtnClick(TObject *Sender)
 {
   replaceAll = true;
   Main->ReplaceDialogReplace();

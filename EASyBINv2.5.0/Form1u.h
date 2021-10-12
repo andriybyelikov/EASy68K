@@ -111,66 +111,66 @@ __published:	// IDE-managed Components
         TMaskEdit *FillByte;
         TButton *Fill;
         TMaskEdit *startAddress;
-        void __fastcall NewExecute(TObject *Sender);
-        void __fastcall ExitExecute(TObject *Sender);
-        void __fastcall AboutExecute(TObject *Sender);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall FormResize(TObject *Sender);
-        void __fastcall HelpExecute(TObject *Sender);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void NewExecute(TObject *Sender);
+        void ExitExecute(TObject *Sender);
+        void AboutExecute(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void FormResize(TObject *Sender);
+        void HelpExecute(TObject *Sender);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall OutputStartAddressKeyPress(TObject *Sender, char &Key);
-        void __fastcall Address1Change(TObject *Sender);
-        void __fastcall FormPaint(TObject *Sender);
-        void __fastcall RowSpinUpClick(TObject *Sender);
-        void __fastcall RowSpinDownClick(TObject *Sender);
-        void __fastcall PageSpinUpClick(TObject *Sender);
-        void __fastcall PageSpinDownClick(TObject *Sender);
-        void __fastcall FormMouseWheelDown(TObject *Sender,
+        void OutputStartAddressKeyPress(TObject *Sender, char &Key);
+        void Address1Change(TObject *Sender);
+        void FormPaint(TObject *Sender);
+        void RowSpinUpClick(TObject *Sender);
+        void RowSpinDownClick(TObject *Sender);
+        void PageSpinUpClick(TObject *Sender);
+        void PageSpinDownClick(TObject *Sender);
+        void FormMouseWheelDown(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall FormMouseWheelUp(TObject *Sender,
+        void FormMouseWheelUp(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall Address1KeyDown(TObject *Sender, WORD &Key,
+        void Address1KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall FormMouseDown(TObject *Sender, TMouseButton Button,
+        void FormMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall promptTimer(TObject *Sender);
-        void __fastcall FormKeyPress(TObject *Sender, char &Key);
-        void __fastcall CopyClick(TObject *Sender);
-        void __fastcall AddrKeyPress(TObject *Sender, char &Key);
-        void __fastcall FillClick(TObject *Sender);
-        void __fastcall Address1KeyUp(TObject *Sender, WORD &Key,
+        void promptTimer(TObject *Sender);
+        void FormKeyPress(TObject *Sender, char &Key);
+        void CopyClick(TObject *Sender);
+        void AddrKeyPress(TObject *Sender, char &Key);
+        void FillClick(TObject *Sender);
+        void Address1KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall OpenBinFile(TObject *Sender);
-        void __fastcall SaveBinFile(TObject *Sender);
-        void __fastcall OutputSplitClick(TObject *Sender);
-        void __fastcall OpenExecute(TObject *Sender);
-        void __fastcall OutputFirstAddressChange(TObject *Sender);
-        void __fastcall OutputLengthChange(TObject *Sender);
-        void __fastcall SaveSRecFile(TObject *Sender);
-        void __fastcall startAddressEnter(TObject *Sender);
-        void __fastcall OutputFirstAddressEnter(TObject *Sender);
-        void __fastcall OutputLengthEnter(TObject *Sender);
-        void __fastcall FromEnter(TObject *Sender);
-        void __fastcall ToEnter(TObject *Sender);
-        void __fastcall BytesEnter(TObject *Sender);
-        void __fastcall FillByteEnter(TObject *Sender);
-        void __fastcall Address1Enter(TObject *Sender);
+        void OpenBinFile(TObject *Sender);
+        void SaveBinFile(TObject *Sender);
+        void OutputSplitClick(TObject *Sender);
+        void OpenExecute(TObject *Sender);
+        void OutputFirstAddressChange(TObject *Sender);
+        void OutputLengthChange(TObject *Sender);
+        void SaveSRecFile(TObject *Sender);
+        void startAddressEnter(TObject *Sender);
+        void OutputFirstAddressEnter(TObject *Sender);
+        void OutputLengthEnter(TObject *Sender);
+        void FromEnter(TObject *Sender);
+        void ToEnter(TObject *Sender);
+        void BytesEnter(TObject *Sender);
+        void FillByteEnter(TObject *Sender);
+        void Address1Enter(TObject *Sender);
 private:	// User declarations
-        void __fastcall WmDropFiles(TWMDropFiles& Message);     // handle drag-n-drop from explorer
+        void WmDropFiles(TWMDropFiles& Message);     // handle drag-n-drop from explorer
         int row, col, rowHeight, colWidth;
         int textX, textY, nRows;
         bool promptVisible;
         int split;      // 0, 2, or 4 how binary output data is split
 
 public:		// User declarations
-        __fastcall TForm1(TComponent* Owner);
-        __fastcall ~TForm1();
-        void __fastcall displayHelp(char * context);
-        void __fastcall OpenSRecordFile(AnsiString name);
-        void __fastcall erasePrompt();
-        void __fastcall drawPrompt();
-        void __fastcall gotoRC(TObject *Sender, int r, int c);
+        TForm1(TComponent* Owner);
+        ~TForm1();
+        void displayHelp(char * context);
+        void OpenSRecordFile(AnsiString name);
+        void erasePrompt();
+        void drawPrompt();
+        void gotoRC(TObject *Sender, int r, int c);
 
 
 

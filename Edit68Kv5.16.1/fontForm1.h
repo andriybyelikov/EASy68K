@@ -21,13 +21,13 @@ __published:	// IDE-managed Components
         TEdit *currentSize;
         TLabel *Label4;
         TEdit *currentFont;
-        void __fastcall cmdCloseClick(TObject *Sender);
-        void __fastcall cmdChangeClick(TObject *Sender);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall cbFontChange(TObject *Sender);
+        void cmdCloseClick(TObject *Sender);
+        void cmdChangeClick(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void cbFontChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TfontForm(TComponent* Owner);
+        TfontForm(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfontForm *fontForm;

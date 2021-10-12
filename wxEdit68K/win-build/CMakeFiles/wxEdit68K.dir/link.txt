@@ -1,0 +1,3 @@
+/usr/bin/cmake -E rm -f CMakeFiles/wxEdit68K.dir/objects.a
+/usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/wxEdit68K.dir/objects.a @CMakeFiles/wxEdit68K.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -Wl,--whole-archive CMakeFiles/wxEdit68K.dir/objects.a -Wl,--no-whole-archive -o wxEdit68K.exe -Wl,--out-implib,libwxEdit68K.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/wxEdit68K.dir/linklibs.rsp

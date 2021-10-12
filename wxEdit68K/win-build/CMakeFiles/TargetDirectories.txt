@@ -1,0 +1,3 @@
+/media/data/repositories/wxEASy68K/wxEdit68K/win-build/CMakeFiles/rebuild_cache.dir
+/media/data/repositories/wxEASy68K/wxEdit68K/win-build/CMakeFiles/edit_cache.dir
+/media/data/repositories/wxEASy68K/wxEdit68K/win-build/CMakeFiles/wxEdit68K.dir

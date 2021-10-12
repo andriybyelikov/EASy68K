@@ -19,25 +19,25 @@ __published:	// IDE-managed Components
         TLabel *Label2;
         TCSpinButton *CSpinButton1;
         TComboBox *whichStack;
-        void __fastcall FormCreate(TObject *Sender);
-        void __fastcall FormPaint(TObject *Sender);
-        void __fastcall FormResize(TObject *Sender);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall CSpinButton1UpClick(TObject *Sender);
-        void __fastcall CSpinButton1DownClick(TObject *Sender);
-        void __fastcall FormMouseWheelDown(TObject *Sender,
+        void FormCreate(TObject *Sender);
+        void FormPaint(TObject *Sender);
+        void FormResize(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void CSpinButton1UpClick(TObject *Sender);
+        void CSpinButton1DownClick(TObject *Sender);
+        void FormMouseWheelDown(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall FormMouseWheelUp(TObject *Sender,
+        void FormMouseWheelUp(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall whichStackChange(TObject *Sender);
+        void whichStackChange(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TStackFrm(TComponent* Owner);
-        void __fastcall BringToFront();
-        void __fastcall DisplayStack();
-        void __fastcall updateDisplay();
+        TStackFrm(TComponent* Owner);
+        void BringToFront();
+        void DisplayStack();
+        void updateDisplay();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TStackFrm *StackFrm;

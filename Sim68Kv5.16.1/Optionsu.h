@@ -21,11 +21,11 @@ __published:	// IDE-managed Components
         TEdit *AutoTraceInterval;
         TBitBtn *Cancel;
         TCheckBox *DisableDisplay;
-        void __fastcall OKClick(TObject *Sender);
-        void __fastcall CancelClick(TObject *Sender);
+        void OKClick(TObject *Sender);
+        void CancelClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TAutoTraceOptions(TComponent* Owner);
+        TAutoTraceOptions(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TAutoTraceOptions *AutoTraceOptions;

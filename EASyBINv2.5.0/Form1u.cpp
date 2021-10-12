@@ -58,7 +58,7 @@ HTML_HELP_PROC __HtmlHelp;  // function pointer for the HtmlHelp() function. Not
                             // create a conflict with the declaration in htmlhelp.h
 
 //---------------------------------------------------------------------------
-bool __fastcall LoadHtmlHelp()
+bool LoadHtmlHelp()
 {
   HKEY HHKey;
   DWORD PathSize = 255;
@@ -98,7 +98,7 @@ bool __fastcall LoadHtmlHelp()
 //---------------------------------------------------------------------------
 // Form1 Constructor
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
 {
   // initialize helpfile location -- m_asHelpFile is an AnsiString type private
@@ -149,7 +149,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 // Form1 Destructor
 //---------------------------------------------------------------------------
-__fastcall TForm1::~TForm1()
+TForm1::~TForm1()
 {
   if (memory != NULL)
     delete[] memory;            // free 68000 memory space
@@ -192,14 +192,14 @@ __fastcall TForm1::~TForm1()
 //---------------------------------------------------------------------------
 // Close the Form
 // Exit
-void __fastcall TForm1::ExitExecute(TObject *Sender)
+void TForm1::ExitExecute(TObject *Sender)
 {
   Application->Terminate();
 }
 
 //---------------------------------------------------------------------------
 // Open S-Record file
-void __fastcall TForm1::OpenSRecordFile(AnsiString name)
+void TForm1::OpenSRecordFile(AnsiString name)
 {
   AnsiString str;
   int addr;
@@ -225,7 +225,7 @@ void __fastcall TForm1::OpenSRecordFile(AnsiString name)
 
 //--------------------------------------------------------------------------
 // handler for drag-n-drop from explorer
-void __fastcall TForm1::WmDropFiles(TWMDropFiles& Message)
+void TForm1::WmDropFiles(TWMDropFiles& Message)
 {
   AnsiString fileName;
   int size;
@@ -266,7 +266,7 @@ void __fastcall TForm1::WmDropFiles(TWMDropFiles& Message)
 
 //---------------------------------------------------------------------------
 // Display Open File Dialog for S-Record load
-void __fastcall TForm1::OpenExecute(TObject *Sender)
+void TForm1::OpenExecute(TObject *Sender)
 {
   try {
     OpenDialog->Filter = "EASy68K S-Record [.S68]|*.S68|Motorola S-Record [.S3][.S19]|*.S3;*.S19|Other S-Record|*.*";
@@ -282,7 +282,7 @@ void __fastcall TForm1::OpenExecute(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // Save S-Record File
-void __fastcall TForm1::SaveSRecFile(TObject *Sender)
+void TForm1::SaveSRecFile(TObject *Sender)
 {
   try {
     AnsiString msg;
@@ -306,7 +306,7 @@ void __fastcall TForm1::SaveSRecFile(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // Display Open Binary File
-void __fastcall TForm1::OpenBinFile(TObject *Sender)
+void TForm1::OpenBinFile(TObject *Sender)
 {
   try {
     int size;
@@ -333,7 +333,7 @@ void __fastcall TForm1::OpenBinFile(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::SaveBinFile(TObject *Sender)
+void TForm1::SaveBinFile(TObject *Sender)
 {
   try {
     // save binary file
@@ -349,7 +349,7 @@ void __fastcall TForm1::SaveBinFile(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // New Environment
-void __fastcall TForm1::NewExecute(TObject *Sender)
+void TForm1::NewExecute(TObject *Sender)
 {
   try {
     if((Application->MessageBox
@@ -381,13 +381,13 @@ void __fastcall TForm1::NewExecute(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::AboutExecute(TObject *Sender)
+void TForm1::AboutExecute(TObject *Sender)
 {
   AboutFrm->ShowModal();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormShow(TObject *Sender)
+void TForm1::FormShow(TObject *Sender)
 {
   AnsiString fileName, ext, option;
 
@@ -410,13 +410,13 @@ void __fastcall TForm1::FormShow(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormResize(TObject *Sender)
+void TForm1::FormResize(TObject *Sender)
 {
   Form1->Repaint();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::displayHelp(char* context)
+void TForm1::displayHelp(char* context)
 {
   HWND H = ::GetDesktopWindow();  //this->Handle;  //::GetDesktopWindow();
   if (HHLibrary != 0)
@@ -426,13 +426,13 @@ void __fastcall TForm1::displayHelp(char* context)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::HelpExecute(TObject *Sender)
+void TForm1::HelpExecute(TObject *Sender)
 {
   displayHelp("EASyBIN");
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+void TForm1::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   erasePrompt();                // erase old prompt
@@ -470,7 +470,7 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::OutputStartAddressKeyPress(TObject *Sender, char &Key)
+void TForm1::OutputStartAddressKeyPress(TObject *Sender, char &Key)
 {
   if ( (Key >= '0' && Key <= '9') ||
        (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -482,7 +482,7 @@ void __fastcall TForm1::OutputStartAddressKeyPress(TObject *Sender, char &Key)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::Address1Change(TObject *Sender)
+void TForm1::Address1Change(TObject *Sender)
 {
   try {
     str = "0x";
@@ -500,7 +500,7 @@ void __fastcall TForm1::Address1Change(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // display binary data
-void __fastcall TForm1::FormPaint(TObject *Sender)
+void TForm1::FormPaint(TObject *Sender)
 {
   try {
     TPoint scrPos;
@@ -603,7 +603,7 @@ void __fastcall TForm1::FormPaint(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RowSpinUpClick(TObject *Sender)
+void TForm1::RowSpinUpClick(TObject *Sender)
 {
   int addr;
 
@@ -625,7 +625,7 @@ void __fastcall TForm1::RowSpinUpClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RowSpinDownClick(TObject *Sender)
+void TForm1::RowSpinDownClick(TObject *Sender)
 {
   int addr;
 
@@ -647,7 +647,7 @@ void __fastcall TForm1::RowSpinDownClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::PageSpinUpClick(TObject *Sender)
+void TForm1::PageSpinUpClick(TObject *Sender)
 {
   int addr;
 
@@ -668,7 +668,7 @@ void __fastcall TForm1::PageSpinUpClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::PageSpinDownClick(TObject *Sender)
+void TForm1::PageSpinDownClick(TObject *Sender)
 {
   int addr;
 
@@ -689,21 +689,21 @@ void __fastcall TForm1::PageSpinDownClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FormMouseWheelDown(TObject *Sender,
+void TForm1::FormMouseWheelDown(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   RowSpinDownClick(Sender);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FormMouseWheelUp(TObject *Sender,
+void TForm1::FormMouseWheelUp(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   RowSpinUpClick(Sender);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Address1KeyDown(TObject *Sender, WORD &Key,
+void TForm1::Address1KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   switch (Key) {
@@ -730,7 +730,7 @@ void __fastcall TForm1::Address1KeyDown(TObject *Sender, WORD &Key,
 
 //---------------------------------------------------------------------------
 // goto row, col
-void __fastcall TForm1::gotoRC(TObject *Sender, int r, int c)
+void TForm1::gotoRC(TObject *Sender, int r, int c)
 {
   try {
     row = r;
@@ -766,7 +766,7 @@ void __fastcall TForm1::gotoRC(TObject *Sender, int r, int c)
 
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormMouseDown(TObject *Sender, TMouseButton Button,
+void TForm1::FormMouseDown(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   erasePrompt();                // erase old prompt
@@ -785,14 +785,14 @@ void __fastcall TForm1::FormMouseDown(TObject *Sender, TMouseButton Button,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::promptTimer(TObject *Sender)
+void TForm1::promptTimer(TObject *Sender)
 {
   drawPrompt();
 }
 
 //---------------------------------------------------------------------------
 // draw prompt
-void __fastcall TForm1::drawPrompt()
+void TForm1::drawPrompt()
 {
   int promptX = colWidth * col;
 
@@ -810,7 +810,7 @@ void __fastcall TForm1::drawPrompt()
 
 //---------------------------------------------------------------------------
 // erase prompt
-void __fastcall TForm1::erasePrompt()
+void TForm1::erasePrompt()
 {
   int promptX = colWidth * col;
 
@@ -820,7 +820,7 @@ void __fastcall TForm1::erasePrompt()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
+void TForm1::FormKeyPress(TObject *Sender, char &Key)
 {
   try {
     TPoint scrPos;
@@ -896,7 +896,7 @@ void __fastcall TForm1::FormKeyPress(TObject *Sender, char &Key)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::CopyClick(TObject *Sender)
+void TForm1::CopyClick(TObject *Sender)
 {
   try {
     unsigned int fromAddr, toAddr, bytes, i;
@@ -946,7 +946,7 @@ void __fastcall TForm1::CopyClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::AddrKeyPress(TObject *Sender, char &Key)
+void TForm1::AddrKeyPress(TObject *Sender, char &Key)
 {
   if ( (Key >= '0' && Key <= '9') ||
        (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -959,7 +959,7 @@ void __fastcall TForm1::AddrKeyPress(TObject *Sender, char &Key)
 
 
 //---------------------------------------------------------------------------
-void __fastcall TForm1::FillClick(TObject *Sender)
+void TForm1::FillClick(TObject *Sender)
 {
   try {
     unsigned int fromAddr, toAddr, fill, i;
@@ -991,14 +991,14 @@ void __fastcall TForm1::FillClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Address1KeyUp(TObject *Sender, WORD &Key,
+void TForm1::Address1KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   Repaint();      // update display
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OutputSplitClick(TObject *Sender)
+void TForm1::OutputSplitClick(TObject *Sender)
 {
   try {
     // split is 0, 2 or 4
@@ -1029,13 +1029,13 @@ void __fastcall TForm1::OutputSplitClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OutputFirstAddressChange(TObject *Sender)
+void TForm1::OutputFirstAddressChange(TObject *Sender)
 {
   Repaint();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OutputLengthChange(TObject *Sender)
+void TForm1::OutputLengthChange(TObject *Sender)
 {
 //  unsigned int outLength;
 //  str = "0x";
@@ -1049,55 +1049,55 @@ void __fastcall TForm1::OutputLengthChange(TObject *Sender)
 
 
 
-void __fastcall TForm1::startAddressEnter(TObject *Sender)
+void TForm1::startAddressEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::OutputFirstAddressEnter(TObject *Sender)
-{
-  erasePrompt();                // turn off main window prompt
-        
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::OutputLengthEnter(TObject *Sender)
+void TForm1::OutputFirstAddressEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FromEnter(TObject *Sender)
+void TForm1::OutputLengthEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ToEnter(TObject *Sender)
+void TForm1::FromEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::BytesEnter(TObject *Sender)
+void TForm1::ToEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FillByteEnter(TObject *Sender)
+void TForm1::BytesEnter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Address1Enter(TObject *Sender)
+void TForm1::FillByteEnter(TObject *Sender)
+{
+  erasePrompt();                // turn off main window prompt
+        
+}
+//---------------------------------------------------------------------------
+
+void TForm1::Address1Enter(TObject *Sender)
 {
   erasePrompt();                // turn off main window prompt
         

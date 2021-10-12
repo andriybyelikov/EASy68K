@@ -48,43 +48,43 @@ __published:	// IDE-managed Components
         TLabel *Label10;
         TLabel *Label11;
         TSpeedButton *Save;
-        void __fastcall FormCreate(TObject *Sender);
-        void __fastcall FormPaint(TObject *Sender);
-        void __fastcall FormResize(TObject *Sender);
-        void __fastcall RowSpinUpClick(TObject *Sender);
-        void __fastcall RowSpinDownClick(TObject *Sender);
-        void __fastcall PageSpinUpClick(TObject *Sender);
-        void __fastcall PageSpinDownClick(TObject *Sender);
-        void __fastcall FormMouseWheelDown(TObject *Sender,
+        void FormCreate(TObject *Sender);
+        void FormPaint(TObject *Sender);
+        void FormResize(TObject *Sender);
+        void RowSpinUpClick(TObject *Sender);
+        void RowSpinDownClick(TObject *Sender);
+        void PageSpinUpClick(TObject *Sender);
+        void PageSpinDownClick(TObject *Sender);
+        void FormMouseWheelDown(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall FormMouseWheelUp(TObject *Sender,
+        void FormMouseWheelUp(TObject *Sender,
           TShiftState Shift, TPoint &MousePos, bool &Handled);
-        void __fastcall Address1KeyDown(TObject *Sender, WORD &Key,
+        void Address1KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall FormMouseDown(TObject *Sender, TMouseButton Button,
+        void FormMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall promptTimer(TObject *Sender);
-        void __fastcall FormKeyPress(TObject *Sender, char &Key);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void promptTimer(TObject *Sender);
+        void FormKeyPress(TObject *Sender, char &Key);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall CopyClick(TObject *Sender);
-        void __fastcall AddrKeyPress(TObject *Sender, char &Key);
-        void __fastcall FillClick(TObject *Sender);
-        void __fastcall Address1KeyUp(TObject *Sender, WORD &Key,
+        void CopyClick(TObject *Sender);
+        void AddrKeyPress(TObject *Sender, char &Key);
+        void FillClick(TObject *Sender);
+        void Address1KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall Address1Change(TObject *Sender);
-        void __fastcall SaveClick(TObject *Sender);
+        void Address1Change(TObject *Sender);
+        void SaveClick(TObject *Sender);
 private:	// User declarations
         int row, col, rowHeight, colWidth;
         int textX, textY, nRows;
         bool promptVisible;
 public:		// User declarations
-        __fastcall TMemoryFrm(TComponent* Owner);
-        void __fastcall BringToFront();
-        void __fastcall erasePrompt();
-        void __fastcall gotoRC(TObject *Sender, int r, int c);
-        void __fastcall drawPrompt();
-        void __fastcall LivePaint(unsigned int);
+        TMemoryFrm(TComponent* Owner);
+        void BringToFront();
+        void erasePrompt();
+        void gotoRC(TObject *Sender, int r, int c);
+        void drawPrompt();
+        void LivePaint(unsigned int);
 
 };
 

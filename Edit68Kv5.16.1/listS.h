@@ -15,19 +15,19 @@ class TListFile : public TForm
 __published:	// IDE-managed Components
         TRichEdit *List;
         TSplitter *Splitter1;
-        void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
-        void __fastcall ListKeyDown(TObject *Sender, WORD &Key,
+        void FormClose(TObject *Sender, TCloseAction &Action);
+        void ListKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall ListKeyPress(TObject *Sender, char &Key);
-        void __fastcall ListKeyUp(TObject *Sender, WORD &Key,
+        void ListKeyPress(TObject *Sender, char &Key);
+        void ListKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall ListMouseUp(TObject *Sender, TMouseButton Button,
+        void ListMouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall ListMouseDown(TObject *Sender, TMouseButton Button,
+        void ListMouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TListFile(TComponent* Owner);
+        TListFile(TComponent* Owner);
         TPoint CurPos;
 };
 //---------------------------------------------------------------------------

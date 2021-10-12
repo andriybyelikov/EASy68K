@@ -58,60 +58,60 @@ __published:	// IDE-managed Components
         TLabel *debugLabel5;
         TLabel *debugLabel6;
         TLabel *debugLabel7;
-        void __fastcall RegStringGridClick(TObject *Sender);
-        void __fastcall AddrStringGridClick(TObject *Sender);
-        void __fastcall ExprStringGridClick(TObject *Sender);
-        void __fastcall RegSetButtonClick(TObject *Sender);
-        void __fastcall AddrSetButtonClick(TObject *Sender);
-        void __fastcall ExprSetButtonClick(TObject *Sender);
-        void __fastcall ExprRegAppendButtonClick(TObject *Sender);
-        void __fastcall ExprAddrAppendButtonClick(TObject *Sender);
-        void __fastcall ExprAndAppendButtonClick(TObject *Sender);
-        void __fastcall ExprOrAppendButtonClick(TObject *Sender);
-        void __fastcall ExprBackspaceButtonClick(TObject *Sender);
-        void __fastcall RegClearButtonClick(TObject *Sender);
-        void __fastcall RegClearAllButtonClick(TObject *Sender);
-        void __fastcall AddrClearButtonClick(TObject *Sender);
-        void __fastcall AddrClearAllButtonClick(TObject *Sender);
-        void __fastcall RegValueKeyPress(TObject *Sender, char &Key);
-        void __fastcall AddrSelectKeyPress(TObject *Sender, char &Key);
-        void __fastcall AddrValueKeyPress(TObject *Sender, char &Key);
-        void __fastcall ExprCountKeyPress(TObject *Sender, char &Key);
-        void __fastcall ExprClearButtonClick(TObject *Sender);
-        void __fastcall ExprClearAllButtonClick(TObject *Sender);
-        void __fastcall RegStringGridDblClick(TObject *Sender);
-        void __fastcall AddrStringGridDblClick(TObject *Sender);
-        void __fastcall ExprStringGridDblClick(TObject *Sender);
-        void __fastcall RegColumnMoved(TObject *Sender, int FromIndex,
+        void RegStringGridClick(TObject *Sender);
+        void AddrStringGridClick(TObject *Sender);
+        void ExprStringGridClick(TObject *Sender);
+        void RegSetButtonClick(TObject *Sender);
+        void AddrSetButtonClick(TObject *Sender);
+        void ExprSetButtonClick(TObject *Sender);
+        void ExprRegAppendButtonClick(TObject *Sender);
+        void ExprAddrAppendButtonClick(TObject *Sender);
+        void ExprAndAppendButtonClick(TObject *Sender);
+        void ExprOrAppendButtonClick(TObject *Sender);
+        void ExprBackspaceButtonClick(TObject *Sender);
+        void RegClearButtonClick(TObject *Sender);
+        void RegClearAllButtonClick(TObject *Sender);
+        void AddrClearButtonClick(TObject *Sender);
+        void AddrClearAllButtonClick(TObject *Sender);
+        void RegValueKeyPress(TObject *Sender, char &Key);
+        void AddrSelectKeyPress(TObject *Sender, char &Key);
+        void AddrValueKeyPress(TObject *Sender, char &Key);
+        void ExprCountKeyPress(TObject *Sender, char &Key);
+        void ExprClearButtonClick(TObject *Sender);
+        void ExprClearAllButtonClick(TObject *Sender);
+        void RegStringGridDblClick(TObject *Sender);
+        void AddrStringGridDblClick(TObject *Sender);
+        void ExprStringGridDblClick(TObject *Sender);
+        void RegColumnMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall AddrColumnMoved(TObject *Sender, int FromIndex,
+        void AddrColumnMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall ExprColumnMoved(TObject *Sender, int FromIndex,
+        void ExprColumnMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall RegRowMoved(TObject *Sender, int FromIndex,
+        void RegRowMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall RegTopLeftChanged(TObject *Sender);
-        void __fastcall AddrTopLeftChanged(TObject *Sender);
-        void __fastcall AddrRowMoved(TObject *Sender, int FromIndex,
+        void RegTopLeftChanged(TObject *Sender);
+        void AddrTopLeftChanged(TObject *Sender);
+        void AddrRowMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall ExprRowMoved(TObject *Sender, int FromIndex,
+        void ExprRowMoved(TObject *Sender, int FromIndex,
           int ToIndex);
-        void __fastcall ExprTopLeftChanged(TObject *Sender);
-        void __fastcall ExprLParenAppendButtonClick(TObject *Sender);
-        void __fastcall ExprRParenAppendButtonClick(TObject *Sender);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void ExprTopLeftChanged(TObject *Sender);
+        void ExprLParenAppendButtonClick(TObject *Sender);
+        void ExprRParenAppendButtonClick(TObject *Sender);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TBreaksFrm(TComponent* Owner);
-        void __fastcall BringToFront();
-        int __fastcall sbpoint(int loc);
-        int __fastcall cbpoint(int loc);
-        void __fastcall setRegButtons();
-        void __fastcall setAddrButtons();
-        void __fastcall setExprButtons();
-        int __fastcall precedence(int op_prec);
-        void __fastcall resetDebug();
+        TBreaksFrm(TComponent* Owner);
+        void BringToFront();
+        int sbpoint(int loc);
+        int cbpoint(int loc);
+        void setRegButtons();
+        void setAddrButtons();
+        void setExprButtons();
+        int precedence(int op_prec);
+        void resetDebug();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TBreaksFrm *BreaksFrm;

@@ -61,28 +61,10 @@ extern bool WARflag;            // display warnings
 extern tabTypes tabType;
 extern bool maximizedEdit;      // true starts child edit window maximized
 
-void __fastcall SaveFont(TTextStuff *);
-
-//------------------------------------------------------------------------------
-
-
-// this is the registry key where HTML Help registers the location of hhctrl.ocx
-
-#define HHPathRegKey "CLSID\\{adb880a6-d8ff-11cf-9377-00aa003b7a11}\\InprocServer32"
-
-// typedef for the HtmlHelp() function
-
-typedef HWND WINAPI (*HTML_HELP_PROC)(HWND, LPCSTR, UINT, DWORD_PTR);
-
-// global variables the HTML Help libary
-
-HANDLE HHLibrary = 0;       // handle to the loaded hhctrl.ocx, 0 if not loaded
-HTML_HELP_PROC __HtmlHelp;  // function pointer for the HtmlHelp() function. Note
-                            // that you cannot name it HtmlHelp because that would
-                            // create a conflict with the declaration in htmlhelp.h
+void SaveFont(TTextStuff *);
 
 //---------------------------------------------------------------------------
-bool __fastcall LoadHtmlHelp()
+bool LoadHtmlHelp()
 {
   try {
     HKEY HHKey;
@@ -127,16 +109,9 @@ bool __fastcall LoadHtmlHelp()
 
 
 //---------------------------------------------------------------------------
-__fastcall TMain::TMain(TComponent* Owner)
+TMain::TMain(TComponent* Owner)
         : TForm(Owner)
 {
-  iNewFiles   = 0;     //used to name new files
-  iListsOpen  = 0;
-  iSourceOpen = 0;
-
-  // Make size 2/3 of screen
-  Main->Width = Screen->Width*2.0/3.0;
-  Main->Height = Screen->Height*2.0/3.0;
 
   // initialize helpfile location -- m_asHelpFile is an AnsiString type private
   // member of the TForm1 class
@@ -159,21 +134,13 @@ __fastcall TMain::TMain(TComponent* Owner)
   if (HHLibrary != 0)
     __HtmlHelp(NULL, NULL, HH_INITIALIZE, (DWORD)&m_Cookie);
 
-  // initialize the Context combobox items
-  //ContextComboBox->Items->AddObject("1000 (home page)", (TObject*)1000);
-  //ContextComboBox->Items->AddObject("1001 (test topic1)", (TObject*)1001);
-  //ContextComboBox->Items->AddObject("1002 (test topic2)", (TObject*)1002);
-  // set initial combobox selection
-  //TopicComboBox->ItemIndex = 0;
-  //ContextComboBox->ItemIndex = 0;
-
   DragAcceptFiles(Handle, true);        // enable drag-n-drop from explorer
 }
 
 //---------------------------------------------------------------------------
 // Shows save as dialog.
 // Proper flags are set for the FileInfo structure (Project).
-void __fastcall TMain::mnuSaveAsClick(TObject *Sender)
+void TMain::mnuSaveAsClick(TObject *Sender)
 {
   //grab active mdi child
   TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
@@ -214,7 +181,7 @@ void __fastcall TMain::mnuSaveAsClick(TObject *Sender)
 
 //---------------------------------------------------------------------------
 //Saves file, if file has not been named yet then the SaveAs function is called
-void __fastcall TMain::mnuSaveClick(TObject *Sender)
+void TMain::mnuSaveClick(TObject *Sender)
 {
   //grab active mdi child
   TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
@@ -236,7 +203,7 @@ void __fastcall TMain::mnuSaveClick(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // Add font and tab info to .X68 source file
-void __fastcall SaveFont(TTextStuff *active)
+void SaveFont(TTextStuff *active)
 {
   fstream file;
   try {
@@ -260,15 +227,9 @@ void __fastcall SaveFont(TTextStuff *active)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TMain::mnuExitClick(TObject *Sender)
-{
-  Main->Close();
-}
-
-//---------------------------------------------------------------------------
 // Opens file in a new window.
 // Proper FileInfo structure (Project) flags are set after the file is opened.
-void __fastcall TMain::OpenFile(AnsiString name)
+void TMain::OpenFile(AnsiString name)
 {
 
   // check to see if file exists
@@ -309,7 +270,7 @@ void __fastcall TMain::OpenFile(AnsiString name)
 
 //--------------------------------------------------------------------------
 // Open Click
-void __fastcall TMain::mnuOpenClick(TObject *Sender)
+void TMain::mnuOpenClick(TObject *Sender)
 {
   OpenDialog->Title = "Open File";
   Main->SetFocus();
@@ -320,7 +281,7 @@ void __fastcall TMain::mnuOpenClick(TObject *Sender)
 
 //--------------------------------------------------------------------------
 // handler for drag-n-drop from explorer
-void __fastcall TMain::WmDropFiles(TWMDropFiles& Message)
+void TMain::WmDropFiles(TWMDropFiles& Message)
 {
   AnsiString fileName;
   char buff[MAX_PATH];                  // filename buffer
@@ -339,7 +300,7 @@ void __fastcall TMain::WmDropFiles(TWMDropFiles& Message)
 //--------------------------------------------------------------------------
 // Assembles active source file window. Makes a check to see if the file
 // loaded is a source file before loading it into assembler.
-void __fastcall TMain::mnuDoAssemblerClick(TObject *Sender)
+void TMain::mnuDoAssemblerClick(TObject *Sender)
 {
   AnsiString sourceFile, tempFile;
 
@@ -382,150 +343,11 @@ void __fastcall TMain::mnuDoAssemblerClick(TObject *Sender)
       temp_set << mbOK;
       MessageDlg("File Access Error.  Please verify that you have write permission to the folder where the selected file is located.", mtError,temp_set,0);
     }
-  //}
-  //else
-  //{
-  //  TMsgDlgButtons temp_set;
-  //  temp_set << mbOK;
-  //  MessageDlg("Cannot assemble a non-source file", mtError ,temp_set, 0);
-  //}
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::mnuEditorOptionsClick(TObject *Sender)
-{
-  EditorOptionsForm->ShowModal();
-}
-
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::mnuPrinterSetupClick(TObject *Sender)
-{
-  PrinterSetupDialog->Execute();
-}
-
-//---------------------------------------------------------------------------
-// Prints the text from the active window
-void __fastcall TMain::mnuPrintSourceClick(TObject *Sender)
-{
-  int startLine, endLine, line;
-  int copies, linesPerPage, lineOnPage, pageNumber;
-  bool newPage = false;
-  TTextStuff *RichPrint = NULL;
-
-  try // Try to print the text
-  {
-    if(!PrintDialog->Execute())   // if printDialog OK button not pressed
-      return;
-
-    // Grab the active Child Form
-    TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
-
-    // Create printer interface
-    TPrinter *Prntr = Printer();
-    Prntr->BeginDoc();          // start the print job
-    Prntr->Canvas->Font = Active->SourceText->Font; // set printer font
-
-    //Create temp TTextStuff and copy text to print
-    RichPrint = new TTextStuff(Application);
-    RichPrint->SourceText->Font = Active->SourceText->Font;
-
-    if(PrintDialog->PrintRange)         // if print selected text
-      RichPrint->SourceText->Text = Active->SourceText->SelText;
-    else                                // else, print all text
-      RichPrint->SourceText->Text = Active->SourceText->Text;
-
-    RichPrint->Project = Active->Project;
-    RichPrint->SetTabsAll();
-    RichPrint->SourceText->SelectAll();
-    RichPrint->replaceTabs();
-
-    // if Print w/Black checked
-    //if (EditorOptionsForm->PrintBlack->Checked) {
-      // set color to black
-    //  RichPrint->SourceText->SelectAll();
-    //  RichPrint->SourceText->SelAttributes->Color = clBlack;
-    //}
-
-    // Calculate number of lines that can fit on a page
-    linesPerPage = (Prntr->PageHeight / Prntr->Canvas->TextHeight("W"));
-
-    copies = PrintDialog->Copies;
-
-    // Set the title used by the print manager to identify this job
-    Prntr->Title = "EASy68K " + Active->Project.CurrentFile;
-    lineOnPage = 0;
-
-    for(int i=0; i<copies; i++)
-    {
-      //pageNumber = 1;
-      line = 0;
-      do
-      {
-        if(newPage)
-        {
-          Prntr->NewPage();
-          lineOnPage = 0;
-        }
-        newPage = true;
-        endLine = line + linesPerPage;
-
-        // Adjust the ending line count for the last page (which may not be full)
-        if(endLine >= RichPrint->SourceText->Lines->Count)
-          endLine = RichPrint->SourceText->Lines->Count;
-
-        // For each line of text
-        for (; line<endLine; line++)
-        {
-          // If new page marker
-          if(RichPrint->SourceText->Lines->Strings[line] == NEW_PAGE_MARKER)
-          {
-            line++;   // skip new page marker
-            break;    // exit For each line of text, newPage is already true
-          }
-          else
-          {
-            // Print one line
-            Prntr->Canvas->TextOutA(
-              20,
-              Prntr->Canvas->TextHeight(RichPrint->SourceText->Lines->Strings[line]) * lineOnPage,
-              RichPrint->SourceText->Lines->Strings[line].c_str()
-              );
-            lineOnPage++;
-          }
-        }
-        //pageNumber++;
-      } while(line < RichPrint->SourceText->Lines->Count);
-    }
-    Prntr->EndDoc();
-  }
-  catch(...) //if there is an error then cancel print
-  {
-    TMsgDlgButtons temp_set;
-    temp_set << mbOK;
-    Printer()->Abort();
-    Printer()->EndDoc();
-    MessageDlg("Printer error.  Please check printer.", mtError,temp_set,0);
-  }
-  if(RichPrint)
-    delete RichPrint;
-}
-
-//---------------------------------------------------------------------------
-void __fastcall TMain::tbOpenClick(TObject *Sender)
-{
-  mnuOpenClick(Sender); //call the menu function because it has the code already there
-}
-
-//---------------------------------------------------------------------------
-void __fastcall TMain::tbSaveClick(TObject *Sender)
-{
-  mnuSaveClick(Sender); //call the menu function because it has the code already there
 }
 
 //---------------------------------------------------------------------------
 // Create a new source file
-void __fastcall TMain::mnuNewClick(TObject *Sender)
+void TMain::mnuNewClick(TObject *Sender)
 {
   //create the source window
   TTextStuff *TextStuff;
@@ -535,31 +357,19 @@ void __fastcall TMain::mnuNewClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::tbNewClick(TObject *Sender)
-{
-  mnuNewClick(Sender);
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::tbAssembleClick(TObject *Sender)
+void TMain::tbAssembleClick(TObject *Sender)
 {
   mnuDoAssemblerClick(Sender);
 }
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::mnuAboutClick(TObject *Sender)
-{
-  AboutBox->ShowModal();
-}
 
 //---------------------------------------------------------------------------
-void __fastcall TMain::mnuHelpClick(TObject *Sender)
+void TMain::mnuHelpClick(TObject *Sender)
 {
   displayHelp("INTRO");
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TMain::displayHelp(char* context)
+void TMain::displayHelp(char* context)
 {
   HWND H = ::GetDesktopWindow();  //this->Handle;  //::GetDesktopWindow();
   if (HHLibrary != 0)
@@ -571,7 +381,7 @@ void __fastcall TMain::displayHelp(char* context)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::mnuFindClick(TObject *Sender)
+void TMain::mnuFindClick(TObject *Sender)
 {
   //grab active mdi child
   TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
@@ -583,22 +393,9 @@ void __fastcall TMain::mnuFindClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-// The find dialog is displayed
-//void __fastcall TMain::FindDialogShow(TObject *Sender)
-//{
-  //grab active mdi child
-//  TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
-
-  //if we have selected text in the source window use that for selection
-//  if(Active->SourceText->SelText != "")
-//    FindDialog->FindText = Active->SourceText->SelText;
-//}
-
-
-//---------------------------------------------------------------------------
 // Searches the active source window for the given text, displays message
 // if it is not found.
-void __fastcall TMain::FindDialogFind(AnsiString findText, bool wholeWord, bool matchCase) {
+void TMain::FindDialogFind(AnsiString findText, bool wholeWord, bool matchCase) {
 
   TMsgDlgButtons temp_set; //message dialog stuff
   temp_set << mbOK;
@@ -643,14 +440,14 @@ void __fastcall TMain::FindDialogFind(AnsiString findText, bool wholeWord, bool 
 
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::tbFindClick(TObject *Sender)
+void TMain::tbFindClick(TObject *Sender)
 {
   mnuFindClick(Sender);
 }
 
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::mnuFindAndReplace1Click(TObject *Sender)
+void TMain::mnuFindAndReplace1Click(TObject *Sender)
 {
   //grab active mdi child
   TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
@@ -660,7 +457,7 @@ void __fastcall TMain::mnuFindAndReplace1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::ReplaceDialogReplace()
+void TMain::ReplaceDialogReplace()
 {
   int startSave, lengthSave;
 
@@ -693,13 +490,13 @@ void __fastcall TMain::ReplaceDialogReplace()
 //---------------------------------------------------------------------------
 
 //search for text item specified in find dialog
-void __fastcall TMain::FindNext()
+void TMain::FindNext()
 {
   FindDialogFind(findDialogFrm->findText->Text, findDialogFrm->wholeWordChk->Checked, findDialogFrm->matchCaseChk->Checked);
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TMain::Edit1Click(TObject *Sender)
+void TMain::Edit1Click(TObject *Sender)
 //need to prevent user from "find next" if no windows are open or no find
 //text has been input yet
 {
@@ -714,7 +511,7 @@ void __fastcall TMain::Edit1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::mnuFindNextClick(TObject *Sender)
+void TMain::mnuFindNextClick(TObject *Sender)
 {
   FindNext();
 }
@@ -722,7 +519,7 @@ void __fastcall TMain::mnuFindNextClick(TObject *Sender)
 
 // Intialize variables
 
-void __fastcall TMain::FormShow(TObject *Sender)
+void TMain::FormShow(TObject *Sender)
 {
   AnsiString fileName;
 
@@ -751,42 +548,13 @@ void __fastcall TMain::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TMain::mnuAssemblerOptionsClick(TObject *Sender)
+void TMain::mnuAssemblerOptionsClick(TObject *Sender)
 {
   Options->Show();
 }
 //---------------------------------------------------------------------------
 
-/*
-  WARNING: When you close an application that uses HtmlHelp and at the point of
-  exit may have HTML Help Windows still open, you _must_ close these windows
-  prior to exit. Failing to do this may result in access violations.
-
-  The most generic way is to use the HH_CLOSE_ALL command. This will close
-  all HTML Help windows opened by the application and is the most convenient
-  way because it doesn't require a handle to the HTML Help Window:
-
-  ::HtmlHelp(0, NULL, HH_CLOSE_ALL, 0);
-
-  There are a few gotcha's when using the HH_CLOSE_ALL command with a dynamically
-  loaded HTML Help API. More specifically the problem lies in unloading the HTML
-  Help API. You want to be a good Windows citizen so you unload all dynamically
-  loaded library before you terminate. So after the mandatory HH_CLOSE_ALL you
-  call FreeLibrary and then...bang, an access violation. The problem is that
-  normally HH_CLOSE_ALL results in the creation of a secondary thread that performs
-  the actual action of closing all open HTML Help Windows while your application
-  thread is allowed to continue running. If you immediately call FreeLibrary
-  after HH_CLOSE_ALL, that secondary - which exists in hhctrl.ocx, may still be
-  running. When it continues running the operating system finds that hhctrl.ocx
-  is already unloaded and an access violation occurs. There are multiple ways
-  to work around this problem but the recommended one is to use HH_INITIALIZE
-  when you load HTML HELP and HH_UNINITIALIZE before you unload HTML Help, as
-  is done in this example (doing this results in HH_CLOSE_ALL not spawning a
-  secondary thread but using the calling thread, elimanating the problem).
-
-*/
-
-void __fastcall TMain::FormClose(TObject *Sender, TCloseAction &Action)
+void TMain::FormClose(TObject *Sender, TCloseAction &Action)
 {
   try{
     Options->SaveSettings();  //save editor settings to file
@@ -809,7 +577,7 @@ void __fastcall TMain::FormClose(TObject *Sender, TCloseAction &Action)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::FormKeyDown(TObject *Sender, WORD &Key,
+void TMain::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)
@@ -818,7 +586,7 @@ void __fastcall TMain::FormKeyDown(TObject *Sender, WORD &Key,
 //---------------------------------------------------------------------------
 // Paste the clipboard to the current child. Format the pasted text.
 
-void __fastcall TMain::EditPaste1Execute(TObject *Sender)
+void TMain::EditPaste1Execute(TObject *Sender)
 {
   if (Clipboard()->HasFormat(CF_TEXT) == false) // if clipboard empty
     return;
@@ -854,44 +622,23 @@ void __fastcall TMain::EditPaste1Execute(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::EditCommentAdd1Execute(TObject *Sender)
+void TMain::EditCommentAdd1Execute(TObject *Sender)
 {
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
   Active->commentSelection();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMain::EditUncomment1Execute(TObject *Sender)
+void TMain::EditUncomment1Execute(TObject *Sender)
 {
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
   Active->unCommentSelection();
 }
 //---------------------------------------------------------------------------
 
-
-void __fastcall TMain::EditUndoExecute(TObject *Sender)
-{
-  //grab active mdi child
-  TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
-
-  Active->Undo();
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::EditRedoExecute(TObject *Sender)
-{
-  //grab active mdi child
-  TTextStuff *Active = (TTextStuff*)this->ActiveMDIChild;
-
-  Active->Redo();
-
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TMain::Reload1Click(TObject *Sender)
+void TMain::Reload1Click(TObject *Sender)
 {
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
   Active->EditorReload1Click(Sender);
 }
 //---------------------------------------------------------------------------
-

@@ -4,7 +4,7 @@
 #define helpH
 //---------------------------------------------------------------------------
 
-int __fastcall getHelpContext(char* str);
+int getHelpContext(char* str);
 
 #endif
 

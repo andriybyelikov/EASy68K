@@ -14,24 +14,24 @@
 #pragma resource "*.dfm"
 TChkSave *ChkSave;
 //---------------------------------------------------------------------------
-__fastcall TChkSave::TChkSave(TComponent* Owner)
+TChkSave::TChkSave(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TChkSave::FormCreate(TObject *Sender)
+void TChkSave::FormCreate(TObject *Sender)
 {
   lblMessage->Caption = "Source has been modified. Save before exiting?";
   ChkSave->Caption = "Save source file?";        
 }
 //---------------------------------------------------------------------------
-void __fastcall TChkSave::btnOKClick(TObject *Sender)
+void TChkSave::btnOKClick(TObject *Sender)
 {
   Main->mnuSaveClick(Sender);
   ChkSave->Close();
 }
 //---------------------------------------------------------------------------
-void __fastcall TChkSave::Button2Click(TObject *Sender)
+void TChkSave::Button2Click(TObject *Sender)
 {
   ChkSave->Close();
 }

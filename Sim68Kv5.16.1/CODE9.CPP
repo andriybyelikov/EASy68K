@@ -44,7 +44,7 @@ int pageX;
 int pageY;
 
 
-void __fastcall formFeed()
+void formFeed()
 {
   if (!printing) {
     initPrint();
@@ -55,7 +55,7 @@ void __fastcall formFeed()
   pageY = pageTop;
 }
 
-void __fastcall lineFeed()
+void lineFeed()
 {
   pageY += pageRowHeight;
   if (pageY > pageBot) {
@@ -63,7 +63,7 @@ void __fastcall lineFeed()
   }
 }
 
-void __fastcall nextX()
+void nextX()
 {
   pageX += pageColWidth;
   if (pageX > pageRight) {
@@ -72,7 +72,7 @@ void __fastcall nextX()
   }
 }
 
-void __fastcall initPrint()
+void initPrint()
 {
   Prntr = Printer();
   printing = false;
@@ -97,7 +97,7 @@ void __fastcall initPrint()
 //  \r	0x0D	CR	Carriage return
 //  \t	0x09	HT	Tab (horizontal)
 //  \v	0x0B	VT	Vertical tab
-void __fastcall printChar(char ch)
+void printChar(char ch)
 {
   if (!printing) {
     initPrint();
@@ -301,7 +301,7 @@ int	STOP()
         D1.L is color as 0x00BBGGRR
           BB is amount of blue from 0x00 to 0xFF
           GG is amount of green from 0x00 to 0xFF
-          RR is amount of red from 0x00 to 0xFF
+ï¿½         RR is amount of red from 0x00 to 0xFF
         D2.L
           Low word is style by bits 0 = off, 1 = on
           bit0 is Bold
@@ -562,7 +562,7 @@ of zero indicates success.
  80 - Set pen color where D1.L is color as 0x00BBGGRR
       BB is amount of blue from 0x00 to 0xFF
       GG is amount of green from 0x00 to 0xFF
-      RR is amount of red from 0x00 to 0xFF
+ï¿½     RR is amount of red from 0x00 to 0xFF
  81 - Set fill color where D1.L is color as 0x00BBGGRR
  82 - Draw pixel at X,Y in current pen color where X = D1.W & Y = D2.W.
       Not affected by drawing mode.
@@ -571,21 +571,21 @@ of zero indicates success.
       where X1 = D1.W, Y1 = D2.W, X2 = D3.W, Y2 = D4.W
  85 - Draw line to X,Y where X = D1.W & Y = D2.W
  86 - Move to X,Y where X = D1.W & Y = D2.W
- 87 - Draw rectangle defined by (Left X, Upper Y, Right X, Lower Y). 
+ 87 - Draw rectangle defined by (Left X, Upper Y, Right X, Lower Y).ï¿½
       where LX = D1.W, UY = D2.W, RX = D3.W, LY = D4.W
       The rectangle is drawn using line color and filled using fill color.
  88 - Draw ellipse bounded by the rectangle (Left X, Upper Y, Right X, Lower Y)
       where LX = D1.W, UY = D2.W, RX = D3.W, LY = D4.W
       The ellipse is drawn using line color and filled using fill color.
-      A circle is drawn if the bounding rectangle is a square.
+ï¿½     A circle is drawn if the bounding rectangle is a square.
  89 - Flood Fill the area at X, Y with the fill color where X = D1.W & Y = D2.W
- 90 - Draw unfilled rectangle defined by (Left X, Upper Y, Right X, Lower Y). 
+ 90 - Draw unfilled rectangle defined by (Left X, Upper Y, Right X, Lower Y).ï¿½
       where LX = D1.W, UY = D2.W, RX = D3.W, LY = D4.W
       The rectangle is drawn using line color and is not filled.
  91 - Draw unfilled ellipse bounded by the rectangle (Left X, Upper Y, Right X, Lower Y)
       where LX = D1.W, UY = D2.W, RX = D3.W, LY = D4.W
       The ellipse is drawn using line color and is not filled.
-      A circle is drawn if the bounding rectangle is a square.
+ï¿½     A circle is drawn if the bounding rectangle is a square.
  92 - Set drawing mode where D1.W is mode number as:
         0 - Always black
         1 - Always white

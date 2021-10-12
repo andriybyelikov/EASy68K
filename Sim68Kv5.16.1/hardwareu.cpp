@@ -34,14 +34,14 @@ int ProtectedStart=0, ProtectedEnd=0, InvalidStart=0, InvalidEnd=0;
 bool ROMMap=false, ReadMap=false, ProtectedMap=false, InvalidMap=false;
 
 //---------------------------------------------------------------------------
-__fastcall THardware::THardware(TComponent* Owner)
+THardware::THardware(TComponent* Owner)
         : TForm(Owner)
 {
 }
 
 //---------------------------------------------------------------------------
 // Return hardware to new positions
-void __fastcall THardware::initialize()
+void THardware::initialize()
 {
   switch0->Layout = blGlyphLeft;
   switch1->Layout = blGlyphLeft;
@@ -63,7 +63,7 @@ void __fastcall THardware::initialize()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch0Click(TObject *Sender)
+void THardware::switch0Click(TObject *Sender)
 {
   if(switch0->Layout == blGlyphLeft) {
     // switch on
@@ -79,7 +79,7 @@ void __fastcall THardware::switch0Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch1Click(TObject *Sender)
+void THardware::switch1Click(TObject *Sender)
 {
   if(switch1->Layout == blGlyphLeft) {
     // switch on
@@ -95,7 +95,7 @@ void __fastcall THardware::switch1Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch2Click(TObject *Sender)
+void THardware::switch2Click(TObject *Sender)
 {
   if(switch2->Layout == blGlyphLeft) {
     // switch on
@@ -111,7 +111,7 @@ void __fastcall THardware::switch2Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch3Click(TObject *Sender)
+void THardware::switch3Click(TObject *Sender)
 {
   if(switch3->Layout == blGlyphLeft) {
     // switch on
@@ -127,7 +127,7 @@ void __fastcall THardware::switch3Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch4Click(TObject *Sender)
+void THardware::switch4Click(TObject *Sender)
 {
   if(switch4->Layout == blGlyphLeft) {
     // switch on
@@ -143,7 +143,7 @@ void __fastcall THardware::switch4Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch5Click(TObject *Sender)
+void THardware::switch5Click(TObject *Sender)
 {
   if(switch5->Layout == blGlyphLeft) {
     // switch on
@@ -159,7 +159,7 @@ void __fastcall THardware::switch5Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch6Click(TObject *Sender)
+void THardware::switch6Click(TObject *Sender)
 {
   if(switch6->Layout == blGlyphLeft) {
     // switch on
@@ -175,7 +175,7 @@ void __fastcall THardware::switch6Click(TObject *Sender)
   StackFrm->Repaint();
 }
 //---------------------------------------------------------------------------
-void __fastcall THardware::switch7Click(TObject *Sender)
+void THardware::switch7Click(TObject *Sender)
 {
   if(switch7->Layout == blGlyphLeft) {
     // switch on
@@ -192,7 +192,7 @@ void __fastcall THardware::switch7Click(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::FormShow(TObject *Sender)
+void THardware::FormShow(TObject *Sender)
 {
   update();
   memory[switchLoc] = 0x00;
@@ -201,7 +201,7 @@ void __fastcall THardware::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::updateIfNeeded(int adr)
+void THardware::updateIfNeeded(int adr)
 {
   if (adr < MEMSIZE) {          // if in valid memory space
     if((adr >= seg7loc-4 && adr <= seg7loc+15) || // if address in seg7 display
@@ -214,7 +214,7 @@ void __fastcall THardware::updateIfNeeded(int adr)
 //---------------------------------------------------------------------------
 
 // update displays
-void __fastcall THardware::update()
+void THardware::update()
 {
   unsigned char data;
 
@@ -546,7 +546,7 @@ void __fastcall THardware::update()
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::addrKeyPress(TObject *Sender, char &Key)
+void THardware::addrKeyPress(TObject *Sender, char &Key)
 {
   if ( (Key >= '0' && Key <= '9') ||
        (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -560,7 +560,7 @@ void __fastcall THardware::addrKeyPress(TObject *Sender, char &Key)
 
 // this is called on startup when LoadSettings() initializes the address
 // and each time the user changes the address.
-void __fastcall THardware::seg7addrChange(TObject *Sender)
+void THardware::seg7addrChange(TObject *Sender)
 {
   str1 = "0x";
   seg7loc = StrToInt(str1 + seg7addr->EditText);   // get 7-seg address
@@ -570,7 +570,7 @@ void __fastcall THardware::seg7addrChange(TObject *Sender)
 
 // this is called on startup when LoadSettings() initializes the address
 // and each time the user changes the address.
-void __fastcall THardware::LEDaddrChange(TObject *Sender)
+void THardware::LEDaddrChange(TObject *Sender)
 {
   str1 = "0x";
   LEDloc = StrToInt(str1 + LEDaddr->EditText);    // get LED address
@@ -580,7 +580,7 @@ void __fastcall THardware::LEDaddrChange(TObject *Sender)
 
 // this is called on startup when LoadSettings() initializes the address
 // and each time the user changes the address.
-void __fastcall THardware::switchAddrChange(TObject *Sender)
+void THardware::switchAddrChange(TObject *Sender)
 {
   str1 = "0x";
   switchLoc = StrToInt(str1 + switchAddr->EditText);  // get switch address
@@ -614,7 +614,7 @@ void __fastcall THardware::switchAddrChange(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::switchAddrExit(TObject *Sender)
+void THardware::switchAddrExit(TObject *Sender)
 {
   str1 = "0x";
   switchLoc = StrToInt(str1 + switchAddr->EditText);  // get switch address
@@ -624,7 +624,7 @@ void __fastcall THardware::switchAddrExit(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::switchAddrKeyDown(TObject *Sender, WORD &Key,
+void THardware::switchAddrKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   if (Key == VK_RETURN)
@@ -639,7 +639,7 @@ void __fastcall THardware::switchAddrKeyDown(TObject *Sender, WORD &Key,
 
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pbAddrChange(TObject *Sender)
+void THardware::pbAddrChange(TObject *Sender)
 {
   str1 = "0x";
   pbLoc = StrToInt(str1 + pbAddr->EditText);  // get push button address
@@ -673,7 +673,7 @@ void __fastcall THardware::pbAddrChange(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall THardware::addrKeyUp(TObject *Sender, WORD &Key,
+void THardware::addrKeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   // check 7-seg address for conflicts
@@ -712,49 +712,49 @@ void __fastcall THardware::addrKeyUp(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ1(TObject *Sender)
+void THardware::IRQ1(TObject *Sender)
 {
   IRQprocess(1);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ2(TObject *Sender)
+void THardware::IRQ2(TObject *Sender)
 {
   IRQprocess(2);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ3(TObject *Sender)
+void THardware::IRQ3(TObject *Sender)
 {
   IRQprocess(3);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ4(TObject *Sender)
+void THardware::IRQ4(TObject *Sender)
 {
   IRQprocess(4);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ5(TObject *Sender)
+void THardware::IRQ5(TObject *Sender)
 {
   IRQprocess(5);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ6(TObject *Sender)
+void THardware::IRQ6(TObject *Sender)
 {
   IRQprocess(6);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQ7(TObject *Sender)
+void THardware::IRQ7(TObject *Sender)
 {
   IRQprocess(7);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::IRQprocess(int irqN)
+void THardware::IRQprocess(int irqN)
 {
   static int intMask;
   if(hardwareEnabled) {
@@ -775,7 +775,7 @@ void __fastcall THardware::IRQprocess(int irqN)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::ResetBtnClick(TObject *Sender)
+void THardware::ResetBtnClick(TObject *Sender)
 {
   if (hardwareEnabled) {
     hardReset = true;
@@ -793,7 +793,7 @@ void __fastcall THardware::ResetBtnClick(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // turn off all auto IRQ timers
-void __fastcall THardware::autoIRQoff()
+void THardware::autoIRQoff()
 {
   IRQ1timer->Enabled = false;
   IRQ2timer->Enabled = false;
@@ -808,7 +808,7 @@ void __fastcall THardware::autoIRQoff()
 
 //---------------------------------------------------------------------------
 // turn on all auto IRQ timers
-void __fastcall THardware::autoIRQon()
+void THardware::autoIRQon()
 {
   IRQ1timer->Enabled = CheckBox1->Checked;
   IRQ2timer->Enabled = CheckBox2->Checked;
@@ -828,7 +828,7 @@ void __fastcall THardware::autoIRQon()
 //             Bit 7 = 1 to enable an auto IRQ
 //             Bits 6-0 = IRQ number 1 through 7
 //  interval = Auto Interval in mS, 1 through 99999999
-void __fastcall THardware::setAutoIRQ(uint irq, uint interval)
+void THardware::setAutoIRQ(uint irq, uint interval)
 {
   switch (irq) {
     case 0x00:          // disable all auto IRQs
@@ -904,7 +904,7 @@ void __fastcall THardware::setAutoIRQ(uint irq, uint interval)
 
 //---------------------------------------------------------------------------
 // disable hardware
-void __fastcall THardware::disable()
+void THardware::disable()
 {
   autoIRQoff();
   hardwareEnabled = false;
@@ -920,7 +920,7 @@ void __fastcall THardware::disable()
 
 //---------------------------------------------------------------------------
 // enable hardware
-void __fastcall THardware::enable()
+void THardware::enable()
 {
   autoIRQon();
   hardwareEnabled = true;
@@ -935,7 +935,7 @@ void __fastcall THardware::enable()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::IRQintervalChange(TObject *Sender)
+void THardware::IRQintervalChange(TObject *Sender)
 {
   switch(AutoIRQ->ItemIndex) {
     case 0:
@@ -963,7 +963,7 @@ void __fastcall THardware::IRQintervalChange(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::AutoIRQChange(TObject *Sender)
+void THardware::AutoIRQChange(TObject *Sender)
 {
   switch(AutoIRQ->ItemIndex) {
     case 0:
@@ -991,7 +991,7 @@ void __fastcall THardware::AutoIRQChange(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb0KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb0KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xFE;
@@ -1000,7 +1000,7 @@ void __fastcall THardware::pb0KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb0MouseDown(TObject *Sender,
+void THardware::pb0MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xFE;
@@ -1009,7 +1009,7 @@ void __fastcall THardware::pb0MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb0MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb0MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x01;
@@ -1018,7 +1018,7 @@ void __fastcall THardware::pb0MouseUp(TObject *Sender, TMouseButton Button,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb0KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb0KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x01;
@@ -1028,7 +1028,7 @@ void __fastcall THardware::pb0KeyUp(TObject *Sender, WORD &Key,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::pb1KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb1KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xFD;
@@ -1037,7 +1037,7 @@ void __fastcall THardware::pb1KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb1MouseDown(TObject *Sender,
+void THardware::pb1MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xFD;
@@ -1046,7 +1046,7 @@ void __fastcall THardware::pb1MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb1KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb1KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x02;
@@ -1055,7 +1055,7 @@ void __fastcall THardware::pb1KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb1MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb1MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x02;
@@ -1065,7 +1065,7 @@ void __fastcall THardware::pb1MouseUp(TObject *Sender, TMouseButton Button,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::pb2KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb2KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xFB;
@@ -1074,7 +1074,7 @@ void __fastcall THardware::pb2KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb2MouseDown(TObject *Sender,
+void THardware::pb2MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xFB;
@@ -1083,7 +1083,7 @@ void __fastcall THardware::pb2MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb2KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb2KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x04;
@@ -1092,7 +1092,7 @@ void __fastcall THardware::pb2KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb2MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb2MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x04;
@@ -1102,7 +1102,7 @@ void __fastcall THardware::pb2MouseUp(TObject *Sender, TMouseButton Button,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall THardware::pb3KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb3KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xF7;
@@ -1111,7 +1111,7 @@ void __fastcall THardware::pb3KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb3MouseDown(TObject *Sender,
+void THardware::pb3MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xF7;
@@ -1120,7 +1120,7 @@ void __fastcall THardware::pb3MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb3KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb3KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x08;
@@ -1129,7 +1129,7 @@ void __fastcall THardware::pb3KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb3MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb3MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x08;
@@ -1139,7 +1139,7 @@ void __fastcall THardware::pb3MouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb4KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb4KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xEF;
@@ -1148,7 +1148,7 @@ void __fastcall THardware::pb4KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb4MouseDown(TObject *Sender,
+void THardware::pb4MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xEF;
@@ -1157,7 +1157,7 @@ void __fastcall THardware::pb4MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb4KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb4KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x10;
@@ -1166,7 +1166,7 @@ void __fastcall THardware::pb4KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb4MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb4MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x10;
@@ -1176,7 +1176,7 @@ void __fastcall THardware::pb4MouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb5KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb5KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xDF;
@@ -1185,7 +1185,7 @@ void __fastcall THardware::pb5KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb5MouseDown(TObject *Sender,
+void THardware::pb5MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xDF;
@@ -1194,7 +1194,7 @@ void __fastcall THardware::pb5MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb5KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb5KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x20;
@@ -1203,7 +1203,7 @@ void __fastcall THardware::pb5KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb5MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb5MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x20;
@@ -1213,7 +1213,7 @@ void __fastcall THardware::pb5MouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb6KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb6KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0xBF;
@@ -1222,7 +1222,7 @@ void __fastcall THardware::pb6KeyDown(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb6MouseDown(TObject *Sender,
+void THardware::pb6MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0xBF;
@@ -1231,7 +1231,7 @@ void __fastcall THardware::pb6MouseDown(TObject *Sender,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb6KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb6KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x40;
@@ -1240,7 +1240,7 @@ void __fastcall THardware::pb6KeyUp(TObject *Sender, WORD &Key,
   StackFrm->Repaint();
 }
 
-void __fastcall THardware::pb6MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb6MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x40;
@@ -1250,7 +1250,7 @@ void __fastcall THardware::pb6MouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb7KeyDown(TObject *Sender, WORD &Key,
+void THardware::pb7KeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] &= 0x7F;
@@ -1260,7 +1260,7 @@ void __fastcall THardware::pb7KeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb7MouseDown(TObject *Sender,
+void THardware::pb7MouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] &= 0x7F;
@@ -1270,7 +1270,7 @@ void __fastcall THardware::pb7MouseDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb7KeyUp(TObject *Sender, WORD &Key,
+void THardware::pb7KeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   memory[pbLoc] |= 0x80;
@@ -1280,7 +1280,7 @@ void __fastcall THardware::pb7KeyUp(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pb7MouseUp(TObject *Sender, TMouseButton Button,
+void THardware::pb7MouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   memory[pbLoc] |= 0x80;
@@ -1290,7 +1290,7 @@ void __fastcall THardware::pb7MouseUp(TObject *Sender, TMouseButton Button,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pbAddrKeyDown(TObject *Sender, WORD &Key,
+void THardware::pbAddrKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   if(Key == VK_RETURN && pbLoc < MEMSIZE)     // if valid address
@@ -1303,7 +1303,7 @@ void __fastcall THardware::pbAddrKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::pbAddrExit(TObject *Sender)
+void THardware::pbAddrExit(TObject *Sender)
 {
   if (pbLoc < MEMSIZE) {                         // if valid address
     memory[pbLoc] = 0xFF;
@@ -1315,7 +1315,7 @@ void __fastcall THardware::pbAddrExit(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall THardware::FormCreate(TObject *Sender)
+void THardware::FormCreate(TObject *Sender)
 {
   pbInit = false;       // push buttons not initialized
   autoIRQ = false;    // automatic IRQ disabled
@@ -1323,7 +1323,7 @@ void __fastcall THardware::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::FormKeyDown(TObject *Sender, WORD &Key,
+void THardware::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)
@@ -1333,7 +1333,7 @@ void __fastcall THardware::FormKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::BringToFront()
+void THardware::BringToFront()
 {
   if(Hardware->Visible)
     Hardware->SetFocus();
@@ -1343,122 +1343,122 @@ void __fastcall THardware::BringToFront()
 //---------------------------------------------------------------------------
 
 
-void __fastcall THardware::CheckBox1Click(TObject *Sender)
+void THardware::CheckBox1Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ1timer->Enabled = CheckBox1->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox2Click(TObject *Sender)
+void THardware::CheckBox2Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ2timer->Enabled = CheckBox2->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox3Click(TObject *Sender)
+void THardware::CheckBox3Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ3timer->Enabled = CheckBox3->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox4Click(TObject *Sender)
+void THardware::CheckBox4Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ4timer->Enabled = CheckBox4->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox5Click(TObject *Sender)
+void THardware::CheckBox5Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ5timer->Enabled = CheckBox5->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox6Click(TObject *Sender)
+void THardware::CheckBox6Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ6timer->Enabled = CheckBox6->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::CheckBox7Click(TObject *Sender)
+void THardware::CheckBox7Click(TObject *Sender)
 {
   if (autoIRQ)
     IRQ7timer->Enabled = CheckBox7->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ROMStartEditChange(TObject *Sender)
+void THardware::ROMStartEditChange(TObject *Sender)
 {
   ROMStart = StrToInt("0x" + Hardware->ROMStartEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ROMEndEditChange(TObject *Sender)
+void THardware::ROMEndEditChange(TObject *Sender)
 {
   ROMEnd = StrToInt("0x" + Hardware->ROMEndEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ReadStartEditChange(TObject *Sender)
+void THardware::ReadStartEditChange(TObject *Sender)
 {
   ReadStart = StrToInt("0x" + Hardware->ReadStartEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ReadEndEditChange(TObject *Sender)
+void THardware::ReadEndEditChange(TObject *Sender)
 {
   ReadEnd = StrToInt("0x" + Hardware->ReadEndEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ProtectedStartEditChange(TObject *Sender)
+void THardware::ProtectedStartEditChange(TObject *Sender)
 {
   ProtectedStart = StrToInt("0x" + Hardware->ProtectedStartEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ProtectedEndEditChange(TObject *Sender)
+void THardware::ProtectedEndEditChange(TObject *Sender)
 {
   ProtectedEnd = StrToInt("0x" + Hardware->ProtectedEndEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::InvalidStartEditChange(TObject *Sender)
+void THardware::InvalidStartEditChange(TObject *Sender)
 {
   InvalidStart = StrToInt("0x" + Hardware->InvalidStartEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::InvalidEndEditChange(TObject *Sender)
+void THardware::InvalidEndEditChange(TObject *Sender)
 {
   InvalidEnd = StrToInt("0x" + Hardware->InvalidEndEdit->EditText);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ROMChkClick(TObject *Sender)
+void THardware::ROMChkClick(TObject *Sender)
 {
   ROMMap = ROMChk->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ReadChkClick(TObject *Sender)
+void THardware::ReadChkClick(TObject *Sender)
 {
   ReadMap = ReadChk->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::ProtectedChkClick(TObject *Sender)
+void THardware::ProtectedChkClick(TObject *Sender)
 {
   ProtectedMap = ProtectedChk->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall THardware::InvalidChkClick(TObject *Sender)
+void THardware::InvalidChkClick(TObject *Sender)
 {
   InvalidMap = InvalidChk->Checked;
 }

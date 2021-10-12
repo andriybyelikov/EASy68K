@@ -14,10 +14,10 @@ class TNewHelp : public TForm
 {
 __published:	// IDE-managed Components
         TCppWebBrowser *Help;
-        void __fastcall FormShow(TObject *Sender);
+        void FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TNewHelp(TComponent* Owner);
+        TNewHelp(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TNewHelp *NewHelp;

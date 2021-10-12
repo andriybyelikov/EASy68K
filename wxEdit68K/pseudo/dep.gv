@@ -1,0 +1,20 @@
+digraph
+{
+    assembleS
+    chkSaveS
+    EDIT68K
+    editorOptions
+    findDialogS
+    fontForm1
+    listS
+    mainS
+    newhelpS
+    optionsS
+    Preview_dlg
+    replaceDialogS
+    textS
+
+    EDIT68K->mainS
+    mainS->textS
+    textS->editorOptions
+}

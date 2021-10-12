@@ -1,0 +1,1 @@
+-I/media/data/repositories/wxEASy68K/wxEdit68K/include -isystem /usr/x86_64-w64-mingw32/lib/wx/include/x86_64-w64-mingw32-msw-unicode-static-3.1 -isystem /usr/x86_64-w64-mingw32/include/wx-3.1

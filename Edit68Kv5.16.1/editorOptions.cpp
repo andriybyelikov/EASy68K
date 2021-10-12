@@ -48,18 +48,18 @@ bool syntaxDisabled = false;
 extern bool highlightDisabled;
 
 //---------------------------------------------------------------------------
-__fastcall TEditorOptionsForm::TEditorOptionsForm(TComponent* Owner)
+TEditorOptionsForm::TEditorOptionsForm(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::cmdCancelClick(TObject *Sender)
+void TEditorOptionsForm::cmdCancelClick(TObject *Sender)
 {
   Close();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::cmdOKClick(TObject *Sender)
+void TEditorOptionsForm::cmdOKClick(TObject *Sender)
 {
   AnsiString str;
   TPoint CurPos; //saves the cursor position
@@ -171,7 +171,7 @@ void __fastcall TEditorOptionsForm::cmdOKClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::FormShow(TObject *Sender)
+void TEditorOptionsForm::FormShow(TObject *Sender)
 {
   try {
     //grab active mdi child
@@ -208,7 +208,7 @@ void __fastcall TEditorOptionsForm::FormShow(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::cbFontChange(TObject *Sender)
+void TEditorOptionsForm::cbFontChange(TObject *Sender)
 {
   try {
   //grab active mdi child
@@ -256,7 +256,7 @@ void __fastcall TEditorOptionsForm::cbFontChange(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TEditorOptionsForm::FormKeyDown(TObject *Sender, WORD &Key,
+void TEditorOptionsForm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)
@@ -265,26 +265,26 @@ void __fastcall TEditorOptionsForm::FormKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::AutoIndentClick(TObject *Sender)
+void TEditorOptionsForm::AutoIndentClick(TObject *Sender)
 {
   autoIndent = AutoIndent->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::AutoIndentKeyPress(TObject *Sender,
+void TEditorOptionsForm::AutoIndentKeyPress(TObject *Sender,
       char &Key)
 {
   autoIndent = AutoIndent->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::RealTabsClick(TObject *Sender)
+void TEditorOptionsForm::RealTabsClick(TObject *Sender)
 {
   realTabs = RealTabs->Checked;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::RealTabsKeyPress(TObject *Sender,
+void TEditorOptionsForm::RealTabsKeyPress(TObject *Sender,
       char &Key)
 {
   realTabs = RealTabs->Checked;
@@ -292,7 +292,7 @@ void __fastcall TEditorOptionsForm::RealTabsKeyPress(TObject *Sender,
 //---------------------------------------------------------------------------
 
 
-void __fastcall TEditorOptionsForm::cmdHelpClick(TObject *Sender)
+void TEditorOptionsForm::cmdHelpClick(TObject *Sender)
 {
   Main->displayHelp("EDIT_OPTIONS");
 }
@@ -300,35 +300,35 @@ void __fastcall TEditorOptionsForm::cmdHelpClick(TObject *Sender)
 
 
 
-void __fastcall TEditorOptionsForm::StaticTextClick(TObject *Sender)
+void TEditorOptionsForm::StaticTextClick(TObject *Sender)
 {
   setSyntaxPreviewColor(dynamic_cast<TStaticText*>(Sender)->Color);
 }
 
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::BoldClick(TObject *Sender)
+void TEditorOptionsForm::BoldClick(TObject *Sender)
 {
   if (!inElementClick)
     setSyntaxPreviewStyle();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::ItalicClick(TObject *Sender)
+void TEditorOptionsForm::ItalicClick(TObject *Sender)
 {
   if (!inElementClick)
     setSyntaxPreviewStyle();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::UnderlineClick(TObject *Sender)
+void TEditorOptionsForm::UnderlineClick(TObject *Sender)
 {
   if (!inElementClick)
     setSyntaxPreviewStyle();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::setSyntaxPreviewColor(TColor color)
+void TEditorOptionsForm::setSyntaxPreviewColor(TColor color)
 {
   try {
   switch(Element->ItemIndex) {
@@ -371,7 +371,7 @@ void __fastcall TEditorOptionsForm::setSyntaxPreviewColor(TColor color)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::setSyntaxPreviewStyle()
+void TEditorOptionsForm::setSyntaxPreviewStyle()
 {
   try {
   switch(Element->ItemIndex) {
@@ -426,7 +426,7 @@ void __fastcall TEditorOptionsForm::setSyntaxPreviewStyle()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TEditorOptionsForm::ElementClick(TObject *Sender)
+void TEditorOptionsForm::ElementClick(TObject *Sender)
 {
   try {
   inElementClick = true;
@@ -480,7 +480,7 @@ void __fastcall TEditorOptionsForm::ElementClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::highlightPreview()
+void TEditorOptionsForm::highlightPreview()
 {
   try {
   commentLbl->Font->Color = commentStyleTemp.color;
@@ -555,14 +555,14 @@ void __fastcall TEditorOptionsForm::highlightPreview()
 
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::FormClose(TObject *Sender,
+void TEditorOptionsForm::FormClose(TObject *Sender,
       TCloseAction &Action)
 {
   styleChange = false;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TEditorOptionsForm::SyntaxComboChange(TObject *Sender)
+void TEditorOptionsForm::SyntaxComboChange(TObject *Sender)
 {
   try {
   Element->ItemIndex = -1;                      // clear item selection

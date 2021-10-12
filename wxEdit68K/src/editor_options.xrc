@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxDialog" name="editor_options_dlg">
+    <title>wxEASy68K Editor Options</title>
+    <object class="wxBoxSizer">
+      <object class="sizeritem">
+        <flag>wxALL</flag>
+        <border>10</border>
+        <object class="wxFlexGridSizer">
+          <rows>2</rows>
+          <cols>1</cols>
+          <vgap>10</vgap>
+          <object class="sizeritem">
+            <object class="wxNotebook">
+              <object class="notebookpage">
+                <label>General</label>
+                <object class="wxPanel">
+                  <object class="wxBoxSizer">
+                    <object class="sizeritem">
+                      <flag>wxALL</flag>
+                      <border>10</border>
+                      <object class="wxFlexGridSizer">
+                        <rows>2</rows>
+                        <cols>1</cols>
+                        <vgap>10</vgap>
+                        <object class="sizeritem">
+                          <object class="wxGridSizer">
+                            <rows>1</rows>
+                            <cols>2</cols>
+                            <hgap>10</hgap>
+                            <object class="sizeritem">
+                              <flag>wxEXPAND</flag>
+                              <object class="wxStaticBoxSizer">
+                                <label>New File Settings</label>
+                                <object class="sizeritem">
+                                  <flag>wxALL</flag>
+                                  <border>10</border>
+                                  <object class="wxBoxSizer">
+                                    <orient>wxVERTICAL</orient>
+                                    <object class="sizeritem">
+                                      <object class="wxGridSizer">
+                                        <rows>3</rows>
+                                        <cols>2</cols>
+                                        <hgap>10</hgap>
+                                        <vgap>10</vgap>
+                                        <object class="sizeritem">
+                                          <flag>wxALIGN_RIGHT</flag>
+                                          <object class="wxStaticText">
+                                            <label>New Font:</label>
+                                          </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <object class="wxComboBox"/>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <flag>wxALIGN_RIGHT</flag>
+                                          <object class="wxStaticText">
+                                            <label>New Font Size:</label>
+                                          </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <object class="wxComboBox"/>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <flag>wxALIGN_RIGHT</flag>
+                                          <object class="wxStaticText">
+                                            <label>Fixed Tab Size:</label>
+                                          </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <object class="wxSpinCtrl"/>
+                                        </object>
+                                      </object>
+                                    </object>
+                                    <object class="spacer">
+                                      <size>10</size>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <flag>wxALIGN_RIGHT</flag>
+                                      <object class="wxBoxSizer">
+                                        <orient>wxVERTICAL</orient>
+                                        <object class="sizeritem">
+                                          <object class="wxRadioButton">
+                                            <label>Assembly Tabs</label>
+                                          </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <object class="wxRadioButton">
+                                            <label>Fixed Tabs</label>
+                                          </object>
+                                        </object>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                            <object class="sizeritem">
+                              <flag>wxEXPAND</flag>
+                              <object class="wxStaticBoxSizer">
+                                <label>Current File Info</label>
+                                <object class="sizeritem">
+                                  <flag>wxALL</flag>
+                                  <border>10</border>
+                                  <object class="wxGridSizer">
+                                    <rows>4</rows>
+                                    <cols>2</cols>
+                                    <hgap>10</hgap>
+                                    <vgap>10</vgap>
+                                    <object class="sizeritem">
+                                      <flag>wxALIGN_RIGHT</flag>
+                                      <object class="wxStaticText">
+                                        <font>
+                                          <weight>bold</weight>
+                                        </font>
+                                        <label>Font:</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxStaticText">
+                                        <label>Courier New</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <flag>wxALIGN_RIGHT</flag>
+                                      <object class="wxStaticText">
+                                        <font>
+                                          <weight>bold</weight>
+                                        </font>
+                                        <label>Font Size:</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxStaticText">
+                                        <label>10</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <flag>wxALIGN_RIGHT</flag>
+                                      <object class="wxStaticText">
+                                        <font>
+                                          <weight>bold</weight>
+                                        </font>
+                                        <label>Fixed Tab Size:</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxStaticText">
+                                        <label>4</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <flag>wxALIGN_RIGHT</flag>
+                                      <object class="wxStaticText">
+                                        <font>
+                                          <weight>bold</weight>
+                                        </font>
+                                        <style>wxALIGN_CENTRE</style>
+                                        <label>Tab Type:</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxStaticText">
+                                        <label>Fixed</label>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxEXPAND</flag>
+                          <object class="wxGridSizer">
+                            <rows>1</rows>
+                            <cols>2</cols>
+                            <hgap>10</hgap>
+                            <object class="sizeritem">
+                              <flag>wxEXPAND</flag>
+                              <object class="wxStaticBoxSizer">
+                                <label>Environment</label>
+                                <object class="sizeritem">
+                                  <flag>wxALL</flag>
+                                  <border>10</border>
+                                  <object class="wxBoxSizer">
+                                    <orient>wxVERTICAL</orient>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Auto Indent</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Real Tabs</label>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+              </object>
+              <object class="notebookpage">
+                <label>Colors</label>
+                <object class="wxPanel">
+                  <object class="wxBoxSizer">
+                    <object class="sizeritem">
+                      <option>1</option>
+                      <flag>wxALL|wxEXPAND</flag>
+                      <border>10</border>
+                      <object class="wxGridSizer">
+                        <rows>1</rows>
+                        <cols>2</cols>
+                        <hgap>10</hgap>
+                        <object class="sizeritem">
+                          <option>1</option>
+                          <flag>wxEXPAND</flag>
+                          <object class="wxStaticBoxSizer">
+                            <label>Preview</label>
+                            <object class="sizeritem">
+                              <option>1</option>
+                              <flag>wxEXPAND</flag>
+                              <object class="wxRichTextCtrl" name="editor_pre">
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <object class="wxBoxSizer">
+                            <orient>wxVERTICAL</orient>
+                            <object class="sizeritem">
+                              <object class="wxBoxSizer">
+                                <orient>wxVERTICAL</orient>
+                                <object class="sizeritem">
+                                  <object class="wxStaticText">
+                                    <label>Color Presets</label>
+                                  </object>
+                                </object>
+                                <object class="sizeritem">
+                                  <object class="wxComboBox">
+                                    <selection>0</selection>
+                                    <content>
+                                      <item>Color1</item>
+                                      <item>Color2</item>
+                                      <item>No Color</item>
+                                      <item>Custom</item>
+                                      <item>Disabled</item>
+                                    </content>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                            <object class="spacer">
+                              <size>10</size>
+                            </object>
+                            <object class="sizeritem">
+                              <object class="wxGridSizer">
+                                <rows>1</rows>
+                                <cols>2</cols>
+                                <hgap>10</hgap>
+                                <object class="sizeritem">
+                                  <object class="wxBoxSizer">
+                                    <orient>wxVERTICAL</orient>
+                                    <object class="sizeritem">
+                                      <object class="wxStaticText">
+                                        <label>Element</label>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxListBox">
+                                        <selection>0</selection>
+                                        <content>
+                                          <item>Code</item>
+                                          <item>Comment</item>
+                                          <item>Directive</item>
+                                          <item>Label</item>
+                                          <item>Macro/Other</item>
+                                          <item>Structured</item>
+                                          <item>Structure Error</item>
+                                          <item>Text</item>
+                                          <item>Background</item>
+                                        </content>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                                <object class="sizeritem">
+                                  <option>1</option>
+                                  <flag>wxEXPAND</flag>
+                                  <object class="wxBoxSizer">
+                                    <orient>wxVERTICAL</orient>
+                                    <object class="sizeritem">
+                                      <object class="wxBoxSizer">
+                                        <orient>wxVERTICAL</orient>
+                                        <object class="sizeritem">
+                                          <object class="wxStaticText">
+                                            <label>Color</label>
+                                          </object>
+                                        </object>
+                                        <object class="sizeritem">
+                                          <object class="wxColourPickerCtrl"/>
+                                        </object>
+                                      </object>
+                                    </object>
+                                    <object class="spacer">
+                                      <size>10</size>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <option>1</option>
+                                      <flag>wxEXPAND</flag>
+                                      <object class="wxStaticBoxSizer">
+                                        <label>Text Attributes</label>
+                                        <object class="sizeritem">
+                                          <object class="wxBoxSizer">
+                                            <orient>wxVERTICAL</orient>
+                                            <object class="sizeritem">
+                                              <object class="wxCheckBox">
+                                                <label>Bold</label>
+                                              </object>
+                                            </object>
+                                            <object class="sizeritem">
+                                              <object class="wxCheckBox">
+                                                <label>Italic</label>
+                                              </object>
+                                            </object>
+                                            <object class="sizeritem">
+                                              <object class="wxCheckBox">
+                                                <label>Underline</label>
+                                              </object>
+                                            </object>
+                                          </object>
+                                        </object>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="sizeritem">
+            <flag>wxALIGN_RIGHT</flag>
+            <object class="wxBoxSizer">
+              <object class="sizeritem">
+                <object class="wxGridSizer">
+                  <hgap>10</hgap>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="wxID_OK"/>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="wxID_CANCEL"/>
+                  </object>
+                  <object class="sizeritem">
+                    <object class="wxButton" name="wxID_HELP"/>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</resource>

@@ -12,18 +12,18 @@
 #pragma resource "*.dfm"
 TfontForm *fontForm;
 //---------------------------------------------------------------------------
-__fastcall TfontForm::TfontForm(TComponent* Owner)
+TfontForm::TfontForm(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TfontForm::cmdCloseClick(TObject *Sender)
+void TfontForm::cmdCloseClick(TObject *Sender)
 {
   Close();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfontForm::cmdChangeClick(TObject *Sender)
+void TfontForm::cmdChangeClick(TObject *Sender)
 {
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
   Active->SourceText->Font->Name = cbFont->Text;
@@ -33,7 +33,7 @@ void __fastcall TfontForm::cmdChangeClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TfontForm::FormShow(TObject *Sender)
+void TfontForm::FormShow(TObject *Sender)
 {
   //grab active mdi child
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
@@ -41,7 +41,7 @@ void __fastcall TfontForm::FormShow(TObject *Sender)
   fontForm->currentSize->Text = IntToStr(Active->SourceText->Font->Size);
 }
 //---------------------------------------------------------------------------
-void __fastcall TfontForm::cbFontChange(TObject *Sender)
+void TfontForm::cbFontChange(TObject *Sender)
 {
   cbSize->Items->Clear();
   if (cbFont->Text == "Fixedsys") {

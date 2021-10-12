@@ -15,13 +15,13 @@ __published:	// IDE-managed Components
         TLabel *Label1;
         TButton *cmdOk;
         TButton *cmdCancel;
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall txtScreenNumberChange(TObject *Sender);
-        void __fastcall cmdOkClick(TObject *Sender);
-        void __fastcall cmdCancelClick(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void txtScreenNumberChange(TObject *Sender);
+        void cmdOkClick(TObject *Sender);
+        void cmdCancelClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TfrmFullscreenOptions(TComponent* Owner);
+        TfrmFullscreenOptions(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfrmFullscreenOptions *frmFullscreenOptions;

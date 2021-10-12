@@ -17,12 +17,12 @@
 #pragma resource "*.dfm"
 TAssemblerBox *AssemblerBox;
 //---------------------------------------------------------------------------
-__fastcall TAssemblerBox::TAssemblerBox(TComponent* Owner)
+TAssemblerBox::TAssemblerBox(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TAssemblerBox::cmdExecuteClick(TObject *Sender)
+void TAssemblerBox::cmdExecuteClick(TObject *Sender)
 {
   AnsiString sim68K, S68;
 
@@ -39,20 +39,20 @@ void __fastcall TAssemblerBox::cmdExecuteClick(TObject *Sender)
   AssemblerBox->Close();
 }
 //---------------------------------------------------------------------------
-void __fastcall TAssemblerBox::cmdCloseClick(TObject *Sender)
+void TAssemblerBox::cmdCloseClick(TObject *Sender)
 {
   AssemblerBox->Close();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TAssemblerBox::FormClose(TObject *Sender,
+void TAssemblerBox::FormClose(TObject *Sender,
       TCloseAction &Action)
 {
   cmdExecute->Enabled = false;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TAssemblerBox::FormShow(TObject *Sender)
+void TAssemblerBox::FormShow(TObject *Sender)
 {
   //grab the active child window
   TTextStuff *Active = (TTextStuff*)Main->ActiveMDIChild;
@@ -67,7 +67,7 @@ void __fastcall TAssemblerBox::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TAssemblerBox::cmdLoadL68Click(TObject *Sender)
+void TAssemblerBox::cmdLoadL68Click(TObject *Sender)
 {
   AnsiString L68;
 

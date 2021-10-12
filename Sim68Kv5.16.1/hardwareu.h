@@ -195,137 +195,137 @@ __published:	// IDE-managed Components
         TMaskEdit *ProtectedEndEdit;
         TMaskEdit *MaskEdit19;
         TMaskEdit *InvalidEndEdit;
-        void __fastcall switch0Click(TObject *Sender);
-        void __fastcall switch1Click(TObject *Sender);
-        void __fastcall switch2Click(TObject *Sender);
-        void __fastcall switch3Click(TObject *Sender);
-        void __fastcall switch4Click(TObject *Sender);
-        void __fastcall switch5Click(TObject *Sender);
-        void __fastcall switch6Click(TObject *Sender);
-        void __fastcall switch7Click(TObject *Sender);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall addrKeyPress(TObject *Sender, char &Key);
-        void __fastcall seg7addrChange(TObject *Sender);
-        void __fastcall LEDaddrChange(TObject *Sender);
-        void __fastcall switchAddrChange(TObject *Sender);
-        void __fastcall addrKeyUp(TObject *Sender, WORD &Key,
+        void switch0Click(TObject *Sender);
+        void switch1Click(TObject *Sender);
+        void switch2Click(TObject *Sender);
+        void switch3Click(TObject *Sender);
+        void switch4Click(TObject *Sender);
+        void switch5Click(TObject *Sender);
+        void switch6Click(TObject *Sender);
+        void switch7Click(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void addrKeyPress(TObject *Sender, char &Key);
+        void seg7addrChange(TObject *Sender);
+        void LEDaddrChange(TObject *Sender);
+        void switchAddrChange(TObject *Sender);
+        void addrKeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall IRQ1(TObject *Sender);
-        void __fastcall IRQ2(TObject *Sender);
-        void __fastcall IRQ3(TObject *Sender);
-        void __fastcall IRQ4(TObject *Sender);
-        void __fastcall IRQ5(TObject *Sender);
-        void __fastcall IRQ6(TObject *Sender);
-        void __fastcall IRQ7(TObject *Sender);
-        void __fastcall ResetBtnClick(TObject *Sender);
-        void __fastcall IRQintervalChange(TObject *Sender);
-        void __fastcall AutoIRQChange(TObject *Sender);
-        void __fastcall pbAddrChange(TObject *Sender);
-        void __fastcall pb0KeyDown(TObject *Sender, WORD &Key,
+        void IRQ1(TObject *Sender);
+        void IRQ2(TObject *Sender);
+        void IRQ3(TObject *Sender);
+        void IRQ4(TObject *Sender);
+        void IRQ5(TObject *Sender);
+        void IRQ6(TObject *Sender);
+        void IRQ7(TObject *Sender);
+        void ResetBtnClick(TObject *Sender);
+        void IRQintervalChange(TObject *Sender);
+        void AutoIRQChange(TObject *Sender);
+        void pbAddrChange(TObject *Sender);
+        void pb0KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb0MouseDown(TObject *Sender, TMouseButton Button,
+        void pb0MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb0MouseUp(TObject *Sender, TMouseButton Button,
+        void pb0MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb0KeyUp(TObject *Sender, WORD &Key,
+        void pb0KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb1KeyDown(TObject *Sender, WORD &Key,
+        void pb1KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb1KeyUp(TObject *Sender, WORD &Key,
+        void pb1KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb1MouseDown(TObject *Sender, TMouseButton Button,
+        void pb1MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb1MouseUp(TObject *Sender, TMouseButton Button,
+        void pb1MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb2KeyDown(TObject *Sender, WORD &Key,
+        void pb2KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb2KeyUp(TObject *Sender, WORD &Key,
+        void pb2KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb2MouseDown(TObject *Sender, TMouseButton Button,
+        void pb2MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb2MouseUp(TObject *Sender, TMouseButton Button,
+        void pb2MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb3KeyDown(TObject *Sender, WORD &Key,
+        void pb3KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb3KeyUp(TObject *Sender, WORD &Key,
+        void pb3KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb3MouseDown(TObject *Sender, TMouseButton Button,
+        void pb3MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb3MouseUp(TObject *Sender, TMouseButton Button,
+        void pb3MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb4KeyDown(TObject *Sender, WORD &Key,
+        void pb4KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb4MouseDown(TObject *Sender, TMouseButton Button,
+        void pb4MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb4KeyUp(TObject *Sender, WORD &Key,
+        void pb4KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb4MouseUp(TObject *Sender, TMouseButton Button,
+        void pb4MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb5KeyDown(TObject *Sender, WORD &Key,
+        void pb5KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb5MouseDown(TObject *Sender, TMouseButton Button,
+        void pb5MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb5KeyUp(TObject *Sender, WORD &Key,
+        void pb5KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb5MouseUp(TObject *Sender, TMouseButton Button,
+        void pb5MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb6KeyDown(TObject *Sender, WORD &Key,
+        void pb6KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb6MouseDown(TObject *Sender, TMouseButton Button,
+        void pb6MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb6KeyUp(TObject *Sender, WORD &Key,
+        void pb6KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb6MouseUp(TObject *Sender, TMouseButton Button,
+        void pb6MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb7KeyDown(TObject *Sender, WORD &Key,
+        void pb7KeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb7MouseDown(TObject *Sender, TMouseButton Button,
+        void pb7MouseDown(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pb7KeyUp(TObject *Sender, WORD &Key,
+        void pb7KeyUp(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pb7MouseUp(TObject *Sender, TMouseButton Button,
+        void pb7MouseUp(TObject *Sender, TMouseButton Button,
           TShiftState Shift, int X, int Y);
-        void __fastcall pbAddrKeyDown(TObject *Sender, WORD &Key,
+        void pbAddrKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall pbAddrExit(TObject *Sender);
-        void __fastcall FormCreate(TObject *Sender);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void pbAddrExit(TObject *Sender);
+        void FormCreate(TObject *Sender);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall CheckBox1Click(TObject *Sender);
-        void __fastcall CheckBox2Click(TObject *Sender);
-        void __fastcall CheckBox3Click(TObject *Sender);
-        void __fastcall CheckBox4Click(TObject *Sender);
-        void __fastcall CheckBox5Click(TObject *Sender);
-        void __fastcall CheckBox6Click(TObject *Sender);
-        void __fastcall CheckBox7Click(TObject *Sender);
-        void __fastcall switchAddrExit(TObject *Sender);
-        void __fastcall switchAddrKeyDown(TObject *Sender, WORD &Key,
+        void CheckBox1Click(TObject *Sender);
+        void CheckBox2Click(TObject *Sender);
+        void CheckBox3Click(TObject *Sender);
+        void CheckBox4Click(TObject *Sender);
+        void CheckBox5Click(TObject *Sender);
+        void CheckBox6Click(TObject *Sender);
+        void CheckBox7Click(TObject *Sender);
+        void switchAddrExit(TObject *Sender);
+        void switchAddrKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
-        void __fastcall ROMStartEditChange(TObject *Sender);
-        void __fastcall ROMEndEditChange(TObject *Sender);
-        void __fastcall ReadStartEditChange(TObject *Sender);
-        void __fastcall ReadEndEditChange(TObject *Sender);
-        void __fastcall ProtectedStartEditChange(TObject *Sender);
-        void __fastcall ProtectedEndEditChange(TObject *Sender);
-        void __fastcall InvalidStartEditChange(TObject *Sender);
-        void __fastcall InvalidEndEditChange(TObject *Sender);
-        void __fastcall ROMChkClick(TObject *Sender);
-        void __fastcall ReadChkClick(TObject *Sender);
-        void __fastcall ProtectedChkClick(TObject *Sender);
-        void __fastcall InvalidChkClick(TObject *Sender);
+        void ROMStartEditChange(TObject *Sender);
+        void ROMEndEditChange(TObject *Sender);
+        void ReadStartEditChange(TObject *Sender);
+        void ReadEndEditChange(TObject *Sender);
+        void ProtectedStartEditChange(TObject *Sender);
+        void ProtectedEndEditChange(TObject *Sender);
+        void InvalidStartEditChange(TObject *Sender);
+        void InvalidEndEditChange(TObject *Sender);
+        void ROMChkClick(TObject *Sender);
+        void ReadChkClick(TObject *Sender);
+        void ProtectedChkClick(TObject *Sender);
+        void InvalidChkClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall THardware(TComponent* Owner);
-        void __fastcall initialize();
-        void __fastcall BringToFront();
-        void __fastcall update();
-        void __fastcall updateIfNeeded(int);
-        void __fastcall autoIRQoff();
-        void __fastcall autoIRQon();
-        void __fastcall setAutoIRQ(uint irq, uint interval);
-        void __fastcall disable();
-        void __fastcall enable();
-        void __fastcall IRQprocess(int);
+        THardware(TComponent* Owner);
+        void initialize();
+        void BringToFront();
+        void update();
+        void updateIfNeeded(int);
+        void autoIRQoff();
+        void autoIRQon();
+        void setAutoIRQ(uint irq, uint interval);
+        void disable();
+        void enable();
+        void IRQprocess(int);
 
 };
 //---------------------------------------------------------------------------

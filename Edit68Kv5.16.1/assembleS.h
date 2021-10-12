@@ -21,14 +21,14 @@ __published:	// IDE-managed Components
         TLabel *Label1;
         TLabel *Label2;
         TButton *cmdLoadL68;
-        void __fastcall cmdExecuteClick(TObject *Sender);
-        void __fastcall cmdCloseClick(TObject *Sender);
-        void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall cmdLoadL68Click(TObject *Sender);
+        void cmdExecuteClick(TObject *Sender);
+        void cmdCloseClick(TObject *Sender);
+        void FormClose(TObject *Sender, TCloseAction &Action);
+        void FormShow(TObject *Sender);
+        void cmdLoadL68Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TAssemblerBox(TComponent* Owner);
+        TAssemblerBox(TComponent* Owner);
       
         AnsiString batFileEx; //simulator batch file path
         AnsiString ListF; //list file path

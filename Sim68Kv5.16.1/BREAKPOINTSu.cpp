@@ -42,7 +42,7 @@ int expr_edit_row = 1;
 #pragma resource "*.dfm"
 TBreaksFrm *BreaksFrm;
 //---------------------------------------------------------------------------
-__fastcall TBreaksFrm::TBreaksFrm(TComponent* Owner)
+TBreaksFrm::TBreaksFrm(TComponent* Owner)
         : TForm(Owner)
 {
         // Set the column titles and row IDs of the TStringGrids
@@ -109,7 +109,7 @@ __fastcall TBreaksFrm::TBreaksFrm(TComponent* Owner)
 
 
 // Sets PC breakpoints only
-int __fastcall TBreaksFrm::sbpoint(int loc)     // set break point
+int TBreaksFrm::sbpoint(int loc)     // set break point
 {
   int i;
   AnsiString str;
@@ -129,7 +129,7 @@ int __fastcall TBreaksFrm::sbpoint(int loc)     // set break point
 }
 
 // Clears PC break points only
-int __fastcall TBreaksFrm::cbpoint(int loc)     // clear break point
+int TBreaksFrm::cbpoint(int loc)     // clear break point
 {
   int i, j;
   AnsiString str;
@@ -158,13 +158,13 @@ int __fastcall TBreaksFrm::cbpoint(int loc)     // clear break point
 //---------------------------------------------------------------------------
 
 
-void __fastcall TBreaksFrm::resetDebug() {
+void TBreaksFrm::resetDebug() {
         // Reset all breakpoint condition met counts to zero.
         for(int c = 0; c < MAX_BPOINTS; c++)
                 bpCountCond[c] = 0;
 }
 
-void __fastcall TBreaksFrm::setRegButtons()
+void TBreaksFrm::setRegButtons()
 {
         // Are the editable fields exposed for data entry?
         if(RegOperatorCombo->Visible) {
@@ -185,7 +185,7 @@ void __fastcall TBreaksFrm::setRegButtons()
         }
 }
 
-void __fastcall TBreaksFrm::setAddrButtons()
+void TBreaksFrm::setAddrButtons()
 {
         // Are the editable fields exposed for data entry?
         if(AddrOperatorCombo->Visible) {
@@ -206,7 +206,7 @@ void __fastcall TBreaksFrm::setAddrButtons()
         }
 }
 
-void __fastcall TBreaksFrm::setExprButtons()
+void TBreaksFrm::setExprButtons()
 {
         // Are the editable fields exposed for data entry?
         if(ExprEnabledCombo->Visible) {
@@ -296,7 +296,7 @@ void __fastcall TBreaksFrm::setExprButtons()
         }
 }
 
-void __fastcall TBreaksFrm::RegStringGridClick(TObject *Sender)
+void TBreaksFrm::RegStringGridClick(TObject *Sender)
 {
         // Assist the user interface for the expression builder by
         // allowing the user to select a reg breakpoint by click.
@@ -318,7 +318,7 @@ void __fastcall TBreaksFrm::RegStringGridClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrStringGridClick(TObject *Sender)
+void TBreaksFrm::AddrStringGridClick(TObject *Sender)
 {
         // Assist the user interface for the expression builder by
         // allowing the user to select an addr breakpoint by click.
@@ -342,7 +342,7 @@ void __fastcall TBreaksFrm::AddrStringGridClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TBreaksFrm::ExprStringGridClick(TObject *Sender)
+void TBreaksFrm::ExprStringGridClick(TObject *Sender)
 {
         ExprEnabledCombo->Visible = false;
         ExprExprEdit->Visible = false;
@@ -351,7 +351,7 @@ void __fastcall TBreaksFrm::ExprStringGridClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegSetButtonClick(TObject *Sender)
+void TBreaksFrm::RegSetButtonClick(TObject *Sender)
 {
         // Make sure valid data was entered in each field
         if((RegSelectCombo->Text == "") ||
@@ -393,7 +393,7 @@ void __fastcall TBreaksFrm::RegSetButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrSetButtonClick(TObject *Sender)
+void TBreaksFrm::AddrSetButtonClick(TObject *Sender)
 {
         // Make sure valid data was entered in each field
         if((AddrSelectMaskEdit->EditText == "") ||
@@ -440,7 +440,7 @@ void __fastcall TBreaksFrm::AddrSetButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprSetButtonClick(TObject *Sender)
+void TBreaksFrm::ExprSetButtonClick(TObject *Sender)
 {
         // Make sure valid data was entered in each field
         if((ExprEnabledCombo->Text == "") ||
@@ -520,7 +520,7 @@ void __fastcall TBreaksFrm::ExprSetButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-int __fastcall TBreaksFrm::precedence(int op_prec) {
+int TBreaksFrm::precedence(int op_prec) {
         // Currently this is a trivial operation.  The highest precedence
         // operator (AND) has the lowest integer value.  For readability in
         // the infix to postfix conversion algorithm, the precedence function
@@ -530,7 +530,7 @@ int __fastcall TBreaksFrm::precedence(int op_prec) {
 //---------------------------------------------------------------------------
 
 
-void __fastcall TBreaksFrm::ExprRegAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprRegAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -557,7 +557,7 @@ void __fastcall TBreaksFrm::ExprRegAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprAddrAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprAddrAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -582,7 +582,7 @@ void __fastcall TBreaksFrm::ExprAddrAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprAndAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprAndAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -598,7 +598,7 @@ void __fastcall TBreaksFrm::ExprAndAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprOrAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprOrAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -614,7 +614,7 @@ void __fastcall TBreaksFrm::ExprOrAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprBackspaceButtonClick(TObject *Sender)
+void TBreaksFrm::ExprBackspaceButtonClick(TObject *Sender)
 {
         AnsiString original = ExprExprEdit->Text;
         AnsiString edited = original.SubString(0, (original.Length() - 5));
@@ -644,7 +644,7 @@ void __fastcall TBreaksFrm::ExprBackspaceButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegClearButtonClick(TObject *Sender)
+void TBreaksFrm::RegClearButtonClick(TObject *Sender)
 {
         if(reg_edit_row > 0 && reg_edit_row <= regCount) {
                 // Remove the selected row from the TStringGrid
@@ -690,7 +690,7 @@ void __fastcall TBreaksFrm::RegClearButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegClearAllButtonClick(TObject *Sender)
+void TBreaksFrm::RegClearAllButtonClick(TObject *Sender)
 {
         // Remove all rows from the TStringGrid
         for(int curRow = 1; curRow <= regCount; curRow++) {
@@ -715,7 +715,7 @@ void __fastcall TBreaksFrm::RegClearAllButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrClearButtonClick(TObject *Sender)
+void TBreaksFrm::AddrClearButtonClick(TObject *Sender)
 {
         if(addr_edit_row > 0 && addr_edit_row <= addrCount) {
                 // Remove the selected row from the TStringGrid
@@ -765,7 +765,7 @@ void __fastcall TBreaksFrm::AddrClearButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrClearAllButtonClick(TObject *Sender)
+void TBreaksFrm::AddrClearAllButtonClick(TObject *Sender)
 {
         // Remove the selected row from the TStringGrid
         for(int curRow = 1; curRow <= addrCount; curRow++) {
@@ -792,7 +792,7 @@ void __fastcall TBreaksFrm::AddrClearAllButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegValueKeyPress(TObject *Sender, char &Key)
+void TBreaksFrm::RegValueKeyPress(TObject *Sender, char &Key)
 {
         if ( (Key >= '0' && Key <= '9') ||
              (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -804,7 +804,7 @@ void __fastcall TBreaksFrm::RegValueKeyPress(TObject *Sender, char &Key)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrSelectKeyPress(TObject *Sender, char &Key)
+void TBreaksFrm::AddrSelectKeyPress(TObject *Sender, char &Key)
 {
         if ( (Key >= '0' && Key <= '9') ||
              (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -816,7 +816,7 @@ void __fastcall TBreaksFrm::AddrSelectKeyPress(TObject *Sender, char &Key)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrValueKeyPress(TObject *Sender, char &Key)
+void TBreaksFrm::AddrValueKeyPress(TObject *Sender, char &Key)
 {
         if ( (Key >= '0' && Key <= '9') ||
              (toupper(Key) >= 'A' && toupper(Key) <= 'F') )
@@ -828,7 +828,7 @@ void __fastcall TBreaksFrm::AddrValueKeyPress(TObject *Sender, char &Key)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprCountKeyPress(TObject *Sender, char &Key)
+void TBreaksFrm::ExprCountKeyPress(TObject *Sender, char &Key)
 {
         if (Key < '0' || Key > '9') {
                 Beep();
@@ -839,7 +839,7 @@ void __fastcall TBreaksFrm::ExprCountKeyPress(TObject *Sender, char &Key)
 
 
 
-void __fastcall TBreaksFrm::ExprClearButtonClick(TObject *Sender)
+void TBreaksFrm::ExprClearButtonClick(TObject *Sender)
 {
         if(expr_edit_row > 0 && expr_edit_row <= exprCount) {
                 // Remove the selected row from the TStringGrid
@@ -881,7 +881,7 @@ void __fastcall TBreaksFrm::ExprClearButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprClearAllButtonClick(TObject *Sender)
+void TBreaksFrm::ExprClearAllButtonClick(TObject *Sender)
 {
         // Remove the selected row from the TStringGrid
         for(int curRow = 1; curRow <= exprCount; curRow++) {
@@ -902,7 +902,7 @@ void __fastcall TBreaksFrm::ExprClearAllButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegStringGridDblClick(TObject *Sender)
+void TBreaksFrm::RegStringGridDblClick(TObject *Sender)
 {
         // Force data to be entered into consecutive rows
         if(RegStringGrid->Row > regCount) {
@@ -945,7 +945,7 @@ void __fastcall TBreaksFrm::RegStringGridDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrStringGridDblClick(TObject *Sender)
+void TBreaksFrm::AddrStringGridDblClick(TObject *Sender)
 {
         // Force data to be entered into consecutive rows
         if(AddrStringGrid->Row > addrCount) {
@@ -992,7 +992,7 @@ void __fastcall TBreaksFrm::AddrStringGridDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprStringGridDblClick(TObject *Sender)
+void TBreaksFrm::ExprStringGridDblClick(TObject *Sender)
 {
         // Force data to be entered into consecutive rows
         if(ExprStringGrid->Row > exprCount) {
@@ -1053,7 +1053,7 @@ void __fastcall TBreaksFrm::ExprStringGridDblClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegColumnMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::RegColumnMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         RegSelectCombo->Visible = false;
@@ -1064,7 +1064,7 @@ void __fastcall TBreaksFrm::RegColumnMoved(TObject *Sender, int FromIndex,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrColumnMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::AddrColumnMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         AddrSelectMaskEdit->Visible = false;
@@ -1076,7 +1076,7 @@ void __fastcall TBreaksFrm::AddrColumnMoved(TObject *Sender, int FromIndex,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprColumnMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::ExprColumnMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         ExprEnabledCombo->Visible = false;
@@ -1086,7 +1086,7 @@ void __fastcall TBreaksFrm::ExprColumnMoved(TObject *Sender, int FromIndex,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::RegRowMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::RegRowMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         RegSelectCombo->Visible = false;
@@ -1098,7 +1098,7 @@ void __fastcall TBreaksFrm::RegRowMoved(TObject *Sender, int FromIndex,
 //---------------------------------------------------------------------------
 
 
-void __fastcall TBreaksFrm::RegTopLeftChanged(TObject *Sender)
+void TBreaksFrm::RegTopLeftChanged(TObject *Sender)
 {
         RegSelectCombo->Visible = false;
         RegOperatorCombo->Visible = false;
@@ -1108,7 +1108,7 @@ void __fastcall TBreaksFrm::RegTopLeftChanged(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrTopLeftChanged(TObject *Sender)
+void TBreaksFrm::AddrTopLeftChanged(TObject *Sender)
 {
         AddrSelectMaskEdit->Visible = false;
         AddrOperatorCombo->Visible = false;
@@ -1119,7 +1119,7 @@ void __fastcall TBreaksFrm::AddrTopLeftChanged(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::AddrRowMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::AddrRowMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         AddrSelectMaskEdit->Visible = false;
@@ -1131,7 +1131,7 @@ void __fastcall TBreaksFrm::AddrRowMoved(TObject *Sender, int FromIndex,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprRowMoved(TObject *Sender, int FromIndex,
+void TBreaksFrm::ExprRowMoved(TObject *Sender, int FromIndex,
       int ToIndex)
 {
         ExprEnabledCombo->Visible = false;
@@ -1141,7 +1141,7 @@ void __fastcall TBreaksFrm::ExprRowMoved(TObject *Sender, int FromIndex,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprTopLeftChanged(TObject *Sender)
+void TBreaksFrm::ExprTopLeftChanged(TObject *Sender)
 {
         ExprEnabledCombo->Visible = false;
         ExprExprEdit->Visible = false;
@@ -1150,7 +1150,7 @@ void __fastcall TBreaksFrm::ExprTopLeftChanged(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprLParenAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprLParenAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -1166,7 +1166,7 @@ void __fastcall TBreaksFrm::ExprLParenAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::ExprRParenAppendButtonClick(TObject *Sender)
+void TBreaksFrm::ExprRParenAppendButtonClick(TObject *Sender)
 {
         // Make sure there is room for more array elements
         if(infixCount < MAX_LB_NODES) {
@@ -1182,7 +1182,7 @@ void __fastcall TBreaksFrm::ExprRParenAppendButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::FormKeyDown(TObject *Sender, WORD &Key,
+void TBreaksFrm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)
@@ -1192,7 +1192,7 @@ void __fastcall TBreaksFrm::FormKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TBreaksFrm::BringToFront()
+void TBreaksFrm::BringToFront()
 {
   if(BreaksFrm->Visible)
     BreaksFrm->SetFocus();

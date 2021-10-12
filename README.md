@@ -1,5 +1,31 @@
-*                               EASy68K 
-* Editor, Assembler, Simulator, S-Record/Binary utility for 68000 microprocessor
+# wxEASy68K
+
+wxWidgets port of the EASy68K Editor, Assembler, Simulator, S-Record/Binary
+utility for the Motorola 68000 microprocessor (WIP)
+
+---
+
+## Unimplemented features
+
+- Everything related to printing
+
+## Removed features
+
+- MDI paradigm
+- Per file font settings are ignored, as systems other than Windows may not
+  have Windows fonts present. Per file tab settings still apply, however.
+
+## Removed easter eggs
+
+- About dialog easter egg that appears when typing "BMW"
+
+## Removed details
+
+- Print w/black in Editor Options > Colors (always checked and disabled)
+
+---
+---
+---
 
 Editor written by Tim Larson
 Original Assembler code by Paul McKee

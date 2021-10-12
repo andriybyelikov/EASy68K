@@ -229,7 +229,7 @@ int contextSize = sizeof(context)/sizeof(idh_cont);
 
 //---------------------------------------------------------------------------
 // returns context ID for HTML help
-int __fastcall getHelpContext(char* str)
+int getHelpContext(char* str)
 {
   int i, cmp;
   int contextID;

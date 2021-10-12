@@ -25,14 +25,14 @@ __published:	// IDE-managed Components
         TButton *cancelBtn;
         TButton *replaceBtn;
         TButton *replaceAllBtn;
-        void __fastcall findNextBtnClick(TObject *Sender);
-        void __fastcall cancelBtnClick(TObject *Sender);
-        void __fastcall findTextChange(TObject *Sender);
-        void __fastcall replaceBtnClick(TObject *Sender);
-        void __fastcall replaceAllBtnClick(TObject *Sender);
+        void findNextBtnClick(TObject *Sender);
+        void cancelBtnClick(TObject *Sender);
+        void findTextChange(TObject *Sender);
+        void replaceBtnClick(TObject *Sender);
+        void replaceAllBtnClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TreplaceDialogFrm(TComponent* Owner);
+        TreplaceDialogFrm(TComponent* Owner);
         bool replaceAll;
 };
 //---------------------------------------------------------------------------

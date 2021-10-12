@@ -14,12 +14,12 @@ __published:	// IDE-managed Components
         TButton *btnOK;
         TButton *Button2;
         TLabel *lblMessage;
-        void __fastcall FormCreate(TObject *Sender);
-        void __fastcall btnOKClick(TObject *Sender);
-        void __fastcall Button2Click(TObject *Sender);
+        void FormCreate(TObject *Sender);
+        void btnOKClick(TObject *Sender);
+        void Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TChkSave(TComponent* Owner);
+        TChkSave(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TChkSave *ChkSave;

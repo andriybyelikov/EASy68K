@@ -9,25 +9,25 @@
 #pragma resource "*.dfm"
 TfindDialogFrm *findDialogFrm;
 //---------------------------------------------------------------------------
-__fastcall TfindDialogFrm::TfindDialogFrm(TComponent* Owner)
+TfindDialogFrm::TfindDialogFrm(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TfindDialogFrm::findNextBtnClick(TObject *Sender)
+void TfindDialogFrm::findNextBtnClick(TObject *Sender)
 {
   Main->FindDialogFind(findText->Text, wholeWordChk->Checked, matchCaseChk->Checked);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfindDialogFrm::cancelBtnClick(TObject *Sender)
+void TfindDialogFrm::cancelBtnClick(TObject *Sender)
 {
   this->Close();
 }
 
 //---------------------------------------------------------------------------
 
-void __fastcall TfindDialogFrm::findTextChange(TObject *Sender)
+void TfindDialogFrm::findTextChange(TObject *Sender)
 {
   if (findText->Text == "") {
     findNextBtn->Enabled = false;
@@ -40,7 +40,7 @@ void __fastcall TfindDialogFrm::findTextChange(TObject *Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TfindDialogFrm::FormShow(TObject *Sender)
+void TfindDialogFrm::FormShow(TObject *Sender)
 {
   if (findText->Text == "") {
     findNextBtn->Enabled = false;

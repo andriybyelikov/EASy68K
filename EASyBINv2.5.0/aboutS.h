@@ -25,12 +25,12 @@ __published:
         TLabel *Label1;
         TLabel *Label5;
         TLabel *Label4;
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void FormShow(TObject *Sender);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
 private:
 public:
-	virtual __fastcall TAboutFrm(TComponent* AOwner);
+	virtual TAboutFrm(TComponent* AOwner);
 };
 //----------------------------------------------------------------------------
 extern PACKAGE TAboutFrm *AboutFrm;

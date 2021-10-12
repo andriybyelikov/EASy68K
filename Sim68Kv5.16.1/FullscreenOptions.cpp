@@ -17,14 +17,14 @@
 TfrmFullscreenOptions *frmFullscreenOptions;
 //---------------------------------------------------------------------------
 
-__fastcall TfrmFullscreenOptions::TfrmFullscreenOptions(TComponent* Owner)
+TfrmFullscreenOptions::TfrmFullscreenOptions(TComponent* Owner)
         : TForm(Owner)
 {
 }
 
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmFullscreenOptions::FormShow(TObject *Sender)
+void TfrmFullscreenOptions::FormShow(TObject *Sender)
 {
   txtScreenNumber->Text = static_cast<int>(FullScreenMonitor) + 1;
   txtScreenNumber->SetFocus();
@@ -33,7 +33,7 @@ void __fastcall TfrmFullscreenOptions::FormShow(TObject *Sender)
 
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmFullscreenOptions::txtScreenNumberChange(
+void TfrmFullscreenOptions::txtScreenNumberChange(
       TObject *Sender)
 {
   int scrNumber = txtScreenNumber->Text.ToIntDef(-1);
@@ -46,14 +46,14 @@ void __fastcall TfrmFullscreenOptions::txtScreenNumberChange(
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmFullscreenOptions::cmdOkClick(TObject *Sender)
+void TfrmFullscreenOptions::cmdOkClick(TObject *Sender)
 {
   FullScreenMonitor = static_cast<char>(txtScreenNumber->Text.ToInt() - 1);
   Close();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmFullscreenOptions::cmdCancelClick(TObject *Sender)
+void TfrmFullscreenOptions::cmdCancelClick(TObject *Sender)
 {
   Close();
 }

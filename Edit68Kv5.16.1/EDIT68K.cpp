@@ -20,8 +20,8 @@ WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
         try
         {
-                 Application->Initialize();
-                 Application->Title = "EASy68K";
+                 Application->Initialize(); // DONE
+                 Application->Title = "EASy68K"; // DONE
                  Application->CreateForm(__classid(TMain), &Main);
                  Application->CreateForm(__classid(TAboutBox), &AboutBox);
                  Application->CreateForm(__classid(TAssemblerBox), &AssemblerBox);

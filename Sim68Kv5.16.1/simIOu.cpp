@@ -70,7 +70,7 @@ uchar keyUpCode;                // "
 //---------------------------------------------------------------------------
 // Constructor
 //---------------------------------------------------------------------------
-__fastcall TsimIO::TsimIO(TComponent* Owner) : TForm(Owner)
+TsimIO::TsimIO(TComponent* Owner) : TForm(Owner)
 {
   try {
   row = 0;
@@ -134,7 +134,7 @@ __fastcall TsimIO::TsimIO(TComponent* Owner) : TForm(Owner)
 //---------------------------------------------------------------------------
 // Destructor
 //---------------------------------------------------------------------------
-__fastcall TsimIO::~TsimIO()
+TsimIO::~TsimIO()
 {
   try {
   if (fullScreen){
@@ -184,7 +184,7 @@ __fastcall TsimIO::~TsimIO()
 //---------------------------------------------------------------------------
 //  Sets the window size
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::setWindowSize(ushort width, ushort height)
+void TsimIO::setWindowSize(ushort width, ushort height)
 {
   try {
   if (height == 0 && width == 0) {      // if use current height & width
@@ -235,7 +235,7 @@ void __fastcall TsimIO::setWindowSize(ushort width, ushort height)
 //---------------------------------------------------------------------------
 // Changes the resolution of the display device
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::setupWindow()
+void TsimIO::setupWindow()
 {
   try {
   DWORD dwExStyle;
@@ -369,14 +369,14 @@ void __fastcall TsimIO::setupWindow()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::getWindowSize(ushort &width, ushort &height)
+void TsimIO::getWindowSize(ushort &width, ushort &height)
 {
   height = canHeight;
   width = canWidth;
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormPaint(TObject *Sender)
+void TsimIO::FormPaint(TObject *Sender)
 {
   try {
   //draw back buffer to form
@@ -389,7 +389,7 @@ void __fastcall TsimIO::FormPaint(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // Call setTextSize whenever the font size changes
-void __fastcall TsimIO::setTextSize()
+void TsimIO::setTextSize()
 {
   try {
   rowHeight = Canvas->TextHeight("Xp");
@@ -408,13 +408,13 @@ void __fastcall TsimIO::setTextSize()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormResize(TObject *Sender)
+void TsimIO::FormResize(TObject *Sender)
 {
   //simIO->Repaint();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormKeyDown(TObject *Sender, WORD &Key,
+void TsimIO::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   try {
@@ -449,7 +449,7 @@ void __fastcall TsimIO::FormKeyDown(TObject *Sender, WORD &Key,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormKeyUp(TObject *Sender, WORD &Key,
+void TsimIO::FormKeyUp(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
   try {
@@ -465,7 +465,7 @@ void __fastcall TsimIO::FormKeyUp(TObject *Sender, WORD &Key,
 
 //-----------------------------------------------------------------------
 // Display File Dialog
-void __fastcall TsimIO::displayFileDialog(long *mode, int A1, int A2, int A3, short *result)
+void TsimIO::displayFileDialog(long *mode, int A1, int A2, int A3, short *result)
 {
   try {
   char title[256];              // title buffer
@@ -564,7 +564,7 @@ void __fastcall TsimIO::displayFileDialog(long *mode, int A1, int A2, int A3, sh
 
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::BringToFront()
+void TsimIO::BringToFront()
 {
   try {
   if(simIO->Visible)
@@ -581,7 +581,7 @@ void __fastcall TsimIO::BringToFront()
 // get state of 4 keys as defined in codes (1 byte each)
 // return in codes as $00 if key up, $FF if key down (4 bytes)
 // or return key code of last keypress
-void __fastcall TsimIO::getKeyState(long *codes)
+void TsimIO::getKeyState(long *codes)
 {
   try {
   long code = *codes;
@@ -612,13 +612,13 @@ void __fastcall TsimIO::getKeyState(long *codes)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormActivate(TObject *Sender)
+void TsimIO::FormActivate(TObject *Sender)
 {
   clearKeys();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::clearKeys()
+void TsimIO::clearKeys()
 {
   try {
   keyDownCode = 0;
@@ -633,7 +633,7 @@ void __fastcall TsimIO::clearKeys()
 
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormMouseDown(TObject *Sender, TMouseButton Button,
+void TsimIO::FormMouseDown(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   try {
@@ -700,7 +700,7 @@ void __fastcall TsimIO::FormMouseDown(TObject *Sender, TMouseButton Button,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormMouseUp(TObject *Sender, TMouseButton Button,
+void TsimIO::FormMouseUp(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
   try {
@@ -766,7 +766,7 @@ void __fastcall TsimIO::FormMouseUp(TObject *Sender, TMouseButton Button,
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormMouseMove(TObject *Sender, TShiftState Shift,
+void TsimIO::FormMouseMove(TObject *Sender, TShiftState Shift,
       int X, int Y)
 {
   try {
@@ -808,7 +808,7 @@ void __fastcall TsimIO::FormMouseMove(TObject *Sender, TShiftState Shift,
 //  \t	0x09	HT	Tab (horizontal)
 //  \v	0x0B	VT	Vertical tab
 
-void __fastcall TsimIO::charOut(char ch)
+void TsimIO::charOut(char ch)
 {
   try {
   if (simIO->Visible == false)  // if I/O form not visible,
@@ -884,7 +884,7 @@ void __fastcall TsimIO::charOut(char ch)
 //---------------------------------------------------------------------------
 //  textOut
 //  Display string at x,y without CR
-void __fastcall TsimIO::textOut(AnsiString str)
+void TsimIO::textOut(AnsiString str)
 {
   try {
   int n = str.Length();
@@ -903,7 +903,7 @@ void __fastcall TsimIO::textOut(AnsiString str)
 //  Draw string at x,y as graphics
 //  The text is not made part of the text array and may not be read using
 //  trap task 22. Allows positioning text at exact pixels.
-void __fastcall TsimIO::drawText(AnsiString str, int x, int y)
+void TsimIO::drawText(AnsiString str, int x, int y)
 {
   try {
   BackBuffer->Canvas->TextOutA(x, y, str);
@@ -918,7 +918,7 @@ void __fastcall TsimIO::drawText(AnsiString str, int x, int y)
 //---------------------------------------------------------------------------
 //  textOutCR
 //  Display string at x,y with CR
-void __fastcall TsimIO::textOutCR(AnsiString str)
+void TsimIO::textOutCR(AnsiString str)
 {
   try {
   int n = str.Length();
@@ -932,7 +932,7 @@ void __fastcall TsimIO::textOutCR(AnsiString str)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::setFontProperties(int c, int s)
+void TsimIO::setFontProperties(int c, int s)
 {
   TFont* f = NULL;
   try {
@@ -995,7 +995,7 @@ void __fastcall TsimIO::setFontProperties(int c, int s)
 
 //---------------------------------------------------------------------------
 //  doCRLF
-void __fastcall TsimIO::doCRLF()
+void TsimIO::doCRLF()
 {
   try {
   col=0;
@@ -1013,7 +1013,7 @@ void __fastcall TsimIO::doCRLF()
 
 //---------------------------------------------------------------------------
 // clear the screen
-void __fastcall TsimIO::clear()
+void TsimIO::clear()
 {
   try {
   gotorc(0, 0);
@@ -1036,7 +1036,7 @@ void __fastcall TsimIO::clear()
 
 //---------------------------------------------------------------------------
 // goto row col
-void __fastcall TsimIO::gotorc(int r, int c)
+void TsimIO::gotorc(int r, int c)
 {
   try {
   if (r < 0)
@@ -1069,7 +1069,7 @@ void __fastcall TsimIO::gotorc(int r, int c)
 
 //---------------------------------------------------------------------------
 // Returns COL in high byte of D1.W and ROW in low byte of D1.W.
-void __fastcall TsimIO::getrc(short* d1)
+void TsimIO::getrc(short* d1)
 {
   try {
   *d1 = (short)(((char)col << 8) | (char)row);
@@ -1081,7 +1081,7 @@ void __fastcall TsimIO::getrc(short* d1)
 
 //---------------------------------------------------------------------------
 // Returns character at r,c in D1.B
-void __fastcall TsimIO::getCharAt(ushort r, ushort c, char* d1)
+void TsimIO::getCharAt(ushort r, ushort c, char* d1)
 {
   try {
   if (r >= MAX_ROWS)
@@ -1096,7 +1096,7 @@ void __fastcall TsimIO::getCharAt(ushort r, ushort c, char* d1)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::setTextWrap(bool b)
+void TsimIO::setTextWrap(bool b)
 {
   textWrap = b;
 }
@@ -1104,7 +1104,7 @@ void __fastcall TsimIO::setTextWrap(bool b)
 //---------------------------------------------------------------------------
 // scroll
 // scroll the text up by one row
-void __fastcall TsimIO::scroll()
+void TsimIO::scroll()
 {
   try {
   TRect TopRect, BotRect;
@@ -1148,7 +1148,7 @@ void __fastcall TsimIO::scroll()
 // scroll the text in the specified text rectangle up,down,left or right by one character
 // dir = 0 up, 1 down, other values reserved
 // invalid text areas are ignored
-void __fastcall TsimIO::scrollRect(ushort r, ushort c, ushort h, ushort w, ushort dir)
+void TsimIO::scrollRect(ushort r, ushort c, ushort h, ushort w, ushort dir)
 {
   try {
   TRect TopRect, BotRect, LeftRect, RightRect;
@@ -1275,7 +1275,7 @@ void __fastcall TsimIO::scrollRect(ushort r, ushort c, ushort h, ushort w, ushor
 //---------------------------------------------------------------------------
 //  charIn
 //  get one character from keyboard
-void __fastcall TsimIO::charIn(char *ch)
+void TsimIO::charIn(char *ch)
 {
   try {
   char str[2];
@@ -1306,7 +1306,7 @@ void __fastcall TsimIO::charIn(char *ch)
 // inNum: NULL = leave data as string in buffer
 //     address = convert string to number and store at address
 //             The conversion happens in FormKeyPress (below)
-void __fastcall TsimIO::textIn(char *str, long *size, long *inNum)
+void TsimIO::textIn(char *str, long *size, long *inNum)
 {
   try {
   userBuf = str;                // point userBuf at users input buffer
@@ -1331,7 +1331,7 @@ void __fastcall TsimIO::textIn(char *str, long *size, long *inNum)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::FormKeyPress(TObject *Sender, char &Key)
+void TsimIO::FormKeyPress(TObject *Sender, char &Key)
 {
   try {
   if (inputMode) {
@@ -1417,7 +1417,7 @@ void __fastcall TsimIO::FormKeyPress(TObject *Sender, char &Key)
 
 
 //---------------------------------------------------------------------------
-void __fastcall TsimIO::promptTimer(TObject *Sender)
+void TsimIO::promptTimer(TObject *Sender)
 {
   try {
   int promptX = colWidth * col;
@@ -1436,7 +1436,7 @@ void __fastcall TsimIO::promptTimer(TObject *Sender)
 
 //---------------------------------------------------------------------------
 // erase prompt
-void __fastcall TsimIO::erasePrompt()
+void TsimIO::erasePrompt()
 {
   try {
   if (inputPrompt) {            // if input prompt wanted
@@ -1619,7 +1619,7 @@ void TsimIO::ResetSounds()
 // playSound
 // post: result = true if sound played
 //       result = 0 if player was busy playing a previous sound
-void __fastcall TsimIO::playSound(char *fileName, short *result )
+void TsimIO::playSound(char *fileName, short *result )
 {
   try {
     if (FileExists(AnsiString(fileName))) {
@@ -1635,7 +1635,7 @@ void __fastcall TsimIO::playSound(char *fileName, short *result )
 }
 
 // pre: waveIndex is limited to 0 to 255
-void __fastcall TsimIO::loadSound(char *fileName, int waveIndex)
+void TsimIO::loadSound(char *fileName, int waveIndex)
 {
   try {
     if (FileExists(AnsiString(fileName))) {
@@ -1655,7 +1655,7 @@ void __fastcall TsimIO::loadSound(char *fileName, int waveIndex)
 // pre: waveIndex is limited to 0 to 255
 // post: result = true if sound played
 //       result = 0 if player was busy playing a previous sound
-void __fastcall TsimIO::playSoundMem(int waveIndex, short *result)
+void TsimIO::playSoundMem(int waveIndex, short *result)
 {
   try {
     if (wavemem[waveIndex] != NULL) {
@@ -1678,7 +1678,7 @@ void __fastcall TsimIO::playSoundMem(int waveIndex, short *result)
 //              = other values reserved
 // post: result = true if sound played
 //       result = 0 if player was busy playing a previous sound
-void __fastcall TsimIO::controlSound(int control, int waveIndex, short *result)
+void TsimIO::controlSound(int control, int waveIndex, short *result)
 {
   try {
     *result = 0;                        // default to error condition
@@ -1714,7 +1714,7 @@ void __fastcall TsimIO::controlSound(int control, int waveIndex, short *result)
 //        Invalid file names are ignored.
 //   post:  result = non zero if sound played successfully
 //          result = 0 if DirectX player not available, sound is not played
-void __fastcall TsimIO::playSoundDX(char *fileName, short *result )
+void TsimIO::playSoundDX(char *fileName, short *result )
 {
   try {
     *result = 0;                        // default to DirectX not available
@@ -1742,7 +1742,7 @@ void __fastcall TsimIO::playSoundDX(char *fileName, short *result )
 //        Reusing a reference number causes the previous sound to be erased.
 //   post: result = non zero if sound loaded successfully.
 //         result = 0 if DirectX sound not available.
-void __fastcall TsimIO::loadSoundDX(char *fileName, int waveIndex, short *result)
+void TsimIO::loadSoundDX(char *fileName, int waveIndex, short *result)
 {
   try {
     *result = 0;                        // default to DirectX not available
@@ -1766,7 +1766,7 @@ void __fastcall TsimIO::loadSoundDX(char *fileName, int waveIndex, short *result
 //   pre:  waveIndex is reference number limited to 0 to 255
 //   post: result = non zero if sound played successfully
 //         result = 0 if DirectX player not available, sound is not played
-void __fastcall TsimIO::playSoundMemDX(int waveIndex, short *result)
+void TsimIO::playSoundMemDX(int waveIndex, short *result)
 {
   try {
     *result = 0;                        // default to DirectX not available
@@ -1786,7 +1786,7 @@ void __fastcall TsimIO::playSoundMemDX(int waveIndex, short *result)
 //   pre:  waveIndex is reference number limited to 0 to 255
 //   post: result = non zero on success
 //         result = 0 on error
-void __fastcall TsimIO::stopSoundMemDX(int waveIndex, short *result)
+void TsimIO::stopSoundMemDX(int waveIndex, short *result)
 {
   try {
     *result = 0;                        // default to DirectX not available
@@ -1811,7 +1811,7 @@ void __fastcall TsimIO::stopSoundMemDX(int waveIndex, short *result)
 //                = other values reserved
 //   post: result = non zero on success
 //         result = 0 on error
-void __fastcall TsimIO::controlSoundDX(int control, int waveIndex, short *result)
+void TsimIO::controlSoundDX(int control, int waveIndex, short *result)
 {
   try {
     *result = 0;                        // default to error
@@ -1849,19 +1849,19 @@ void __fastcall TsimIO::controlSoundDX(int control, int waveIndex, short *result
 //  GRAPHICS FUNCTIONS called by Trap #15 handler
 //---------------------------------------------------------------------------
 
-void __fastcall TsimIO::setLineColor(int c)
+void TsimIO::setLineColor(int c)
 {
   BackBuffer->Canvas->Pen->Color = (TColor) c;
   Canvas->Pen->Color = (TColor) c;
 }
 
-void __fastcall TsimIO::setFillColor(int c)
+void TsimIO::setFillColor(int c)
 {
   BackBuffer->Canvas->Brush->Color = (TColor) c;
   Canvas->Brush->Color = (TColor) c;
 }
 
-void __fastcall TsimIO::drawPixel(int x, int y)
+void TsimIO::drawPixel(int x, int y)
 {
   BackBuffer->Canvas->Pixels[x][y] = BackBuffer->Canvas->Pen->Color;
   if (doubleBuffer == false)
@@ -1869,12 +1869,12 @@ void __fastcall TsimIO::drawPixel(int x, int y)
   //simIO->Repaint();
 }
 
-int  __fastcall TsimIO::getPixel(int x, int y)
+int  TsimIO::getPixel(int x, int y)
 {
   return (int) BackBuffer->Canvas->Pixels[x][y];
 }
 
-void __fastcall TsimIO::line(int x1, int y1, int x2, int y2)
+void TsimIO::line(int x1, int y1, int x2, int y2)
 {
   BackBuffer->Canvas->MoveTo(x1,y1);
   BackBuffer->Canvas->LineTo(x2,y2);
@@ -1887,7 +1887,7 @@ void __fastcall TsimIO::line(int x1, int y1, int x2, int y2)
   //simIO->Repaint();
 }
 
-void __fastcall TsimIO::lineTo(int x, int y)
+void TsimIO::lineTo(int x, int y)
 {
   BackBuffer->Canvas->LineTo(x,y);
   BackBuffer->Canvas->Pixels[x][y] = BackBuffer->Canvas->Pen->Color;
@@ -1899,20 +1899,20 @@ void __fastcall TsimIO::lineTo(int x, int y)
 }
 
 // Move pen to X,Y
-void __fastcall TsimIO::moveTo(int x, int y)
+void TsimIO::moveTo(int x, int y)
 {
   BackBuffer->Canvas->MoveTo(x,y);
   Canvas->MoveTo(x,y);
 }
 
 // Return current X,Y pen position
-void __fastcall TsimIO::getXY(short* x, short* y)
+void TsimIO::getXY(short* x, short* y)
 {
   *x = (short)Canvas->PenPos.x;
   *y = (short)Canvas->PenPos.y;
 }
 
-void __fastcall TsimIO::rectangle(int x1, int y1, int x2, int y2)
+void TsimIO::rectangle(int x1, int y1, int x2, int y2)
 {
   if (x1 > x2) {        // if coords are reversed
     int x = x1;
@@ -1929,7 +1929,7 @@ void __fastcall TsimIO::rectangle(int x1, int y1, int x2, int y2)
     Canvas->Rectangle(x1,y1, x2+1,y2+1);
 }
 
-void __fastcall TsimIO::ellipse(int x1, int y1, int x2, int y2)
+void TsimIO::ellipse(int x1, int y1, int x2, int y2)
 {
   try {
     if (x1 > x2) {        // if coords are reversed
@@ -1954,14 +1954,14 @@ void __fastcall TsimIO::ellipse(int x1, int y1, int x2, int y2)
   }
 }
 
-void __fastcall TsimIO::floodFill(int x, int y)
+void TsimIO::floodFill(int x, int y)
 {
   BackBuffer->Canvas->FloodFill(x,y, BackBuffer->Canvas->Pixels[x][y], fsSurface);
   if (doubleBuffer == false)
     Canvas->FloodFill(x,y, Canvas->Pixels[x][y], fsSurface);
 }
 
-void __fastcall TsimIO::unfilledRectangle(int x1, int y1, int x2, int y2)
+void TsimIO::unfilledRectangle(int x1, int y1, int x2, int y2)
 {
   if (x1 > x2) {        // if coords are reversed
     int x = x1;
@@ -1987,7 +1987,7 @@ void __fastcall TsimIO::unfilledRectangle(int x1, int y1, int x2, int y2)
   Canvas->Brush->Color = c;         // restore fill color
 }
 
-void __fastcall TsimIO::unfilledEllipse(int x1, int y1, int x2, int y2)
+void TsimIO::unfilledEllipse(int x1, int y1, int x2, int y2)
 {
   try {
     if (x1 > x2) {        // if coords are reversed
@@ -2021,7 +2021,7 @@ void __fastcall TsimIO::unfilledEllipse(int x1, int y1, int x2, int y2)
   }
 }
 
-void __fastcall TsimIO::setDrawingMode(int m)
+void TsimIO::setDrawingMode(int m)
 {
   m &= 0x00FF;
   if (m == 16) {                // if turn off double buffering
@@ -2036,7 +2036,7 @@ void __fastcall TsimIO::setDrawingMode(int m)
   }
 }
 
-void __fastcall TsimIO::setPenWidth(int w)
+void TsimIO::setPenWidth(int w)
 {
   w &= 0x00FF;
   BackBuffer->Canvas->Pen->Width = w;
@@ -2048,7 +2048,7 @@ void __fastcall TsimIO::setPenWidth(int w)
 // ----- Serial Communications Code -----
 //---------------------------------------------------------------------------
 // Close all Comm ports
-void __fastcall TsimIO::closeAllComm()
+void TsimIO::closeAllComm()
 {
   for(int i=0; i<MAX_COMM; i++)
     if (hComm[i] != NULL)
@@ -2065,7 +2065,7 @@ void __fastcall TsimIO::closeAllComm()
 //   portName: Null terminated string of comm port name (e.g. COM4)
 // Post:
 //   result: 0 on success, 1 on invalid CID, 2 on error
-void __fastcall TsimIO::initComm(int cid, char *portName, short *result)
+void TsimIO::initComm(int cid, char *portName, short *result)
 {
   *result = 0;           // 0 is success
 
@@ -2118,7 +2118,7 @@ void __fastcall TsimIO::initComm(int cid, char *portName, short *result)
 //   result 0 on success, 1 on invalid CID, 2 on error
 //   3 on comm port not initialized,
 
-void __fastcall TsimIO::setCommParams(int cid, int settings, short *result)
+void TsimIO::setCommParams(int cid, int settings, short *result)
 {
   DCB dcbCommPort;
   char portSettings[] = "9600,N,8,1\0\0\0";     // default settings
@@ -2276,7 +2276,7 @@ void __fastcall TsimIO::setCommParams(int cid, int settings, short *result)
 // close the comm port
 // Pre:
 //   cid: valid cid from initComm above
-void __fastcall TsimIO::closeComm(int cid)
+void TsimIO::closeComm(int cid)
 {
   // purge the internal comm buffer,
   // restore the previous timeout settings,
@@ -2297,7 +2297,7 @@ void __fastcall TsimIO::closeComm(int cid)
 //   str: null terminated string stored at str
 //   result 0 on success, 1 on invalid CID, 2 on error
 //   3 on comm port not initialized, 4 on timeout,
-void __fastcall TsimIO::readComm(int cid, uchar *n, char *str, short *result)
+void TsimIO::readComm(int cid, uchar *n, char *str, short *result)
 {
   DWORD dwBytesRead;
 
@@ -2342,7 +2342,7 @@ void __fastcall TsimIO::readComm(int cid, uchar *n, char *str, short *result)
 //   n: number of characters sent
 //   result 0 on success, 1 on invalid CID, 2 on error
 //   3 on comm port not initialized, 4 on timeout,
-void __fastcall TsimIO::sendComm(int cid, uchar *n, char *str, short *result)
+void TsimIO::sendComm(int cid, uchar *n, char *str, short *result)
 {
   DWORD dwBytesSent;
 
@@ -2375,7 +2375,7 @@ void __fastcall TsimIO::sendComm(int cid, uchar *n, char *str, short *result)
 
 //---------------------------------------------------------------------------
 // Create Client
-void __fastcall TsimIO::createNetClient(int settings, char *server, int *result)
+void TsimIO::createNetClient(int settings, char *server, int *result)
 {
   uint port, type;
 
@@ -2386,7 +2386,7 @@ void __fastcall TsimIO::createNetClient(int settings, char *server, int *result)
 
 //---------------------------------------------------------------------------
 // Create Server
-void __fastcall TsimIO::createNetServer(int settings, int *result)
+void TsimIO::createNetServer(int settings, int *result)
 {
   uint port, type;
 
@@ -2397,7 +2397,7 @@ void __fastcall TsimIO::createNetServer(int settings, int *result)
 
 //---------------------------------------------------------------------------
 // Send
-void __fastcall TsimIO::sendNet(int settings, char *data, char *remoteIP, int *count, int *result)
+void TsimIO::sendNet(int settings, char *data, char *remoteIP, int *count, int *result)
 {
   unsigned int size;
 
@@ -2409,7 +2409,7 @@ void __fastcall TsimIO::sendNet(int settings, char *data, char *remoteIP, int *c
 
 //---------------------------------------------------------------------------
 // Receive
-void __fastcall TsimIO::receiveNet(int settings, char *buffer, int *count, char *senderIP,  int *result)
+void TsimIO::receiveNet(int settings, char *buffer, int *count, char *senderIP,  int *result)
 {
   unsigned int size;
 
@@ -2421,7 +2421,7 @@ void __fastcall TsimIO::receiveNet(int settings, char *buffer, int *count, char 
 
 //---------------------------------------------------------------------------
 // Send on port
-void __fastcall TsimIO::sendPortNet(long *D0, long *D1, char *data, char *remoteIP)
+void TsimIO::sendPortNet(long *D0, long *D1, char *data, char *remoteIP)
 {
   unsigned int size;
   unsigned short portNum;
@@ -2435,7 +2435,7 @@ void __fastcall TsimIO::sendPortNet(long *D0, long *D1, char *data, char *remote
 
 //---------------------------------------------------------------------------
 // Receive data and port
-void __fastcall TsimIO::receivePortNet(long *D0, long *D1, char *buffer, char *senderIP)
+void TsimIO::receivePortNet(long *D0, long *D1, char *buffer, char *senderIP)
 {
   unsigned int size;
   unsigned short portNum;
@@ -2451,14 +2451,14 @@ void __fastcall TsimIO::receivePortNet(long *D0, long *D1, char *buffer, char *s
 
 //---------------------------------------------------------------------------
 // Close Connection
-void __fastcall TsimIO::closeNetConnection(int closeIP, int *result)
+void TsimIO::closeNetConnection(int closeIP, int *result)
 {
   *result = netCloseSockets();
 }
 
 //---------------------------------------------------------------------------
 // Get Local IP
-void __fastcall TsimIO::getLocalIP(char *localIP, int *result)
+void TsimIO::getLocalIP(char *localIP, int *result)
 {
   *result = netLocalIP(localIP);
 }

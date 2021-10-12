@@ -41,17 +41,17 @@ extern TColor backColor;
 extern bool highlightDisabled;
 
 //---------------------------------------------------------------------------
-__fastcall TOptions::TOptions(TComponent* Owner)
+TOptions::TOptions(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TOptions::cmdCancelClick(TObject *Sender)
+void TOptions::cmdCancelClick(TObject *Sender)
 {
   Options->Close();
 }
 //-----------------------------------------------------------------------------
-void __fastcall TOptions::cmdOKClick(TObject *Sender)
+void TOptions::cmdOKClick(TObject *Sender)
 {
   AnsiString msgbuff = "You have unchecked options that are required for use "
                        "by the 68000 simulator Sim68K.  Without these options"
@@ -106,7 +106,7 @@ void __fastcall TOptions::cmdOKClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TOptions::FormShow(TObject *Sender)
+void TOptions::FormShow(TObject *Sender)
 {
   PageControl->ActivePageIndex = 0;  //first sheet is default
 
@@ -123,7 +123,7 @@ void __fastcall TOptions::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TOptions::SaveClick(TObject *Sender)
+void TOptions::SaveClick(TObject *Sender)
 {
   Template->Lines->SaveToFile(
                 ExtractFilePath(Application->ExeName) + "template.NEW");
@@ -131,7 +131,7 @@ void __fastcall TOptions::SaveClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TOptions::SaveSettings()
+void TOptions::SaveSettings()
 //saves editor settings to file, true  & false  settings are saved as 1 and 0
 {
    maximizedEdit = false;
@@ -225,7 +225,7 @@ void __fastcall TOptions::SaveSettings()
 //  as 1 and 0.
 //  If the contents of settings.dat to not match expected then default values
 //  are used.
-void __fastcall TOptions::LoadSettings()
+void TOptions::LoadSettings()
 {
   try {
     const int SIZE = 256;
@@ -912,7 +912,7 @@ void __fastcall TOptions::LoadSettings()
 }
 
 //--------------------------------------------------------------------------
-void __fastcall TOptions::defaultSettings()
+void TOptions::defaultSettings()
 //  default settings
 {
   try {
@@ -981,7 +981,7 @@ void __fastcall TOptions::defaultSettings()
 
 //---------------------------------------------------------------------------
 
-void __fastcall TOptions::FormKeyDown(TObject *Sender, WORD &Key,
+void TOptions::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)

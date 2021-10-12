@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.20)
+project(wxEdit68K)
+include_directories(include)
+file(GLOB SOURCE_FILES src/*.cpp)
+add_executable(wxEdit68K ${SOURCE_FILES})
+
+find_package(wxWidgets COMPONENTS base core xml html richtext aui xrc REQUIRED)
+if (wxWidgets_FOUND)
+    include(${wxWidgets_USE_FILE})
+    target_link_libraries(wxEdit68K ${wxWidgets_LIBRARIES})
+endif()

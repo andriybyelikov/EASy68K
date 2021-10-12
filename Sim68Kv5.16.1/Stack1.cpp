@@ -31,12 +31,12 @@ int stackRowHeight, stackColWidth;        // row height and col width of text
 int stackAddr, midAddr, A7stackAddr, AregAddr;
 
 //---------------------------------------------------------------------------
-__fastcall TStackFrm::TStackFrm(TComponent* Owner)
+TStackFrm::TStackFrm(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
-void __fastcall TStackFrm::FormCreate(TObject *Sender)
+void TStackFrm::FormCreate(TObject *Sender)
 {
   stackAddr = A[8];
   stackAddr -= stackAddr%2;     // force even address
@@ -46,20 +46,20 @@ void __fastcall TStackFrm::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::FormPaint(TObject *Sender)
+void TStackFrm::FormPaint(TObject *Sender)
 {
   DisplayStack();
 }
 //---------------------------------------------------------------------------
 
 
-void __fastcall TStackFrm::FormResize(TObject *Sender)
+void TStackFrm::FormResize(TObject *Sender)
 {
   DisplayStack();
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TStackFrm::updateDisplay()
+void TStackFrm::updateDisplay()
 {
   stackAddr = A[whichStack->ItemIndex];
   AregAddr = stackAddr;
@@ -69,7 +69,7 @@ void __fastcall TStackFrm::updateDisplay()
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TStackFrm::DisplayStack()
+void TStackFrm::DisplayStack()
 {
   AnsiString str;
   TPoint scrPos;
@@ -121,34 +121,34 @@ void __fastcall TStackFrm::DisplayStack()
 //---------------------------------------------------------------------------
 
 
-void __fastcall TStackFrm::whichStackChange(TObject *Sender)
+void TStackFrm::whichStackChange(TObject *Sender)
 {
   updateDisplay();
 }
 //---------------------------------------------------------------------------
 
 
-void __fastcall TStackFrm::FormShow(TObject *Sender)
+void TStackFrm::FormShow(TObject *Sender)
 {
   updateDisplay();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::CSpinButton1UpClick(TObject *Sender)
+void TStackFrm::CSpinButton1UpClick(TObject *Sender)
 {
   midAddr -= 4;               // display lower address
   DisplayStack();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::CSpinButton1DownClick(TObject *Sender)
+void TStackFrm::CSpinButton1DownClick(TObject *Sender)
 {
   midAddr += 4;               // display higher address
   DisplayStack();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::FormMouseWheelDown(TObject *Sender,
+void TStackFrm::FormMouseWheelDown(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   midAddr += 4;               // display higher address
@@ -156,7 +156,7 @@ void __fastcall TStackFrm::FormMouseWheelDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::FormMouseWheelUp(TObject *Sender,
+void TStackFrm::FormMouseWheelUp(TObject *Sender,
       TShiftState Shift, TPoint &MousePos, bool &Handled)
 {
   midAddr -= 4;               // display lower address
@@ -164,7 +164,7 @@ void __fastcall TStackFrm::FormMouseWheelUp(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::FormKeyDown(TObject *Sender, WORD &Key,
+void TStackFrm::FormKeyDown(TObject *Sender, WORD &Key,
       TShiftState Shift)
 {
    if (Key == VK_F1)
@@ -174,7 +174,7 @@ void __fastcall TStackFrm::FormKeyDown(TObject *Sender, WORD &Key,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TStackFrm::BringToFront()
+void TStackFrm::BringToFront()
 {
   if(StackFrm->Visible)
     StackFrm->SetFocus();

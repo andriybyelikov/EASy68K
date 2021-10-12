@@ -32,18 +32,18 @@ __published:	// IDE-managed Components
         TCheckBox *chkStrucEx;
         TCheckBox *chkShowWarnings;
         TCheckBox *chkBitfield;
-        void __fastcall cmdCancelClick(TObject *Sender);
-        void __fastcall cmdOKClick(TObject *Sender);
-        void __fastcall FormShow(TObject *Sender);
-        void __fastcall SaveClick(TObject *Sender);
-        void __fastcall FormKeyDown(TObject *Sender, WORD &Key,
+        void cmdCancelClick(TObject *Sender);
+        void cmdOKClick(TObject *Sender);
+        void FormShow(TObject *Sender);
+        void SaveClick(TObject *Sender);
+        void FormKeyDown(TObject *Sender, WORD &Key,
           TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TOptions(TComponent* Owner);
-        void __fastcall SaveSettings();   //saves editor settings to file
-        void __fastcall LoadSettings();   //loads editor settings from file
-        void __fastcall defaultSettings(); // sets editor defaults
+        TOptions(TComponent* Owner);
+        void SaveSettings();   //saves editor settings to file
+        void LoadSettings();   //loads editor settings from file
+        void defaultSettings(); // sets editor defaults
         bool bSave;  //checks if editor should save before assemble
         int iSelStart;
 };
