@@ -17,13 +17,27 @@ struct FileInfo {
     bool hasName; // true if the file has a valid filename
 };
 
+#include "editor_gui_defs.h"
+
 class MyRichTextCtrl : public wxRichTextCtrl
 {
 public:
+    MyRichTextCtrl(wxWindow *parent);
     void NewProject(const wxString& type);
     void NewSourceFile();
 
     FileInfo m_project;
+
+    FontStyle
+        codeStyle,
+        unknownStyle,
+        directiveStyle,
+        commentStyle,
+        labelStyle,
+        structureStyle,
+        errorStyle,
+        textStyle;
+    wxColor backColor;
 };
 
 #endif

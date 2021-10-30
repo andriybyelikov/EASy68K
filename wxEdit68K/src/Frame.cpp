@@ -3,7 +3,7 @@
 #include <wx/sizer.h>
 
 #include <wx/menu.h>
-#include <wx/richtext/richtextctrl.h>
+
 #include <wx/aboutdlg.h>
 #include <wx/filefn.h>
 
@@ -11,6 +11,8 @@
 
 #include "App.h"
 #include "Frame.h"
+#include "MyRichTextCtrl.h"
+
 
 Frame::Frame() : wxFrame()
 {
@@ -26,6 +28,10 @@ Frame::Frame() : wxFrame()
 
 
     this->notebook = new MyAuiNotebook(this);
+    this->editorOptions = new EditorOptions(this, this->notebook);
+    this->assemblerOptions = new AssemblerOptions(this);
+    this->helpController= new wxHelpController(this);
+    this->helpController->Initialize("../../EASy68K_Helpv5.16.1/help.chm");
 
     this->SetIcon(wxIcon("../icons/about_icon.png"));
 
@@ -40,7 +46,7 @@ Frame::Frame() : wxFrame()
 
 void Frame::OnFileNew(wxCommandEvent &evt)
 {
-    wxRichTextCtrl *richtext = new wxRichTextCtrl(this->notebook);
+    MyRichTextCtrl *richtext = new MyRichTextCtrl(this->notebook);
 
     wxFile *file = new wxFile("../template.NEW");
     wxString *content = new wxString();
@@ -88,7 +94,7 @@ void Frame::OnFileQuit(wxCommandEvent& evt)
 void Frame::OnEditUndo(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->Undo();
     }
@@ -97,7 +103,7 @@ void Frame::OnEditUndo(wxCommandEvent& evt)
 void Frame::OnEditRedo(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->Redo();
     }
@@ -106,7 +112,7 @@ void Frame::OnEditRedo(wxCommandEvent& evt)
 void Frame::OnEditCut(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->Cut();
     }
@@ -115,7 +121,7 @@ void Frame::OnEditCut(wxCommandEvent& evt)
 void Frame::OnEditCopy(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->Copy();
     }
@@ -124,7 +130,7 @@ void Frame::OnEditCopy(wxCommandEvent& evt)
 void Frame::OnEditPaste(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->Paste();
     }
@@ -133,7 +139,7 @@ void Frame::OnEditPaste(wxCommandEvent& evt)
 void Frame::OnEditSelectAll(wxCommandEvent& evt)
 {
     wxWindow *current_page = this->notebook->GetCurrentPage();
-    wxRichTextCtrl *richtext = static_cast<wxRichTextCtrl *>(current_page);
+    MyRichTextCtrl *richtext = static_cast<MyRichTextCtrl *>(current_page);
     if (richtext != NULL) {
         richtext->SelectAll();
     }
@@ -149,31 +155,19 @@ void Frame::OnProjectAssembleSource(wxCommandEvent& evt)
 {}
 
 void Frame::OnOptionsAssemblerOptions(wxCommandEvent& evt)
-{}
+{
+    this->assemblerOptions->ShowModal();
+}
 
 void Frame::OnOptionsEditorOptions(wxCommandEvent& evt)
 {
-    wxDialog dlg;
-    wxXmlResource::Get()->Load("../src/editor_options.xrc");
-    wxXmlResource::Get()->LoadDialog(&dlg, this, "editor_options_dlg");
-
-    wxRichTextCtrl *richtext = XRCCTRL(dlg, "editor_pre", wxRichTextCtrl);
-    richtext->SetFont(wxFont(10, wxFONTFAMILY_TELETYPE, wxFONTSTYLE_NORMAL,
-        wxFONTWEIGHT_NORMAL));
-    richtext->SetValue(
-        "* Syntax Highlight\n"
-        "START  MOVE.B #1,D0\n"
-        "       Unknown or Macro\n"
-        "   if <NE> then\n"
-        "   of <NE> tehn\n"
-        "       DC.B 'HELLO'\n");
-    richtext->Disable();
-
-    dlg.ShowModal();
+    this->editorOptions->ShowModal();
 }
 
 void Frame::OnHelpHelp(wxCommandEvent& evt)
-{}
+{
+    this->helpController->DisplayContents();
+}
 
 void Frame::OnHelpAbout(wxCommandEvent& event)
 {
@@ -201,6 +195,7 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
     EVT_MENU(wxID_COPY, Frame::OnEditCopy)
     EVT_MENU(wxID_PASTE, Frame::OnEditPaste)
     EVT_MENU(wxID_SELECTALL, Frame::OnEditSelectAll)
+    EVT_MENU(XRCID("menu_options_assembler_options"), Frame::OnOptionsAssemblerOptions)
     EVT_MENU(XRCID("menu_options_editor_options"), Frame::OnOptionsEditorOptions)
     EVT_MENU(wxID_ABOUT, Frame::OnHelpAbout)
     EVT_MENU(XRCID("tool_new"), Frame::OnFileNew)
@@ -213,4 +208,5 @@ wxBEGIN_EVENT_TABLE(Frame, wxFrame)
     EVT_MENU(XRCID("tool_cut"), Frame::OnEditCut)
     EVT_MENU(XRCID("tool_copy"), Frame::OnEditCopy)
     EVT_MENU(XRCID("tool_paste"), Frame::OnEditPaste)
+    EVT_MENU(wxID_HELP, Frame::OnHelpHelp)
 wxEND_EVENT_TABLE()

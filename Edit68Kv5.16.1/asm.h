@@ -230,8 +230,6 @@ const int NORMAL = 0;
 const int MILD_ERROR = 1;
 const int CRITICAL = 2;
 
-// tab types
-enum tabTypes{ Assembly, Fixed };
 
 const int TAB1 = 12;          // tab positions for smart tabs (in characters)
 const int TAB2 = 20;
@@ -239,24 +237,6 @@ const int TAB3 = 44;
 
 const int MACRO_NEST_LIMIT = 256;  // nesting level limit
 
-// syntax highlight
-typedef struct
-{
-  TColor color;
-  bool   bold;
-  bool   italic;
-  bool   underline;
-} FontStyle;
-
-const TColor DEFAULT_CODE_COLOR = clBlack;
-const TColor DEFAULT_UNKNOWN_COLOR = clOlive;
-const TColor DEFAULT_DIRECTIVE_COLOR = clGreen;
-const TColor DEFAULT_COMMENT_COLOR = clBlue;
-const TColor DEFAULT_LABEL_COLOR = clPurple;
-const TColor DEFAULT_STRUCTURE_COLOR = clMaroon;
-const TColor DEFAULT_ERROR_COLOR = clRed;
-const TColor DEFAULT_TEXT_COLOR = clTeal;
-const TColor DEFAULT_BACK_COLOR = clWhite;
 
 const char NEW_PAGE_MARKER[] = "<------------------------------ PAGE ------------------------------>";
 

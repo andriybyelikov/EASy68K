@@ -24,7 +24,7 @@
                         <cols>1</cols>
                         <vgap>10</vgap>
                         <object class="sizeritem">
-                          <object class="wxGridSizer">
+                          <object class="wxFlexGridSizer">
                             <rows>1</rows>
                             <cols>2</cols>
                             <hgap>10</hgap>
@@ -38,33 +38,18 @@
                                   <object class="wxBoxSizer">
                                     <orient>wxVERTICAL</orient>
                                     <object class="sizeritem">
+                                      <object class="wxFontPickerCtrl"/>
+                                    </object>
+                                    <object class="spacer">
+                                      <size>10</size>
+                                    </object>
+                                    <object class="sizeritem">
                                       <object class="wxGridSizer">
-                                        <rows>3</rows>
-                                        <cols>2</cols>
-                                        <hgap>10</hgap>
-                                        <vgap>10</vgap>
+                                        <rows>2</rows>
+                                        <cols>1</cols>
                                         <object class="sizeritem">
-                                          <flag>wxALIGN_RIGHT</flag>
                                           <object class="wxStaticText">
-                                            <label>New Font:</label>
-                                          </object>
-                                        </object>
-                                        <object class="sizeritem">
-                                          <object class="wxComboBox"/>
-                                        </object>
-                                        <object class="sizeritem">
-                                          <flag>wxALIGN_RIGHT</flag>
-                                          <object class="wxStaticText">
-                                            <label>New Font Size:</label>
-                                          </object>
-                                        </object>
-                                        <object class="sizeritem">
-                                          <object class="wxComboBox"/>
-                                        </object>
-                                        <object class="sizeritem">
-                                          <flag>wxALIGN_RIGHT</flag>
-                                          <object class="wxStaticText">
-                                            <label>Fixed Tab Size:</label>
+                                            <label>Fixed Tab Size</label>
                                           </object>
                                         </object>
                                         <object class="sizeritem">
@@ -76,7 +61,6 @@
                                       <size>10</size>
                                     </object>
                                     <object class="sizeritem">
-                                      <flag>wxALIGN_RIGHT</flag>
                                       <object class="wxBoxSizer">
                                         <orient>wxVERTICAL</orient>
                                         <object class="sizeritem">
@@ -113,7 +97,7 @@
                                         <font>
                                           <weight>bold</weight>
                                         </font>
-                                        <label>Font:</label>
+                                        <label>Font (legacy):</label>
                                       </object>
                                     </object>
                                     <object class="sizeritem">
@@ -127,7 +111,7 @@
                                         <font>
                                           <weight>bold</weight>
                                         </font>
-                                        <label>Font Size:</label>
+                                        <label>Font Size (legacy):</label>
                                       </object>
                                     </object>
                                     <object class="sizeritem">
@@ -145,7 +129,7 @@
                                       </object>
                                     </object>
                                     <object class="sizeritem">
-                                      <object class="wxStaticText">
+                                      <object class="wxStaticText" name="current_tab_size">
                                         <label>4</label>
                                       </object>
                                     </object>
@@ -160,7 +144,7 @@
                                       </object>
                                     </object>
                                     <object class="sizeritem">
-                                      <object class="wxStaticText">
+                                      <object class="wxStaticText" name="current_tab_type">
                                         <label>Fixed</label>
                                       </object>
                                     </object>
@@ -221,14 +205,8 @@
                         <object class="sizeritem">
                           <option>1</option>
                           <flag>wxEXPAND</flag>
-                          <object class="wxStaticBoxSizer">
-                            <label>Preview</label>
-                            <object class="sizeritem">
-                              <option>1</option>
-                              <flag>wxEXPAND</flag>
-                              <object class="wxRichTextCtrl" name="editor_pre">
-                              </object>
-                            </object>
+                          <object class="wxRichTextCtrl" name="editor_pre">
+                            <style>wxBORDER_SIMPLE</style>
                           </object>
                         </object>
                         <object class="sizeritem">
@@ -243,7 +221,7 @@
                                   </object>
                                 </object>
                                 <object class="sizeritem">
-                                  <object class="wxComboBox">
+                                  <object class="wxChoice" name="presets_choice">
                                     <selection>0</selection>
                                     <content>
                                       <item>Color1</item>
@@ -273,8 +251,7 @@
                                       </object>
                                     </object>
                                     <object class="sizeritem">
-                                      <object class="wxListBox">
-                                        <selection>0</selection>
+                                      <object class="wxListBox" name="element_listbox">
                                         <content>
                                           <item>Code</item>
                                           <item>Comment</item>
@@ -304,7 +281,7 @@
                                           </object>
                                         </object>
                                         <object class="sizeritem">
-                                          <object class="wxColourPickerCtrl"/>
+                                          <object class="wxColourPickerCtrl" name="color_picker"/>
                                         </object>
                                       </object>
                                     </object>
@@ -320,17 +297,17 @@
                                           <object class="wxBoxSizer">
                                             <orient>wxVERTICAL</orient>
                                             <object class="sizeritem">
-                                              <object class="wxCheckBox">
+                                              <object class="wxCheckBox" name="bold_checkbox">
                                                 <label>Bold</label>
                                               </object>
                                             </object>
                                             <object class="sizeritem">
-                                              <object class="wxCheckBox">
+                                              <object class="wxCheckBox" name="italic_checkbox">
                                                 <label>Italic</label>
                                               </object>
                                             </object>
                                             <object class="sizeritem">
-                                              <object class="wxCheckBox">
+                                              <object class="wxCheckBox" name="underline_checkbox">
                                                 <label>Underline</label>
                                               </object>
                                             </object>

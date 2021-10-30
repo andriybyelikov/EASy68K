@@ -41,10 +41,6 @@ extern TColor backColor;
 extern bool highlightDisabled;
 
 //---------------------------------------------------------------------------
-TOptions::TOptions(TComponent* Owner)
-        : TForm(Owner)
-{
-}
 //---------------------------------------------------------------------------
 void TOptions::cmdCancelClick(TObject *Sender)
 {
@@ -103,30 +99,6 @@ void TOptions::cmdOKClick(TObject *Sender)
     SaveSettings();
     Options->Close();
   }
-}
-//---------------------------------------------------------------------------
-
-void TOptions::FormShow(TObject *Sender)
-{
-  PageControl->ActivePageIndex = 0;  //first sheet is default
-
-  //load up template
-  if (FileExists(ExtractFilePath(Application->ExeName) + "template.NEW"))
-    Template->Lines->LoadFromFile
-                      (ExtractFilePath(Application->ExeName) + "template.NEW");
-
-  Template->Font->Name = EditorOptionsForm->cbFont->Text;
-  Template->Font->Size = StrToInt(EditorOptionsForm->cbSize->Text);
-  Template->Modified = false;
-
-}
-//---------------------------------------------------------------------------
-
-
-void TOptions::SaveClick(TObject *Sender)
-{
-  Template->Lines->SaveToFile(
-                ExtractFilePath(Application->ExeName) + "template.NEW");
 }
 //---------------------------------------------------------------------------
 

@@ -83,10 +83,38 @@ CMakeFiles/wxEdit68K.dir/src/App.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wxEdit68K.dir/src/App.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/data/repositories/wxEASy68K/wxEdit68K/src/App.cpp -o CMakeFiles/wxEdit68K.dir/src/App.cpp.s
 
+CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o: CMakeFiles/wxEdit68K.dir/flags.make
+CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o: ../src/AssemblerOptions.cpp
+CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o: CMakeFiles/wxEdit68K.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o -MF CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o.d -o CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o -c /media/data/repositories/wxEASy68K/wxEdit68K/src/AssemblerOptions.cpp
+
+CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/data/repositories/wxEASy68K/wxEdit68K/src/AssemblerOptions.cpp > CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.i
+
+CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/data/repositories/wxEASy68K/wxEdit68K/src/AssemblerOptions.cpp -o CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.s
+
+CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o: CMakeFiles/wxEdit68K.dir/flags.make
+CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o: ../src/EditorOptions.cpp
+CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o: CMakeFiles/wxEdit68K.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o -MF CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o.d -o CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o -c /media/data/repositories/wxEASy68K/wxEdit68K/src/EditorOptions.cpp
+
+CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/data/repositories/wxEASy68K/wxEdit68K/src/EditorOptions.cpp > CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.i
+
+CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/data/repositories/wxEASy68K/wxEdit68K/src/EditorOptions.cpp -o CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.s
+
 CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o: CMakeFiles/wxEdit68K.dir/flags.make
 CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o: ../src/Frame.cpp
 CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o: CMakeFiles/wxEdit68K.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o -MF CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o.d -o CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o -c /media/data/repositories/wxEASy68K/wxEdit68K/src/Frame.cpp
 
 CMakeFiles/wxEdit68K.dir/src/Frame.cpp.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/wxEdit68K.dir/src/Frame.cpp.s: cmake_force
 CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o: CMakeFiles/wxEdit68K.dir/flags.make
 CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o: ../src/MyAuiNotebook.cpp
 CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o: CMakeFiles/wxEdit68K.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o -MF CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o.d -o CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o -c /media/data/repositories/wxEASy68K/wxEdit68K/src/MyAuiNotebook.cpp
 
 CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.i: cmake_force
@@ -111,18 +139,38 @@ CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/data/repositories/wxEASy68K/wxEdit68K/src/MyAuiNotebook.cpp -o CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.s
 
+CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o: CMakeFiles/wxEdit68K.dir/flags.make
+CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o: ../src/MyRichTextCtrl.cpp
+CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o: CMakeFiles/wxEdit68K.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o -MF CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o.d -o CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o -c /media/data/repositories/wxEASy68K/wxEdit68K/src/MyRichTextCtrl.cpp
+
+CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/data/repositories/wxEASy68K/wxEdit68K/src/MyRichTextCtrl.cpp > CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.i
+
+CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/data/repositories/wxEASy68K/wxEdit68K/src/MyRichTextCtrl.cpp -o CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.s
+
 # Object files for target wxEdit68K
 wxEdit68K_OBJECTS = \
 "CMakeFiles/wxEdit68K.dir/src/App.cpp.o" \
+"CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o" \
+"CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o" \
 "CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o" \
-"CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o"
+"CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o" \
+"CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o"
 
 # External object files for target wxEdit68K
 wxEdit68K_EXTERNAL_OBJECTS =
 
 wxEdit68K: CMakeFiles/wxEdit68K.dir/src/App.cpp.o
+wxEdit68K: CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o
+wxEdit68K: CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o
 wxEdit68K: CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o
 wxEdit68K: CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o
+wxEdit68K: CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o
 wxEdit68K: CMakeFiles/wxEdit68K.dir/build.make
 wxEdit68K: /usr/local/lib/libwx_gtk3u_richtext-3.1.a
 wxEdit68K: /usr/local/lib/libwx_gtk3u_aui-3.1.a
@@ -132,7 +180,7 @@ wxEdit68K: /usr/local/lib/libwx_gtk3u_core-3.1.a
 wxEdit68K: /usr/local/lib/libwx_baseu_xml-3.1.a
 wxEdit68K: /usr/local/lib/libwx_baseu-3.1.a
 wxEdit68K: CMakeFiles/wxEdit68K.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable wxEdit68K"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/data/repositories/wxEASy68K/wxEdit68K/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable wxEdit68K"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wxEdit68K.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

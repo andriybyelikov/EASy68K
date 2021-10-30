@@ -379,12 +379,69 @@ CMakeFiles/wxEdit68K.dir/src/App.cpp.o: \
  /usr/local/include/wx-3.1/wx/statusbr.h \
  /usr/local/include/wx-3.1/wx/generic/statusbr.h \
  /usr/local/include/wx-3.1/wx/gtk/frame.h \
+ /usr/local/include/wx-3.1/wx/help.h \
+ /usr/local/include/wx-3.1/wx/helpbase.h \
+ /usr/local/include/wx-3.1/wx/html/helpctrl.h \
+ /usr/local/include/wx-3.1/wx/html/helpfrm.h \
+ /usr/local/include/wx-3.1/wx/html/helpdata.h \
+ /usr/local/include/wx-3.1/wx/config.h \
+ /usr/local/include/wx-3.1/wx/confbase.h \
+ /usr/local/include/wx-3.1/wx/base64.h \
+ /usr/local/include/wx-3.1/wx/fileconf.h \
+ /usr/local/include/wx-3.1/wx/textfile.h \
+ /usr/local/include/wx-3.1/wx/textbuf.h \
+ /usr/local/include/wx-3.1/wx/splitter.h \
+ /usr/local/include/wx-3.1/wx/generic/splitter.h \
+ /usr/local/include/wx-3.1/wx/notebook.h \
+ /usr/local/include/wx-3.1/wx/bookctrl.h \
+ /usr/local/include/wx-3.1/wx/withimages.h \
+ /usr/local/include/wx-3.1/wx/gtk/notebook.h \
+ /usr/local/include/wx-3.1/wx/listbox.h \
+ /usr/local/include/wx-3.1/wx/ctrlsub.h \
+ /usr/local/include/wx-3.1/wx/gtk/listbox.h \
+ /usr/local/include/wx-3.1/wx/choice.h \
+ /usr/local/include/wx-3.1/wx/gtk/choice.h \
+ /usr/local/include/wx-3.1/wx/combobox.h \
+ /usr/local/include/wx-3.1/wx/gtk/combobox.h \
+ /usr/local/include/wx-3.1/wx/checkbox.h \
+ /usr/local/include/wx-3.1/wx/gtk/checkbox.h \
+ /usr/local/include/wx-3.1/wx/stattext.h \
+ /usr/local/include/wx-3.1/wx/gtk/stattext.h \
+ /usr/local/include/wx-3.1/wx/html/htmlwin.h \
+ /usr/local/include/wx-3.1/wx/html/winpars.h \
+ /usr/local/include/wx-3.1/wx/module.h \
+ /usr/local/include/wx-3.1/wx/html/htmlpars.h \
+ /usr/local/include/wx-3.1/wx/html/htmltag.h \
+ /usr/local/include/wx-3.1/wx/hashset.h \
+ /usr/local/include/wx-3.1/wx/html/htmlcell.h \
+ /usr/local/include/wx-3.1/wx/html/htmldefs.h \
+ /usr/local/include/wx-3.1/wx/encconv.h \
+ /usr/local/include/wx-3.1/wx/html/htmlfilt.h \
+ /usr/local/include/wx-3.1/wx/html/helpwnd.h \
+ /usr/local/include/wx-3.1/wx/hash.h \
+ /usr/local/include/wx-3.1/wx/html/htmprint.h \
+ /usr/local/include/wx-3.1/wx/print.h \
+ /usr/local/include/wx-3.1/wx/generic/printps.h \
+ /usr/local/include/wx-3.1/wx/prntbase.h \
+ /usr/local/include/wx-3.1/wx/cmndata.h \
+ /usr/local/include/wx-3.1/wx/dialog.h \
+ /usr/local/include/wx-3.1/wx/sharedptr.h \
+ /usr/local/include/wx-3.1/wx/atomic.h \
+ /usr/local/include/wx-3.1/wx/gtk/dialog.h \
+ /usr/local/include/wx-3.1/wx/printdlg.h \
  /media/data/repositories/wxEASy68K/wxEdit68K/include/MyAuiNotebook.h \
  /usr/local/include/wx-3.1/wx/aui/auibook.h \
  /usr/local/include/wx-3.1/wx/aui/tabart.h \
  /usr/local/include/wx-3.1/wx/aui/framemanager.h \
  /usr/local/include/wx-3.1/wx/sizer.h \
- /usr/local/include/wx-3.1/wx/bookctrl.h \
- /usr/local/include/wx-3.1/wx/withimages.h \
- /usr/local/include/wx-3.1/wx/notebook.h \
- /usr/local/include/wx-3.1/wx/gtk/notebook.h
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/AssemblerOptions.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/EditorOptions.h \
+ /usr/local/include/wx-3.1/wx/clrpicker.h \
+ /usr/local/include/wx-3.1/wx/pickerbase.h \
+ /usr/local/include/wx-3.1/wx/gtk/clrpicker.h \
+ /usr/local/include/wx-3.1/wx/button.h \
+ /usr/local/include/wx-3.1/wx/anybutton.h \
+ /usr/local/include/wx-3.1/wx/gtk/anybutton.h \
+ /usr/local/include/wx-3.1/wx/gtk/button.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/MyRichTextCtrl.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/editor_gui_defs.h

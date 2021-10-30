@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxDialog" name="assembler_options_dlg">
+    <title>wxEASy68K Assembler Options</title>
+    <object class="wxBoxSizer">
+      <object class="sizeritem">
+        <option>1</option>
+        <flag>wxALL|wxEXPAND</flag>
+        <border>10</border>
+        <object class="wxBoxSizer">
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <option>1</option>
+            <flag>wxEXPAND</flag>
+            <object class="wxNotebook">
+              <object class="notebookpage">
+                <label>Assembler Options</label>
+                <object class="wxPanel">
+                  <object class="wxBoxSizer">
+                    <object class="sizeritem">
+                      <flag>wxALL</flag>
+                      <border>10</border>
+                      <object class="wxBoxSizer">
+                        <orient>wxVERTICAL</orient>
+                        <object class="sizeritem">
+                          <object class="wxStaticBoxSizer">
+                            <label>Assembler Options</label>
+                            <object class="sizeritem">
+                              <object class="wxBoxSizer">
+                                <object class="sizeritem">
+                                  <flag>wxALL</flag>
+                                  <border>10</border>
+                                  <object class="wxFlexGridSizer">
+                                    <rows>3</rows>
+                                    <cols>2</cols>
+                                    <hgap>10</hgap>
+                                    <vgap>10</vgap>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Generate List File</label>
+                                        <tooltip>Generates a list file upon assembly [RECOMMENDED]</tooltip>
+                                        <checked>1</checked>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Auto Save Modified Source Before Assembling</label>
+                                        <tooltip>If checked source will be saved before assembly</tooltip>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Generate S-Record</label>
+                                        <tooltip>Generate a S-Record file upon assembly  [RECOMENDED]</tooltip>
+                                        <checked>1</checked>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Assemble Bit Field Instructions</label>
+                                        <checked>1</checked>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Show Warnings</label>
+                                        <checked>1</checked>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxPanel">
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxEXPAND</flag>
+                          <object class="wxStaticBoxSizer">
+                            <label>List File Options</label>
+                            <object class="sizeritem">
+                              <object class="wxBoxSizer">
+                                <object class="sizeritem">
+                                  <flag>wxALL</flag>
+                                  <border>10</border>
+                                  <object class="wxFlexGridSizer">
+                                    <rows>2</rows>
+                                    <cols>2</cols>
+                                    <hgap>10</hgap>
+                                    <vgap>10</vgap>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Cross Reference</label>
+                                        <tooltip>Cross Reference list file</tooltip>
+                                        <checked>1</checked>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Structured Expanded</label>
+                                        <tooltip>Expand structured in list file</tooltip>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Constants Expanded</label>
+                                        <tooltip>Expand constants in list file</tooltip>
+                                      </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                      <object class="wxCheckBox">
+                                        <label>Macros Expanded</label>
+                                        <tooltip>Expand macros in list file</tooltip>
+                                      </object>
+                                    </object>
+                                  </object>
+                                </object>
+                              </object>
+                            </object>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+              </object>
+              <object class="notebookpage">
+                <label>Template</label>
+                <object class="wxPanel">
+                  <object class="wxBoxSizer">
+                    <object class="sizeritem">
+                      <option>1</option>
+                      <flag>wxALL|wxEXPAND</flag>
+                      <border>10</border>
+                      <object class="wxBoxSizer">
+                        <orient>wxVERTICAL</orient>
+                        <object class="sizeritem">
+                          <option>1</option>
+                          <flag>wxEXPAND</flag>
+                          <object class="wxRichTextCtrl">
+                            <style>wxBORDER_SIMPLE</style>
+                          </object>
+                        </object>
+                        <object class="spacer">
+                          <size>10</size>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxALIGN_RIGHT</flag>
+                          <object class="wxButton" name="save_template">
+                            <label>_Save Template</label>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="spacer">
+            <size>10</size>
+          </object>
+          <object class="sizeritem">
+            <flag>wxALIGN_RIGHT</flag>
+            <object class="wxBoxSizer">
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_OK">
+                  <tooltip>Save Settings</tooltip>
+                </object>
+              </object>
+              <object class="spacer">
+                <size>10</size>
+              </object>
+              <object class="sizeritem">
+                <object class="wxButton" name="wxID_CANCEL"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</resource>

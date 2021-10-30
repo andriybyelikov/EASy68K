@@ -51,7 +51,7 @@
       </object>
       <object class="wxMenu">
         <label>_Options</label>
-        <object class="wxMenuItem">
+        <object class="wxMenuItem" name="menu_options_assembler_options">
           <label>Assembler Options...</label>
         </object>
         <object class="wxMenuItem" name="wxID_SEPARATOR"/>
@@ -61,10 +61,7 @@
       </object>
       <object class="wxMenu">
         <label>_Help</label>
-        <object class="wxMenuItem">
-          <bitmap stock_id="wxART_HELP"/>
-          <label>Help</label>
-        </object>
+        <object class="wxMenuItem" name="wxID_HELP"/>
         <object class="wxMenuItem" name="wxID_SEPARATOR"/>
         <object class="wxMenuItem" name="wxID_ABOUT"/>
       </object>

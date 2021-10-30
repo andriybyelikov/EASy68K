@@ -2,7 +2,7 @@
 Compatibility=1.1 or later
 Compiled file=help.chm
 Contents file=contents.hhc
-Default topic=MAIN.HTM
+Default topic=main.htm
 Display compile progress=No
 Full-text search=Yes
 Index file=index.hhk

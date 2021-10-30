@@ -6,5 +6,5 @@ CXX_DEFINES = -D_FILE_OFFSET_BITS=64 -D__WXGTK__
 
 CXX_INCLUDES = -I/media/data/repositories/wxEASy68K/wxEdit68K/include -isystem /usr/local/lib/wx/include/gtk3-unicode-static-3.1 -isystem /usr/local/include/wx-3.1
 
-CXX_FLAGS =  -pthread
+CXX_FLAGS =  -pthread -g
 

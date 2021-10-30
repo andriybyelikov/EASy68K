@@ -1,5 +1,9 @@
 #include <wx/frame.h>
+#include <wx/help.h>
 #include "MyAuiNotebook.h"
+#include "AssemblerOptions.h"
+#include "EditorOptions.h"
+
 
 class Frame: public wxFrame
 {
@@ -35,6 +39,12 @@ public:
 
 private:
     MyAuiNotebook *notebook;
+
+    AssemblerOptions *assemblerOptions;
+    EditorOptions *editorOptions;
+
+    wxHelpController *helpController;
+
     wxPathList *openFiles;
 
     // From the original implementation:

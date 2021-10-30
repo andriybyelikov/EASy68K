@@ -9,3 +9,5 @@ if (wxWidgets_FOUND)
     include(${wxWidgets_USE_FILE})
     target_link_libraries(wxEdit68K ${wxWidgets_LIBRARIES})
 endif()
+
+set(CMAKE_BUILD_TYPE Debug)

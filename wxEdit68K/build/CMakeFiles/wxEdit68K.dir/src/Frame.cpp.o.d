@@ -304,59 +304,13 @@ CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o: \
  /usr/local/include/wx-3.1/wx/menuitem.h \
  /usr/local/include/wx-3.1/wx/gtk/menuitem.h \
  /usr/local/include/wx-3.1/wx/gtk/menu.h \
- /usr/local/include/wx-3.1/wx/richtext/richtextctrl.h \
- /usr/local/include/wx-3.1/wx/richtext/richtextbuffer.h \
- /usr/local/include/wx-3.1/wx/textctrl.h \
- /usr/local/include/wx-3.1/wx/control.h \
- /usr/local/include/wx-3.1/wx/gtk/control.h \
- /usr/local/include/wx-3.1/wx/textentry.h \
- /usr/local/include/wx-3.1/wx/gtk/textentry.h \
- /usr/local/include/wx-3.1/wx/ioswrap.h /usr/include/c++/11.1.0/iostream \
- /usr/include/c++/11.1.0/ostream /usr/include/c++/11.1.0/ios \
- /usr/include/c++/11.1.0/bits/basic_ios.h \
- /usr/include/c++/11.1.0/bits/locale_facets.h \
- /usr/include/c++/11.1.0/cwctype \
- /usr/include/c++/11.1.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/11.1.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/11.1.0/bits/locale_facets.tcc \
- /usr/include/c++/11.1.0/bits/basic_ios.tcc \
- /usr/include/c++/11.1.0/bits/ostream.tcc /usr/include/c++/11.1.0/istream \
- /usr/include/c++/11.1.0/bits/istream.tcc \
- /usr/local/include/wx-3.1/wx/gtk/textctrl.h \
- /usr/local/include/wx-3.1/wx/cmdproc.h \
- /usr/local/include/wx-3.1/wx/txtstrm.h \
- /usr/local/include/wx-3.1/wx/position.h \
- /usr/local/include/wx-3.1/wx/dataobj.h \
- /usr/local/include/wx-3.1/wx/gtk/dataform.h \
- /usr/local/include/wx-3.1/wx/gtk/dataobj.h \
- /usr/local/include/wx-3.1/wx/gtk/dataobj2.h \
- /usr/local/include/wx-3.1/wx/scrolwin.h \
- /usr/local/include/wx-3.1/wx/panel.h \
- /usr/local/include/wx-3.1/wx/containr.h \
- /usr/local/include/wx-3.1/wx/generic/panelg.h \
- /usr/local/include/wx-3.1/wx/gtk/scrolwin.h \
- /usr/local/include/wx-3.1/wx/caret.h \
- /usr/local/include/wx-3.1/wx/generic/caret.h \
- /usr/local/include/wx-3.1/wx/timer.h \
- /usr/local/include/wx-3.1/wx/stopwatch.h \
- /usr/local/include/wx-3.1/wx/time.h /usr/local/include/wx-3.1/wx/dc.h \
- /usr/local/include/wx-3.1/wx/brush.h \
- /usr/local/include/wx-3.1/wx/gtk/brush.h \
- /usr/local/include/wx-3.1/wx/pen.h \
- /usr/local/include/wx-3.1/wx/peninfobase.h \
- /usr/local/include/wx-3.1/wx/gtk/pen.h \
- /usr/local/include/wx-3.1/wx/affinematrix2d.h \
- /usr/local/include/wx-3.1/wx/affinematrix2dbase.h \
- /usr/local/include/wx-3.1/wx/geometry.h \
- /usr/local/include/wx-3.1/wx/overlay.h \
- /usr/local/include/wx-3.1/wx/dnd.h \
- /usr/local/include/wx-3.1/wx/gtk/dnd.h \
  /usr/local/include/wx-3.1/wx/aboutdlg.h \
  /usr/local/include/wx-3.1/wx/app.h \
  /usr/local/include/wx-3.1/wx/eventfilter.h \
  /usr/local/include/wx-3.1/wx/build.h \
  /usr/local/include/wx-3.1/wx/cmdargs.h \
  /usr/local/include/wx-3.1/wx/init.h /usr/local/include/wx-3.1/wx/log.h \
+ /usr/local/include/wx-3.1/wx/time.h \
  /usr/local/include/wx-3.1/wx/generic/logg.h \
  /usr/local/include/wx-3.1/wx/unix/app.h /usr/include/signal.h \
  /usr/include/bits/signum-generic.h /usr/include/bits/signum-arch.h \
@@ -379,23 +333,123 @@ CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o: \
  /usr/local/include/wx-3.1/wx/weakref.h \
  /usr/local/include/wx-3.1/wx/meta/int2type.h \
  /usr/local/include/wx-3.1/wx/gtk/toplevel.h \
+ /usr/local/include/wx-3.1/wx/containr.h \
  /usr/local/include/wx-3.1/wx/sharedptr.h \
  /usr/local/include/wx-3.1/wx/atomic.h \
  /usr/local/include/wx-3.1/wx/gtk/dialog.h \
  /usr/local/include/wx-3.1/wx/gtk/filedlg.h \
  /usr/local/include/wx-3.1/wx/gtk/filectrl.h \
+ /usr/local/include/wx-3.1/wx/control.h \
+ /usr/local/include/wx-3.1/wx/gtk/control.h \
  /usr/local/include/wx-3.1/wx/filectrl.h \
  /media/data/repositories/wxEASy68K/wxEdit68K/include/App.h \
  /media/data/repositories/wxEASy68K/wxEdit68K/include/Frame.h \
  /usr/local/include/wx-3.1/wx/frame.h \
  /usr/local/include/wx-3.1/wx/statusbr.h \
  /usr/local/include/wx-3.1/wx/generic/statusbr.h \
+ /usr/local/include/wx-3.1/wx/pen.h \
+ /usr/local/include/wx-3.1/wx/peninfobase.h \
+ /usr/local/include/wx-3.1/wx/gtk/pen.h \
  /usr/local/include/wx-3.1/wx/gtk/frame.h \
+ /usr/local/include/wx-3.1/wx/help.h \
+ /usr/local/include/wx-3.1/wx/helpbase.h \
+ /usr/local/include/wx-3.1/wx/html/helpctrl.h \
+ /usr/local/include/wx-3.1/wx/html/helpfrm.h \
+ /usr/local/include/wx-3.1/wx/html/helpdata.h \
+ /usr/local/include/wx-3.1/wx/config.h \
+ /usr/local/include/wx-3.1/wx/confbase.h \
+ /usr/local/include/wx-3.1/wx/base64.h \
+ /usr/local/include/wx-3.1/wx/fileconf.h \
+ /usr/local/include/wx-3.1/wx/textfile.h \
+ /usr/local/include/wx-3.1/wx/textbuf.h \
+ /usr/local/include/wx-3.1/wx/splitter.h \
+ /usr/local/include/wx-3.1/wx/generic/splitter.h \
+ /usr/local/include/wx-3.1/wx/notebook.h \
+ /usr/local/include/wx-3.1/wx/bookctrl.h \
+ /usr/local/include/wx-3.1/wx/withimages.h \
+ /usr/local/include/wx-3.1/wx/gtk/notebook.h \
+ /usr/local/include/wx-3.1/wx/listbox.h \
+ /usr/local/include/wx-3.1/wx/ctrlsub.h \
+ /usr/local/include/wx-3.1/wx/gtk/listbox.h \
+ /usr/local/include/wx-3.1/wx/choice.h \
+ /usr/local/include/wx-3.1/wx/gtk/choice.h \
+ /usr/local/include/wx-3.1/wx/combobox.h \
+ /usr/local/include/wx-3.1/wx/textctrl.h \
+ /usr/local/include/wx-3.1/wx/textentry.h \
+ /usr/local/include/wx-3.1/wx/gtk/textentry.h \
+ /usr/local/include/wx-3.1/wx/ioswrap.h /usr/include/c++/11.1.0/iostream \
+ /usr/include/c++/11.1.0/ostream /usr/include/c++/11.1.0/ios \
+ /usr/include/c++/11.1.0/bits/basic_ios.h \
+ /usr/include/c++/11.1.0/bits/locale_facets.h \
+ /usr/include/c++/11.1.0/cwctype \
+ /usr/include/c++/11.1.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/11.1.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/11.1.0/bits/locale_facets.tcc \
+ /usr/include/c++/11.1.0/bits/basic_ios.tcc \
+ /usr/include/c++/11.1.0/bits/ostream.tcc /usr/include/c++/11.1.0/istream \
+ /usr/include/c++/11.1.0/bits/istream.tcc \
+ /usr/local/include/wx-3.1/wx/gtk/textctrl.h \
+ /usr/local/include/wx-3.1/wx/gtk/combobox.h \
+ /usr/local/include/wx-3.1/wx/checkbox.h \
+ /usr/local/include/wx-3.1/wx/gtk/checkbox.h \
+ /usr/local/include/wx-3.1/wx/stattext.h \
+ /usr/local/include/wx-3.1/wx/gtk/stattext.h \
+ /usr/local/include/wx-3.1/wx/html/htmlwin.h \
+ /usr/local/include/wx-3.1/wx/scrolwin.h \
+ /usr/local/include/wx-3.1/wx/panel.h \
+ /usr/local/include/wx-3.1/wx/generic/panelg.h \
+ /usr/local/include/wx-3.1/wx/gtk/scrolwin.h \
+ /usr/local/include/wx-3.1/wx/stopwatch.h \
+ /usr/local/include/wx-3.1/wx/html/winpars.h \
+ /usr/local/include/wx-3.1/wx/module.h \
+ /usr/local/include/wx-3.1/wx/html/htmlpars.h \
+ /usr/local/include/wx-3.1/wx/html/htmltag.h \
+ /usr/local/include/wx-3.1/wx/hashset.h \
+ /usr/local/include/wx-3.1/wx/html/htmlcell.h \
+ /usr/local/include/wx-3.1/wx/html/htmldefs.h \
+ /usr/local/include/wx-3.1/wx/brush.h \
+ /usr/local/include/wx-3.1/wx/gtk/brush.h \
+ /usr/local/include/wx-3.1/wx/encconv.h \
+ /usr/local/include/wx-3.1/wx/html/htmlfilt.h \
+ /usr/local/include/wx-3.1/wx/html/helpwnd.h \
+ /usr/local/include/wx-3.1/wx/hash.h \
+ /usr/local/include/wx-3.1/wx/html/htmprint.h \
+ /usr/local/include/wx-3.1/wx/print.h \
+ /usr/local/include/wx-3.1/wx/generic/printps.h \
+ /usr/local/include/wx-3.1/wx/prntbase.h \
+ /usr/local/include/wx-3.1/wx/cmndata.h /usr/local/include/wx-3.1/wx/dc.h \
+ /usr/local/include/wx-3.1/wx/affinematrix2d.h \
+ /usr/local/include/wx-3.1/wx/affinematrix2dbase.h \
+ /usr/local/include/wx-3.1/wx/geometry.h \
+ /usr/local/include/wx-3.1/wx/printdlg.h \
  /media/data/repositories/wxEASy68K/wxEdit68K/include/MyAuiNotebook.h \
  /usr/local/include/wx-3.1/wx/aui/auibook.h \
  /usr/local/include/wx-3.1/wx/aui/tabart.h \
  /usr/local/include/wx-3.1/wx/aui/framemanager.h \
- /usr/local/include/wx-3.1/wx/bookctrl.h \
- /usr/local/include/wx-3.1/wx/withimages.h \
- /usr/local/include/wx-3.1/wx/notebook.h \
- /usr/local/include/wx-3.1/wx/gtk/notebook.h
+ /usr/local/include/wx-3.1/wx/timer.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/AssemblerOptions.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/EditorOptions.h \
+ /usr/local/include/wx-3.1/wx/clrpicker.h \
+ /usr/local/include/wx-3.1/wx/pickerbase.h \
+ /usr/local/include/wx-3.1/wx/gtk/clrpicker.h \
+ /usr/local/include/wx-3.1/wx/button.h \
+ /usr/local/include/wx-3.1/wx/anybutton.h \
+ /usr/local/include/wx-3.1/wx/gtk/anybutton.h \
+ /usr/local/include/wx-3.1/wx/gtk/button.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/MyRichTextCtrl.h \
+ /usr/local/include/wx-3.1/wx/richtext/richtextctrl.h \
+ /usr/local/include/wx-3.1/wx/richtext/richtextbuffer.h \
+ /usr/local/include/wx-3.1/wx/cmdproc.h \
+ /usr/local/include/wx-3.1/wx/txtstrm.h \
+ /usr/local/include/wx-3.1/wx/position.h \
+ /usr/local/include/wx-3.1/wx/dataobj.h \
+ /usr/local/include/wx-3.1/wx/gtk/dataform.h \
+ /usr/local/include/wx-3.1/wx/gtk/dataobj.h \
+ /usr/local/include/wx-3.1/wx/gtk/dataobj2.h \
+ /usr/local/include/wx-3.1/wx/caret.h \
+ /usr/local/include/wx-3.1/wx/generic/caret.h \
+ /usr/local/include/wx-3.1/wx/overlay.h \
+ /usr/local/include/wx-3.1/wx/dnd.h \
+ /usr/local/include/wx-3.1/wx/gtk/dnd.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/editor_gui_defs.h \
+ /media/data/repositories/wxEASy68K/wxEdit68K/include/MyRichTextCtrl.h

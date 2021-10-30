@@ -9,8 +9,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/data/repositories/wxEASy68K/wxEdit68K/src/App.cpp" "CMakeFiles/wxEdit68K.dir/src/App.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/App.cpp.o.d"
+  "/media/data/repositories/wxEASy68K/wxEdit68K/src/AssemblerOptions.cpp" "CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o.d"
+  "/media/data/repositories/wxEASy68K/wxEdit68K/src/EditorOptions.cpp" "CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o.d"
   "/media/data/repositories/wxEASy68K/wxEdit68K/src/Frame.cpp" "CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/Frame.cpp.o.d"
   "/media/data/repositories/wxEASy68K/wxEdit68K/src/MyAuiNotebook.cpp" "CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.o.d"
+  "/media/data/repositories/wxEASy68K/wxEdit68K/src/MyRichTextCtrl.cpp" "CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o" "gcc" "CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o.d"
   )
 
 # Targets to which this target links.

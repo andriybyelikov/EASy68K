@@ -153,6 +153,54 @@ src/App.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/App.cpp.s
 .PHONY : src/App.cpp.s
 
+src/AssemblerOptions.o: src/AssemblerOptions.cpp.o
+.PHONY : src/AssemblerOptions.o
+
+# target to build an object file
+src/AssemblerOptions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.o
+.PHONY : src/AssemblerOptions.cpp.o
+
+src/AssemblerOptions.i: src/AssemblerOptions.cpp.i
+.PHONY : src/AssemblerOptions.i
+
+# target to preprocess a source file
+src/AssemblerOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.i
+.PHONY : src/AssemblerOptions.cpp.i
+
+src/AssemblerOptions.s: src/AssemblerOptions.cpp.s
+.PHONY : src/AssemblerOptions.s
+
+# target to generate assembly for a file
+src/AssemblerOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/AssemblerOptions.cpp.s
+.PHONY : src/AssemblerOptions.cpp.s
+
+src/EditorOptions.o: src/EditorOptions.cpp.o
+.PHONY : src/EditorOptions.o
+
+# target to build an object file
+src/EditorOptions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.o
+.PHONY : src/EditorOptions.cpp.o
+
+src/EditorOptions.i: src/EditorOptions.cpp.i
+.PHONY : src/EditorOptions.i
+
+# target to preprocess a source file
+src/EditorOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.i
+.PHONY : src/EditorOptions.cpp.i
+
+src/EditorOptions.s: src/EditorOptions.cpp.s
+.PHONY : src/EditorOptions.s
+
+# target to generate assembly for a file
+src/EditorOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/EditorOptions.cpp.s
+.PHONY : src/EditorOptions.cpp.s
+
 src/Frame.o: src/Frame.cpp.o
 .PHONY : src/Frame.o
 
@@ -201,6 +249,30 @@ src/MyAuiNotebook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/MyAuiNotebook.cpp.s
 .PHONY : src/MyAuiNotebook.cpp.s
 
+src/MyRichTextCtrl.o: src/MyRichTextCtrl.cpp.o
+.PHONY : src/MyRichTextCtrl.o
+
+# target to build an object file
+src/MyRichTextCtrl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.o
+.PHONY : src/MyRichTextCtrl.cpp.o
+
+src/MyRichTextCtrl.i: src/MyRichTextCtrl.cpp.i
+.PHONY : src/MyRichTextCtrl.i
+
+# target to preprocess a source file
+src/MyRichTextCtrl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.i
+.PHONY : src/MyRichTextCtrl.cpp.i
+
+src/MyRichTextCtrl.s: src/MyRichTextCtrl.cpp.s
+.PHONY : src/MyRichTextCtrl.s
+
+# target to generate assembly for a file
+src/MyRichTextCtrl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wxEdit68K.dir/build.make CMakeFiles/wxEdit68K.dir/src/MyRichTextCtrl.cpp.s
+.PHONY : src/MyRichTextCtrl.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +285,21 @@ help:
 	@echo "... src/App.o"
 	@echo "... src/App.i"
 	@echo "... src/App.s"
+	@echo "... src/AssemblerOptions.o"
+	@echo "... src/AssemblerOptions.i"
+	@echo "... src/AssemblerOptions.s"
+	@echo "... src/EditorOptions.o"
+	@echo "... src/EditorOptions.i"
+	@echo "... src/EditorOptions.s"
 	@echo "... src/Frame.o"
 	@echo "... src/Frame.i"
 	@echo "... src/Frame.s"
 	@echo "... src/MyAuiNotebook.o"
 	@echo "... src/MyAuiNotebook.i"
 	@echo "... src/MyAuiNotebook.s"
+	@echo "... src/MyRichTextCtrl.o"
+	@echo "... src/MyRichTextCtrl.i"
+	@echo "... src/MyRichTextCtrl.s"
 .PHONY : help
 
 
