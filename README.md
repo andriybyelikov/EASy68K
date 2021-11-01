@@ -24,8 +24,6 @@ utility for the Motorola 68000 microprocessor (WIP)
 - Print w/black in Editor Options > Colors (always checked and disabled)
 
 ---
----
----
 
 Editor written by Tim Larson
 Original Assembler code by Paul McKee

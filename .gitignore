@@ -2,3 +2,7 @@
 
 # Valgrind stuff
 *vgcore.*
+
+# Build directories
+wxEdit68K/build
+wxEdit68K/win-build
